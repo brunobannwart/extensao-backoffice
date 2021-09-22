@@ -1,0 +1,7 @@
+export const INCREASE_LOADING = 'INCREASE_LOADING';
+export const DESCREASE_LOADING = 'DESCREASE_LOADING';
+
+export const AUTH_LOGIN = 'AUTH_LOGIN';
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+export const AUTH_ME = 'AUTH_ME';
+export const AUTH_CHECK_LOGGED = 'AUTH_CHECK_LOGGED';
