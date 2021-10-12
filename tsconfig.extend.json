@@ -44,6 +44,9 @@
       "~/repositories": ["app/repositories"],
       "~/repositories/*": ["app/repositories/*"],
 
+      "~/styles": ["app/styles"],
+      "~/styles/*": ["app/styles/*"],
+
       "~/utils": ["app/utils"],
       "~/utils/*": ["app/utils/*"]
     }

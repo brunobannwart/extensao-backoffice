@@ -12,10 +12,6 @@ import Router from './Router';
 const App: React.FC = () => {
   const dispatch = useDispatch();
 
-  const checkLogged: boolean = useSelector(
-    (state: reducers.rootReducer) => state.auth.checkLogged
-  );
-
   const isLogged: boolean = useSelector(
     (state: reducers.rootReducer) =>
       (state.auth?.authToken?.token && true) || false
@@ -32,7 +28,7 @@ const App: React.FC = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div>{checkLogged && <Router isLogged={isLogged} />}</div>;
+  return <div><Router isLogged={isLogged} /></div>;
 };
 
 export default App;

@@ -9,3 +9,12 @@ export interface baseFilter {
   limit?: number | null;
   isDESC?: string | null;
 }
+
+export interface UserAdvancedFilter extends baseFilter {
+  name?: string | null;
+  email?: string | null;
+  phone?: string | null;
+  profileType?: number[];
+  password?: string | null,
+  confirmPassword?: string | null,
+}

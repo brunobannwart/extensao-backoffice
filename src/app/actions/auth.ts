@@ -31,7 +31,7 @@ export const authenticate = (userData: models.AuthRequest) => async (
     MessageService.success('PAGES.AUTH.LOGIN.MESSAGES.WELCOME');
 
     //TODO REDIRECT
-  } catch (err) {
+  } catch (err: any) {
     if (err && err.response) {
       MessageService.error(err.response.message);
     } else if (err && err.message) {
@@ -54,7 +54,7 @@ export const refreshToken = (userData: any) => async (dispatch: Dispatch) => {
       type: AUTH_LOGIN,
     });
 
-  } catch (err) {
+  } catch (err: any) {
     StorageService.removeItem('session-token');
     window.location.href = '/';
   } finally {
@@ -72,7 +72,7 @@ export const logout = () => async (dispatch: Dispatch) => {
     });
 
     window.location.href = '/';
-  } catch (err) {
+  } catch (err: any) {
     MessageService.error('APPLICATION.ERRORS.GENERIC');
   } finally {
     dispatch(decreaseLoading());
