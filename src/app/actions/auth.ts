@@ -1,51 +1,48 @@
-import { Dispatch, AnyAction } from 'redux';
+import { Dispatch } from 'redux';
 import { getRouteStackPath } from '@portal/config/routes';
 import AuthRequests from '~/repositories/auth';
 import { setAuthorizationHeader } from '~/repositories/instance';
 import * as MessageService from '~/services/message';
 import * as StorageService from '~/services/storage';
 
-import {
-  AUTH_CHECK_LOGGED,
-  AUTH_LOGIN,
-  AUTH_LOGOUT,
-} from './actionTypes';
+import { AUTH_CHECK_LOGGED, AUTH_LOGIN, AUTH_LOGOUT } from './actionTypes';
 import { decreaseLoading, increaseLoading } from './loading';
 
-export const authenticate = (userData: models.AuthRequest) => async (
-  dispatch: Dispatch
-) => {
-  dispatch(increaseLoading());
-  try {
-    const payload: models.AuthResponse = await AuthRequests.login(userData);
-    StorageService.setItem('session-token', payload);
+export const authenticate =
+  (userData: models.AuthRequest) => async (dispatch: Dispatch) => {
+    dispatch(increaseLoading());
+    try {
+      const payload: models.AuthResponse = await AuthRequests.login(userData);
+      StorageService.setItem('session-token', payload);
 
-    setAuthorizationHeader(payload.token as string);
+      setAuthorizationHeader(payload.token as string);
 
-    dispatch({
-      payload,
-      type: AUTH_LOGIN,
-    });
+      dispatch({
+        payload,
+        type: AUTH_LOGIN,
+      });
 
-    StorageService.setItem('auth', userData);
-    MessageService.success('PAGES.AUTH.LOGIN.MESSAGES.WELCOME');
+      StorageService.setItem('auth', userData);
+      MessageService.success('PAGES.AUTH.LOGIN.MESSAGES.WELCOME');
 
-    //TODO REDIRECT
-  } catch (err: any) {
-    if (err && err.response) {
-      MessageService.error(err.response.message);
-    } else if (err && err.message) {
-      MessageService.error('PAGES.AUTH.LOGIN.MESSAGES.INVALID');
+      //TODO REDIRECT
+    } catch (err: any) {
+      if (err && err.response) {
+        MessageService.error(err.response.message);
+      } else if (err && err.message) {
+        MessageService.error('PAGES.AUTH.LOGIN.MESSAGES.INVALID');
+      }
+    } finally {
+      dispatch(decreaseLoading());
     }
-  } finally {
-    dispatch(decreaseLoading());
-  }
-};
+  };
 
 export const refreshToken = (userData: any) => async (dispatch: Dispatch) => {
   dispatch(increaseLoading());
   try {
-    const payload: models.AuthResponse = await AuthRequests.refreshToken(userData);
+    const payload: models.AuthResponse = await AuthRequests.refreshToken(
+      userData
+    );
     StorageService.setItem('session-token', payload);
     setAuthorizationHeader(payload.accessToken as string);
 
@@ -53,7 +50,6 @@ export const refreshToken = (userData: any) => async (dispatch: Dispatch) => {
       payload,
       type: AUTH_LOGIN,
     });
-
   } catch (err: any) {
     StorageService.removeItem('session-token');
     window.location.href = '/';

@@ -1,11 +1,5 @@
 import { makeStyles } from '@material-ui/core';
-import {
-  GridColumns,
-  DataGrid,
-  GridPageChangeParams,
-  GridRowsProp,
-  GridSortModelParams,
-} from '@material-ui/data-grid';
+import { GridColumns, DataGrid, GridRowsProp } from '@material-ui/data-grid';
 import React from 'react';
 
 interface IProps {
@@ -54,26 +48,13 @@ const useStyles = makeStyles({
 const DataTable: React.FC<IProps> = (props: IProps) => {
   const classes = useStyles();
 
-  const onChangeSort = (sortModelParams: GridSortModelParams) => {
-    const baseFilter: advancedFilterModels.baseFilter = {
-      orderBy: sortModelParams.sortModel[0].field,
-      page: props.page as number,
-      pageSize: props.pageSize as number,
-      sort: sortModelParams.sortModel[0].sort === 'asc' ? 'asc' : 'desc',
-    };
-
-    if (baseFilter.sort !== props.sort || baseFilter.orderBy !== props.orderBy) {
-      props.onChange(baseFilter);
-    }
-  };
-
-  const onPage = (pageChangeParams: GridPageChangeParams) => {
-    if (pageChangeParams.pageSize === 100) { return; }
+  const onPage = (page: number) => {
+    if (props.pageSize === 100) { return; }
 
     const baseFilter: advancedFilterModels.baseFilter = {
       orderBy: props.orderBy,
-      page: pageChangeParams.page,
-      pageSize: pageChangeParams.pageSize,
+      page: page,
+      pageSize: props.pageSize || 10,
       sort: props.sort,
     };
 
@@ -90,14 +71,12 @@ const DataTable: React.FC<IProps> = (props: IProps) => {
         sortingMode="server"
 
         rows={props.rows}
-        columns={props.columns}
+        columns={props.columns.map((o: any) => ({ ...o, sortable: false, editable: false, filterable: false }))}
 
         pagination
         pageSize={props.pageSize}
         rowsPerPageOptions={[10, 25, 50]}
         rowCount={props.rowCount}
-
-        disableMultipleColumnsSorting={true}
 
         sortModel={[{
           field: props.orderBy,
@@ -105,10 +84,12 @@ const DataTable: React.FC<IProps> = (props: IProps) => {
         }]}
 
         onPageChange={onPage}
-        onSortModelChange={onChangeSort}
 
-        disableExtendRowFullWidth={true}
-        disableColumnMenu={props.disableColumnMenu}
+        disableExtendRowFullWidth
+        disableColumnFilter
+        disableColumnSelector
+        disableSelectionOnClick
+        disableColumnMenu
       />
     </div>
   );
