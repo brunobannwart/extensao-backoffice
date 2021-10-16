@@ -25,7 +25,7 @@ export const authenticate =
       StorageService.setItem('auth', userData);
       MessageService.success('PAGES.AUTH.LOGIN.MESSAGES.WELCOME');
 
-      //TODO REDIRECT
+      window.location.href = getRouteStackPath('DASHBOARD', 'DETAILS');
     } catch (err: any) {
       if (err && err.response) {
         MessageService.error(err.response.message);

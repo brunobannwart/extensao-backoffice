@@ -9,6 +9,7 @@ import * as RecoveryActions from '~/actions/passwordRecovery';
 import AdvancedButton from '~/components/AdvancedButton/AdvancedButton';
 import AdvancedForm from '~/components/AdvancedForm/AdvancedForm';
 import AdvancedInput from '~/components/AdvancedInput/AdvancedInput';
+import { WL_COMPANY_LOGIN_LOGO } from '~/config/env';
 import { translate } from '~/services/i18n';
 import NavigationService from '~/services/navigation';
 
@@ -53,7 +54,7 @@ const ResetPassword = () => {
                         <Col>
                           <img
                             className="login__form__inner__logo"
-                            src=''
+                            src={WL_COMPANY_LOGIN_LOGO}
                             alt="login logo"
                           />
                         </Col>
