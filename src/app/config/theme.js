@@ -1,3 +1,3 @@
 module.exports = {
-  '@primary-color': '#ff8827',
+  '@primary-color': '#46eb7d',
 };
