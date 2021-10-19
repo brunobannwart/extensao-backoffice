@@ -41,6 +41,23 @@ const routes: models.route[] = [
         route: '/administradores/detalhes/:id?',
         sidebarHidden: true,
       },
+      {
+        id: 'GEOGRAPHER_REPORT',
+        name: 'Geógrafos',
+        route: '/geografos/lista',
+      },
+      {
+        id: 'GEOGRAPHER_REGISTER',
+        name: 'Geógrafos',
+        route: '/geografos/registro',
+        sidebarHidden: true,
+      },
+      {
+        id: 'GEOGRAPHER_DETAILS',
+        name: 'Geógrafos',
+        route: '/geografos/detalhes/:id?',
+        sidebarHidden: true,
+      },
     ],
   },
 ];

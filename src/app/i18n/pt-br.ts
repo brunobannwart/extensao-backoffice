@@ -226,6 +226,94 @@ const ptBr = {
         },
       },
 
+      GEOGRAPHER: {
+        ROUTE: {
+          NAME: 'GEÓGRAFOS',
+          REPORT: 'RELATÓRIO',
+          REGISTER: 'REGISTRO',
+          DETAILS: '/usuarios/geografos/detalhes/',
+        },
+        TITLE: 'GEÓGRAFOS',
+        REPORT: {
+          TITLE: 'Geógrafos',
+          PAGE_TITLE: 'Geógrafos',
+          PAGE_DESCRIPTION: 'Listagem de geógrafos',
+          PAGE_TITLE_DETAILS: 'Detalhes',
+
+          ADVANCED_FILTER: {
+            NAME: 'Nome',
+            EMAIL: 'E-mail',
+          },
+
+          TABLE: {
+            NAME: {
+              FIELD: 'name',
+              HEADER: 'Nome'
+            },
+            EMAIL: {
+              FIELD: 'email',
+              HEADER: 'E-mail',
+            },
+            CREATED: {
+              FIELD: 'createdAt',
+              HEADER: 'Data de cadastro'
+            },
+            ACTIONS: {
+              FIELD: 'actions',
+              HEADER: 'Ações'
+            }
+          },
+        },
+
+        DETAILS: {
+          UNDEFINED: 'Não definido',
+          TITLE_ADD: 'Adicionar geógrafo',
+          TITLE_EDIT: 'Editar geógrafo',
+          DESCRIPTION_ADD: 'Preencha os campos abaixo para adicionar um geógrafo',
+          DESCRIPTION_EDIT: 'Preencha os campos abaixo para editar um geógrafo',
+          SUCCESS_ADD_MESSAGE: 'Geógrafo criado com sucesso!',
+          SUCCESS_EDIT_MESSAGE: 'Geógrafo editado com sucesso!',
+          SUCCESS_REMOVE_MESSAGE: 'Geógrafo removido com sucesso!',
+          FORM: {
+            ERROR: {
+              PASSWORD: 'Verifique se as senhas são iguais e tente novamente!',
+              PASSWORD_EMPTY: 'Preencha o campo senha!',
+              NAME: 'Preencha o nome!',
+              PHONE: 'Preencha um número de telefone!',
+              EMAIL: 'Preencha o e-mail!',
+            },
+            TITLE: 'Detalhes do administrador',
+            NAME: {
+              LABEL: 'Nome completo',
+            },
+            EMAIL: {
+              LABEL: 'E-mail válido',
+            },
+            DDI: {
+              LABEL: 'DDI'
+            },
+            PHONE: {
+              LABEL: 'Telefone celular válido',
+            },
+            PASSWORD: {
+              LABEL: 'Senha segura',
+            },
+            PASSWORD_CONFIRMATION: {
+              LABEL: 'Digite novamente a senha',
+            },
+            CHANGE_PASSWORD: {
+              LABEL: 'Desejo alterar a senha',
+            },
+            BACK: {
+              LABEL: 'VOLTAR',
+            },
+            SUBMIT: {
+              LABEL: 'Salvar'
+            }
+          },
+        },
+      },
+
       NOT_FOUND: {
         TITLE: 'Erro 404',
         PAGE_DESCRIPTION:
