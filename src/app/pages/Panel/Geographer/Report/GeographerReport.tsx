@@ -1,4 +1,4 @@
-Geographerimport { PlusCircleOutlined } from '@ant-design/icons';
+import { PlusCircleOutlined } from '@ant-design/icons';
 import { GridCellParams } from '@material-ui/data-grid';
 import { DateTime } from 'luxon';
 import React, { useEffect, useState } from 'react';
@@ -207,4 +207,4 @@ const GeographerReport: React.FC = () => {
   );
 };
 
-export default AdminReport;
+export default GeographerReport;
