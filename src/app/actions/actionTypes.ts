@@ -8,3 +8,6 @@ export const AUTH_CHECK_LOGGED = 'AUTH_CHECK_LOGGED';
 
 export const USER_REPORT = 'USER_REPORT';
 export const USER_DETAIL= 'USER_DETAIL';
+
+export const CATEGORY_REPORT = 'CATEGORY_REPORT';
+export const CATEGORY_DETAIL= 'CATEGORY_DETAIL';

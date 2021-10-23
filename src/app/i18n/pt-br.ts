@@ -226,6 +226,67 @@ const ptBr = {
         },
       },
 
+      CATEGORY: {
+        ROUTE: {
+          NAME: 'CATEGORIAS',
+          REPORT: 'RELATÓRIO',
+          REGISTER: 'REGISTRO',
+          DETAILS: '/monitoramento/categorias/detalhes/',
+        },
+        TITLE: 'CATEGORIAS',
+        REPORT: {
+          TITLE: 'Categorias',
+          PAGE_TITLE: 'Categorias',
+          PAGE_DESCRIPTION: 'Listagem de categorias',
+          PAGE_TITLE_DETAILS: 'Detalhes',
+
+          ADVANCED_FILTER: {
+            TITLE: 'Título',
+          },
+
+          TABLE: {
+            TITLE: {
+              FIELD: 'title',
+              HEADER: 'Título'
+            },
+            CREATED: {
+              FIELD: 'createdAt',
+              HEADER: 'Data de cadastro'
+            },
+            ACTIONS: {
+              FIELD: 'actions',
+              HEADER: 'Ações'
+            }
+          },
+        },
+
+        DETAILS: {
+          UNDEFINED: 'Não definido',
+          TITLE_ADD: 'Adicionar categoria',
+          TITLE_EDIT: 'Editar categoria',
+          DESCRIPTION_ADD: 'Preencha os campos abaixo para adicionar uma categoria',
+          DESCRIPTION_EDIT: 'Preencha os campos abaixo para editar uma categoria',
+          SUCCESS_ADD_MESSAGE: 'Categoria criada com sucesso!',
+          SUCCESS_EDIT_MESSAGE: 'Categoria editada com sucesso!',
+          SUCCESS_REMOVE_MESSAGE: 'Categoria removida com sucesso!',
+          FORM: {
+            ERROR: {
+              TITLE: 'Preencha o título!',
+            },
+            TITLE: 'Detalhes da categoria',
+            SUBJECT: {
+              LABEL: 'Título',
+            },
+            BACK: {
+              LABEL: 'VOLTAR',
+            },
+            SUBMIT: {
+              LABEL: 'Salvar'
+            }
+          },
+        },
+      },
+
       NOT_FOUND: {
         TITLE: 'Erro 404',
         PAGE_DESCRIPTION:

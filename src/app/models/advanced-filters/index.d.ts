@@ -18,3 +18,7 @@ export interface UserAdvancedFilter extends baseFilter {
   password?: string | null,
   confirmPassword?: string | null,
 }
+
+export interface CategoryAdvancedFilter extends baseFilter {
+  title?: string | null;
+}
