@@ -380,6 +380,69 @@ const ptBr = {
         },
       },
 
+      OCCURRENCE: {
+        ROUTE: {
+          NAME: 'OCORRÊNCIAS',
+          REPORT: 'RELATÓRIO',
+          REGISTER: 'REGISTRO',
+          DETAILS: '/monitoramento/ocorrencias/detalhes/',
+        },
+        TITLE: 'OCORRÊNCIAS',
+        REPORT: {
+          TITLE: 'Ocorrências',
+          PAGE_TITLE: 'Ocorrências',
+          PAGE_DESCRIPTION: 'Listagem de ocorrências',
+          PAGE_TITLE_DETAILS: 'Detalhes',
+
+          ADVANCED_FILTER: {
+            TITLE: 'Título',
+          },
+
+          TABLE: {
+            TITLE: {
+              FIELD: 'title',
+              HEADER: 'Título',
+            },
+            CREATED: {
+              FIELD: 'createdAt',
+              HEADER: 'Data de cadastro',
+            },
+            ACTIONS: {
+              FIELD: 'actions',
+              HEADER: 'Ações',
+            },
+          },
+        },
+
+        DETAILS: {
+          UNDEFINED: 'Não definido',
+          TITLE_ADD: 'Adicionar ocorrência',
+          TITLE_EDIT: 'Editar ocorrência',
+          DESCRIPTION_ADD:
+            'Preencha os campos abaixo para adicionar uma ocorrência',
+          DESCRIPTION_EDIT:
+            'Preencha os campos abaixo para editar uma ocorrência',
+          SUCCESS_ADD_MESSAGE: 'Ocorrência criada com sucesso!',
+          SUCCESS_EDIT_MESSAGE: 'Ocorrência editada com sucesso!',
+          SUCCESS_REMOVE_MESSAGE: 'Ocorrência removida com sucesso!',
+          FORM: {
+            ERROR: {
+              TITLE: 'Preencha o título!',
+            },
+            TITLE: 'Detalhes da ocorrência',
+            SUBJECT: {
+              LABEL: 'Título',
+            },
+            BACK: {
+              LABEL: 'VOLTAR',
+            },
+            SUBMIT: {
+              LABEL: 'Salvar',
+            },
+          },
+        },
+      },
+
       NOT_FOUND: {
         TITLE: 'Erro 404',
         PAGE_DESCRIPTION:
