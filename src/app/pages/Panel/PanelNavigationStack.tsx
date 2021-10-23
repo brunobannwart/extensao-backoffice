@@ -10,6 +10,7 @@ import NotFound from '~/pages/Panel/NotFound/NotFound';
 import DashboardNavigationStack from '~/pages/Panel/Dashboard/DashboardNavigationStack';
 import AdminNavigationStack from '~/pages/Panel/Admin/AdminNavigationStack';
 import CategoryNavigationStack from '~/pages/Panel/Category/CategoryNavigationStack';
+import GeographerNavigationStack from '~/pages/Panel/Geographer/GeographerNavigationStack';
 
 const PanelNavigationStack: React.FC = () => {
   const loggedUser = useSelector(
@@ -32,6 +33,7 @@ const PanelNavigationStack: React.FC = () => {
 
           <Route path={getStackPath('USER')}>
             <AdminNavigationStack />
+            <GeographerNavigationStack />
           </Route>
 
           <Route path={getStackPath('TRACKING')}>
