@@ -160,7 +160,7 @@ const ptBr = {
           TABLE: {
             NAME: {
               FIELD: 'name',
-              HEADER: 'Nome'
+              HEADER: 'Nome',
             },
             EMAIL: {
               FIELD: 'email',
@@ -168,12 +168,12 @@ const ptBr = {
             },
             CREATED: {
               FIELD: 'createdAt',
-              HEADER: 'Data de cadastro'
+              HEADER: 'Data de cadastro',
             },
             ACTIONS: {
               FIELD: 'actions',
-              HEADER: 'Ações'
-            }
+              HEADER: 'Ações',
+            },
           },
         },
 
@@ -181,8 +181,10 @@ const ptBr = {
           UNDEFINED: 'Não definido',
           TITLE_ADD: 'Adicionar administrador',
           TITLE_EDIT: 'Editar administrador',
-          DESCRIPTION_ADD: 'Preencha os campos abaixo para adicionar um administrador',
-          DESCRIPTION_EDIT: 'Preencha os campos abaixo para editar um administrador',
+          DESCRIPTION_ADD:
+            'Preencha os campos abaixo para adicionar um administrador',
+          DESCRIPTION_EDIT:
+            'Preencha os campos abaixo para editar um administrador',
           SUCCESS_ADD_MESSAGE: 'Administrador criado com sucesso!',
           SUCCESS_EDIT_MESSAGE: 'Administrador editado com sucesso!',
           SUCCESS_REMOVE_MESSAGE: 'Administrador removido com sucesso!',
@@ -202,7 +204,7 @@ const ptBr = {
               LABEL: 'E-mail válido',
             },
             DDI: {
-              LABEL: 'DDI'
+              LABEL: 'DDI',
             },
             PHONE: {
               LABEL: 'Telefone celular válido',
@@ -220,8 +222,71 @@ const ptBr = {
               LABEL: 'VOLTAR',
             },
             SUBMIT: {
-              LABEL: 'Salvar'
-            }
+              LABEL: 'Salvar',
+            },
+          },
+        },
+      },
+
+      CATEGORY: {
+        ROUTE: {
+          NAME: 'CATEGORIAS',
+          REPORT: 'RELATÓRIO',
+          REGISTER: 'REGISTRO',
+          DETAILS: '/monitoramento/categorias/detalhes/',
+        },
+        TITLE: 'CATEGORIAS',
+        REPORT: {
+          TITLE: 'Categorias',
+          PAGE_TITLE: 'Categorias',
+          PAGE_DESCRIPTION: 'Listagem de categorias',
+          PAGE_TITLE_DETAILS: 'Detalhes',
+
+          ADVANCED_FILTER: {
+            TITLE: 'Título',
+          },
+
+          TABLE: {
+            TITLE: {
+              FIELD: 'title',
+              HEADER: 'Título',
+            },
+            CREATED: {
+              FIELD: 'createdAt',
+              HEADER: 'Data de cadastro',
+            },
+            ACTIONS: {
+              FIELD: 'actions',
+              HEADER: 'Ações',
+            },
+          },
+        },
+
+        DETAILS: {
+          UNDEFINED: 'Não definido',
+          TITLE_ADD: 'Adicionar categoria',
+          TITLE_EDIT: 'Editar categoria',
+          DESCRIPTION_ADD:
+            'Preencha os campos abaixo para adicionar uma categoria',
+          DESCRIPTION_EDIT:
+            'Preencha os campos abaixo para editar uma categoria',
+          SUCCESS_ADD_MESSAGE: 'Categoria criada com sucesso!',
+          SUCCESS_EDIT_MESSAGE: 'Categoria editada com sucesso!',
+          SUCCESS_REMOVE_MESSAGE: 'Categoria removida com sucesso!',
+          FORM: {
+            ERROR: {
+              TITLE: 'Preencha o título!',
+            },
+            TITLE: 'Detalhes da categoria',
+            SUBJECT: {
+              LABEL: 'Título',
+            },
+            BACK: {
+              LABEL: 'VOLTAR',
+            },
+            SUBMIT: {
+              LABEL: 'Salvar',
+            },
           },
         },
       },
@@ -248,7 +313,7 @@ const ptBr = {
           TABLE: {
             NAME: {
               FIELD: 'name',
-              HEADER: 'Nome'
+              HEADER: 'Nome',
             },
             EMAIL: {
               FIELD: 'email',
@@ -256,12 +321,12 @@ const ptBr = {
             },
             CREATED: {
               FIELD: 'createdAt',
-              HEADER: 'Data de cadastro'
+              HEADER: 'Data de cadastro',
             },
             ACTIONS: {
               FIELD: 'actions',
-              HEADER: 'Ações'
-            }
+              HEADER: 'Ações',
+            },
           },
         },
 
@@ -269,7 +334,8 @@ const ptBr = {
           UNDEFINED: 'Não definido',
           TITLE_ADD: 'Adicionar geógrafo',
           TITLE_EDIT: 'Editar geógrafo',
-          DESCRIPTION_ADD: 'Preencha os campos abaixo para adicionar um geógrafo',
+          DESCRIPTION_ADD:
+            'Preencha os campos abaixo para adicionar um geógrafo',
           DESCRIPTION_EDIT: 'Preencha os campos abaixo para editar um geógrafo',
           SUCCESS_ADD_MESSAGE: 'Geógrafo criado com sucesso!',
           SUCCESS_EDIT_MESSAGE: 'Geógrafo editado com sucesso!',
@@ -290,7 +356,7 @@ const ptBr = {
               LABEL: 'E-mail válido',
             },
             DDI: {
-              LABEL: 'DDI'
+              LABEL: 'DDI',
             },
             PHONE: {
               LABEL: 'Telefone celular válido',
@@ -308,8 +374,8 @@ const ptBr = {
               LABEL: 'VOLTAR',
             },
             SUBMIT: {
-              LABEL: 'Salvar'
-            }
+              LABEL: 'Salvar',
+            },
           },
         },
       },

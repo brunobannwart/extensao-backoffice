@@ -14,10 +14,17 @@ type rootReducer = {
   loading: LoadingReducer;
   auth: AuthReducer;
   user: UserReducer;
+  category: CategoryReducer;
 };
 
 type UserReducer = {
   list: models.User[];
   listCount: number;
   detail: models.User | null;
+}
+
+type CategoryReducer = {
+  list: models.Category[];
+  listCount: number;
+  detail: models.Category | null;
 }

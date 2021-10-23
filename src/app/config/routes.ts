@@ -60,6 +60,32 @@ const routes: models.route[] = [
       },
     ],
   },
+  {
+    id: 'TRACKING',
+    name: 'Monitoramento',
+    route: '/monitoramento',
+    icon: '/assets/svg/panel-sidebar/ic_tracking.svg',
+    iconAlt: 'Monitoramento',
+    items: [
+      {
+        id: 'CATEGORY_REPORT',
+        name: 'Categorias',
+        route: '/categorias/lista',
+      },
+      {
+        id: 'CATEGORY_REGISTER',
+        name: 'Categorias',
+        route: '/categorias/registro',
+        sidebarHidden: true,
+      },
+      {
+        id: 'CATEGORY_DETAILS',
+        name: 'Categorias',
+        route: '/categorias/detalhes/:id?',
+        sidebarHidden: true,
+      },
+    ],
+  },
 ];
 
 export const getRoutes = (): models.route[] => routes;

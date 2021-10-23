@@ -92,9 +92,9 @@ export type Currency = {
 };
 
 export type File = {
-  name: string | null,
-  base64: string | null,
-  extension: string | null,
+  name: string | null;
+  base64: string | null;
+  extension: string | null;
 };
 
 export type User = {
@@ -106,6 +106,11 @@ export type User = {
   password?: string;
   profileType: number;
   confirmPassword?: string;
-  changePassword?: boolean,
-  document?: string,
+  changePassword?: boolean;
+  document?: string;
 };
+
+export type Category = {
+  id?: string;
+  title: string;
+}
