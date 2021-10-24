@@ -11,6 +11,7 @@ import DashboardNavigationStack from '~/pages/Panel/Dashboard/DashboardNavigatio
 import AdminNavigationStack from '~/pages/Panel/Admin/AdminNavigationStack';
 import CategoryNavigationStack from '~/pages/Panel/Category/CategoryNavigationStack';
 import GeographerNavigationStack from '~/pages/Panel/Geographer/GeographerNavigationStack';
+import OccurrenceNavigationStack from '~/pages/Panel/Occurrence/OccurrenceNavigationStack';
 
 const PanelNavigationStack: React.FC = () => {
   const loggedUser = useSelector(
@@ -38,6 +39,7 @@ const PanelNavigationStack: React.FC = () => {
 
           <Route path={getStackPath('TRACKING')}>
             <CategoryNavigationStack />
+            <OccurrenceNavigationStack />
           </Route>
 
           <Route>

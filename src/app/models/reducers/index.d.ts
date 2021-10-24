@@ -15,6 +15,7 @@ type rootReducer = {
   auth: AuthReducer;
   user: UserReducer;
   category: CategoryReducer;
+  occurrence: OccurrenceReducer;
 };
 
 type UserReducer = {
@@ -27,4 +28,10 @@ type CategoryReducer = {
   list: models.Category[];
   listCount: number;
   detail: models.Category | null;
+}
+
+type OccurrenceReducer = {
+  list: models.Occurrence[];
+  listCount: number;
+  detail: models.Occurrence | null;
 }

@@ -84,6 +84,17 @@ const routes: models.route[] = [
         route: '/categorias/detalhes/:id?',
         sidebarHidden: true,
       },
+      {
+        id: 'OCCURRENCE_REPORT',
+        name: 'Ocorrências',
+        route: '/ocorrencias/lista',
+      },
+      {
+        id: 'OCCURRENCE_DETAILS',
+        name: 'Ocorrências',
+        route: '/ocorrencias/detalhes/:id?',
+        sidebarHidden: true,
+      },
     ],
   },
 ];

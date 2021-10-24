@@ -3,6 +3,7 @@ import * as AuthActions from './auth';
 import * as PasswordRecoveryActions from './passwordRecovery';
 import * as UserActions from './user';
 import * as CategoryActions from './category';
+import * as OccurrenceActions from './occurrence';
 
 export {
   LoadingActions,
@@ -10,4 +11,5 @@ export {
   PasswordRecoveryActions,
   UserActions,
   CategoryActions,
+  OccurrenceActions,
 };

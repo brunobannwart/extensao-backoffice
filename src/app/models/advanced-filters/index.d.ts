@@ -22,3 +22,7 @@ export interface UserAdvancedFilter extends baseFilter {
 export interface CategoryAdvancedFilter extends baseFilter {
   title?: string | null;
 }
+
+export interface OccurrenceAdvancedFilter extends baseFilter {
+  title?: string | null;
+}

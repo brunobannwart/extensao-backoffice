@@ -114,3 +114,8 @@ export type Category = {
   id?: string;
   title: string;
 }
+
+export type Occurrence = {
+  id?: string;
+  title: string;
+}
