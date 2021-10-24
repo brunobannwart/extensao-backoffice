@@ -8,7 +8,7 @@ import { translate } from '~/services/i18n';
 import OccurrenceReport from '~/pages/Panel/Occurrence/Report/OccurrenceReport';
 import OccurrenceDetails from '~/pages/Panel/Occurrence/Details/OccurrenceDetails';
 
-const OcurrenceNavigationStack = () => {
+const OccurrenceNavigationStack = () => {
   return (
     <Switch>
       <Route path={getRouteStackPath('TRACKING', 'OCCURRENCE_REPORT')}>
@@ -35,4 +35,4 @@ const OcurrenceNavigationStack = () => {
   );
 };
 
-export default OcurrenceNavigationStack;
+export default OccurrenceNavigationStack;
