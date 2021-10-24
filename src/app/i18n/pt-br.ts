@@ -380,6 +380,22 @@ const ptBr = {
         },
       },
 
+      MAP: {
+        ROUTE: {
+          NAME: 'MAPA',
+          REPORT: 'RELATÓRIO',
+          REGISTER: 'REGISTRO',
+          DETAILS: '/monitoramento/mapa',
+        },
+        TITLE: 'MAPA',
+        REPORT: {
+          TITLE: 'Mapa',
+          PAGE_TITLE: 'Mapa',
+          PAGE_DESCRIPTION: 'Visualização',
+          PAGE_TITLE_DETAILS: 'Detalhes',
+        },
+      },
+
       OCCURRENCE: {
         ROUTE: {
           NAME: 'OCORRÊNCIAS',

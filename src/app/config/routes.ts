@@ -85,6 +85,11 @@ const routes: models.route[] = [
         sidebarHidden: true,
       },
       {
+        id: 'MAP_REPORT',
+        name: 'Mapa',
+        route: '/mapa',
+      },
+      {
         id: 'OCCURRENCE_REPORT',
         name: 'Ocorrências',
         route: '/ocorrencias/lista',

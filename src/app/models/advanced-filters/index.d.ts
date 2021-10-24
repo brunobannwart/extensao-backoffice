@@ -26,3 +26,8 @@ export interface CategoryAdvancedFilter extends baseFilter {
 export interface OccurrenceAdvancedFilter extends baseFilter {
   title?: string | null;
 }
+
+export interface MapAdvancedFilter {
+  latitude: number;
+  longitude: number;
+}
