@@ -16,3 +16,7 @@ export const WL_COMPANY_LOADING_LOGO: string = process.env.REACT_APP_WL_COMPANY_
 export const WL_COMPANY_PRIMARY_COLOR: string = process.env.REACT_APP_WL_COMPANY_PRIMARY_COLOR as string;
 
 export const AUTH_API_KEY: string = process.env.REACT_APP_AUTH_API_KEY as string;
+
+export const MAPBOX_API_KEY: string = process.env.REACT_APP_MAPBOX_API_KEY as string;
+export const DEFAULT_LATITUDE: number = Number(process.env.REACT_APP_DEFAULT_LATITUDE as string);
+export const DEFAULT_LONGITUDE: number = Number(process.env.REACT_APP_DEFAULT_LONGITUDE as string);
