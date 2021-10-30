@@ -100,6 +100,23 @@ const routes: models.route[] = [
         route: '/ocorrencias/detalhes/:id?',
         sidebarHidden: true,
       },
+      {
+        id: 'PROFILE_REPORT',
+        name: 'Perfis',
+        route: '/perfis/lista',
+      },
+      {
+        id: 'PROFILE_REGISTER',
+        name: 'Perfis',
+        route: '/perfis/registro',
+        sidebarHidden: true,
+      },
+      {
+        id: 'PROFILE_DETAILS',
+        name: 'Perfis',
+        route: '/perfis/detalhes/:id?',
+        sidebarHidden: true,
+      },
     ],
   },
 ];

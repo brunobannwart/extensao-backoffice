@@ -119,3 +119,8 @@ export type Occurrence = {
   id?: string;
   title: string;
 }
+
+export type Profile = {
+  id?: string;
+  title: string;
+}

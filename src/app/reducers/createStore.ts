@@ -7,6 +7,7 @@ import loadingReducer from './loading';
 import userReducer from './user';
 import categoryReducer from './category';
 import occurrenceReducer from './occurrence';
+import profileReducer from './profile';
 
 const appReducer = combineReducers({
   auth: authReducer,
@@ -15,6 +16,7 @@ const appReducer = combineReducers({
   user: userReducer,
   category: categoryReducer,
   occurrence: occurrenceReducer,
+  profile: profileReducer,
 });
 
 const rootReducer = (state: any, action: any) => {

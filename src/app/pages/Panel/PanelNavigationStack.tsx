@@ -13,6 +13,7 @@ import CategoryNavigationStack from '~/pages/Panel/Category/CategoryNavigationSt
 import GeographerNavigationStack from '~/pages/Panel/Geographer/GeographerNavigationStack';
 import OccurrenceNavigationStack from '~/pages/Panel/Occurrence/OccurrenceNavigationStack';
 import MapNavigationStack from '~/pages/Panel/Map/MapNavigationStack';
+import ProfileNavigationStack from '~/pages/Panel/Profile/ProfileNavigationStack';
 
 const PanelNavigationStack: React.FC = () => {
   const loggedUser = useSelector(
@@ -42,6 +43,7 @@ const PanelNavigationStack: React.FC = () => {
             <CategoryNavigationStack />
             <OccurrenceNavigationStack />
             <MapNavigationStack />
+            <ProfileNavigationStack />
           </Route>
 
           <Route>

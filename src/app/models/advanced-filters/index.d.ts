@@ -31,3 +31,7 @@ export interface MapAdvancedFilter {
   latitude: number;
   longitude: number;
 }
+
+export interface ProfileAdvancedFilter extends baseFilter {
+  title?: string | null;
+}

@@ -459,6 +459,69 @@ const ptBr = {
         },
       },
 
+      PROFILE: {
+        ROUTE: {
+          NAME: 'PERFIS',
+          REPORT: 'RELATÓRIO',
+          REGISTER: 'REGISTRO',
+          DETAILS: '/monitoramento/perfis/detalhes/',
+        },
+        TITLE: 'PERFIS',
+        REPORT: {
+          TITLE: 'Perfis',
+          PAGE_TITLE: 'Perfis',
+          PAGE_DESCRIPTION: 'Listagem de perfis',
+          PAGE_TITLE_DETAILS: 'Detalhes',
+
+          ADVANCED_FILTER: {
+            TITLE: 'Título',
+          },
+
+          TABLE: {
+            TITLE: {
+              FIELD: 'title',
+              HEADER: 'Título',
+            },
+            CREATED: {
+              FIELD: 'createdAt',
+              HEADER: 'Data de cadastro',
+            },
+            ACTIONS: {
+              FIELD: 'actions',
+              HEADER: 'Ações',
+            },
+          },
+        },
+
+        DETAILS: {
+          UNDEFINED: 'Não definido',
+          TITLE_ADD: 'Adicionar perfil',
+          TITLE_EDIT: 'Editar perfil',
+          DESCRIPTION_ADD:
+            'Preencha os campos abaixo para adicionar um perfil',
+          DESCRIPTION_EDIT:
+            'Preencha os campos abaixo para editar um perfil',
+          SUCCESS_ADD_MESSAGE: 'Perfil criado com sucesso!',
+          SUCCESS_EDIT_MESSAGE: 'Perfil editado com sucesso!',
+          SUCCESS_REMOVE_MESSAGE: 'Perfil removido com sucesso!',
+          FORM: {
+            ERROR: {
+              TITLE: 'Preencha o título!',
+            },
+            TITLE: 'Detalhes do perfil',
+            SUBJECT: {
+              LABEL: 'Título',
+            },
+            BACK: {
+              LABEL: 'VOLTAR',
+            },
+            SUBMIT: {
+              LABEL: 'Salvar',
+            },
+          },
+        },
+      },
+
       NOT_FOUND: {
         TITLE: 'Erro 404',
         PAGE_DESCRIPTION:
