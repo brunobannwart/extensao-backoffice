@@ -16,6 +16,7 @@ type rootReducer = {
   user: UserReducer;
   category: CategoryReducer;
   occurrence: OccurrenceReducer;
+  profile: ProfileReducer;
 };
 
 type UserReducer = {
@@ -34,4 +35,10 @@ type OccurrenceReducer = {
   list: models.Occurrence[];
   listCount: number;
   detail: models.Occurrence | null;
+}
+
+type ProfileReducer = {
+  list: models.Profile[];
+  listCount: number;
+  detail: models.Profile | null;
 }

@@ -4,6 +4,7 @@ import * as PasswordRecoveryActions from './passwordRecovery';
 import * as UserActions from './user';
 import * as CategoryActions from './category';
 import * as OccurrenceActions from './occurrence';
+import * as ProfileActions from './profile';
 
 export {
   LoadingActions,
@@ -12,4 +13,5 @@ export {
   UserActions,
   CategoryActions,
   OccurrenceActions,
+  ProfileActions
 };
