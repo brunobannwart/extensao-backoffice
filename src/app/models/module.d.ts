@@ -124,3 +124,9 @@ export type Profile = {
   id?: string;
   title: string;
 }
+
+export type ChangePassword = {
+  oldPassword: string | null;
+  password: string | null;
+  confirmPassword: string | null;
+}

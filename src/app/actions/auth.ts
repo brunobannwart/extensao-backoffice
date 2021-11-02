@@ -94,3 +94,21 @@ export const checkIsLogged = () => async (dispatch: Dispatch) => {
     dispatch(decreaseLoading());
   }
 };
+
+export const changePassword =
+  (authData: models.ChangePassword) => async (dispatch: Dispatch) => {
+    dispatch(increaseLoading());
+    try {
+      await AuthRequests.changePassword(authData);
+
+      MessageService.success(
+        `PAGES.PANEL.CHANGE_PASSWORD.DETAILS.SUCCESS_MESSAGE`
+      );
+
+      window.location.href = getRouteStackPath('DASHBOARD', 'DETAILS');
+    } catch (err: any) {
+      MessageService.error(`APPLICATION.ERRORS.${err.message}`);
+    } finally {
+      dispatch(decreaseLoading());
+    }
+  };

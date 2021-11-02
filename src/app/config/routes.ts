@@ -119,6 +119,20 @@ const routes: models.route[] = [
       },
     ],
   },
+  {
+    id: 'SETTINGS',
+    name: 'Configurações',
+    route: '/config',
+    icon: '/assets/svg/panel-sidebar/ic_settings.svg',
+    iconAlt: 'Configurações',
+    items: [
+      {
+        id: 'CHANGE_PASSWORD',
+        name: 'Alterar senha',
+        route: '/alterar-senha',
+      },
+    ],
+  },
 ];
 
 export const getRoutes = (): models.route[] => routes;
