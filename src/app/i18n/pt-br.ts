@@ -497,10 +497,8 @@ const ptBr = {
           UNDEFINED: 'Não definido',
           TITLE_ADD: 'Adicionar perfil',
           TITLE_EDIT: 'Editar perfil',
-          DESCRIPTION_ADD:
-            'Preencha os campos abaixo para adicionar um perfil',
-          DESCRIPTION_EDIT:
-            'Preencha os campos abaixo para editar um perfil',
+          DESCRIPTION_ADD: 'Preencha os campos abaixo para adicionar um perfil',
+          DESCRIPTION_EDIT: 'Preencha os campos abaixo para editar um perfil',
           SUCCESS_ADD_MESSAGE: 'Perfil criado com sucesso!',
           SUCCESS_EDIT_MESSAGE: 'Perfil editado com sucesso!',
           SUCCESS_REMOVE_MESSAGE: 'Perfil removido com sucesso!',
@@ -526,6 +524,48 @@ const ptBr = {
         TITLE: 'Erro 404',
         PAGE_DESCRIPTION:
           'Parece que não encontramos a página solicitada.\nVerifique a url digitada e tente novamente.',
+      },
+
+      CHANGE_PASSWORD: {
+        ROUTE: {
+          NAME: 'ALTERAR SENHA',
+          REPORT: 'RELATÓRIO',
+          REGISTER: 'REGISTRO',
+          DETAILS: '/config/alterar-senha',
+        },
+        TITLE: 'ALTERAR SENHA',
+        REPORT: {
+          TITLE: 'Alterar Senha',
+          PAGE_TITLE: 'Alterar Senha',
+          PAGE_DESCRIPTION: 'Formulário de alteração de senha',
+        },
+
+        DETAILS: {
+          UNDEFINED: 'Não definido',
+          TITLE: 'Alterar senha',
+          DESCRIPTION_ADD: 'Preencha os campos abaixo para alterar a senha',
+          SUCCESS_MESSAGE: 'Senha alterada com sucesso!',
+          FORM: {
+            ERROR: {
+              PASSWORD: 'Verifique se as senhas são iguais e tente novamente!',
+              PASSWORD_EMPTY: 'Preencha o campo senha!',
+              OLD_PASSWORD: 'Preencha o campo senha antiga!',
+            },
+            TITLE: 'Alteração de senha',
+            PASSWORD: {
+              LABEL: 'Senha segura',
+            },
+            PASSWORD_CONFIRMATION: {
+              LABEL: 'Digite novamente a senha',
+            },
+            OLD_PASSWORD: {
+              LABEL: 'Senha antiga',
+            },
+            SUBMIT: {
+              LABEL: 'Salvar',
+            },
+          },
+        },
       },
     },
   },

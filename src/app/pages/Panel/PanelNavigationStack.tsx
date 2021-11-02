@@ -14,6 +14,7 @@ import GeographerNavigationStack from '~/pages/Panel/Geographer/GeographerNaviga
 import OccurrenceNavigationStack from '~/pages/Panel/Occurrence/OccurrenceNavigationStack';
 import MapNavigationStack from '~/pages/Panel/Map/MapNavigationStack';
 import ProfileNavigationStack from '~/pages/Panel/Profile/ProfileNavigationStack';
+import ChangePasswordNavigationStack from '@portal/pages/Panel/ChangePassword/ChangePasswordNavigationStack';
 
 const PanelNavigationStack: React.FC = () => {
   const loggedUser = useSelector(
@@ -44,6 +45,10 @@ const PanelNavigationStack: React.FC = () => {
             <OccurrenceNavigationStack />
             <MapNavigationStack />
             <ProfileNavigationStack />
+          </Route>
+
+          <Route path={getStackPath('SETTINGS')}>
+            <ChangePasswordNavigationStack />
           </Route>
 
           <Route>

@@ -19,6 +19,13 @@ const AuthApi = {
 
     return data;
   },
+
+  changePassword: async (params: models.ChangePassword) => {
+    const instance = getInstance();
+    const { data } = await instance.post(`${API_URL}/auth/change-Password`, params);
+
+    return data;
+  }
 };
 
 export default AuthApi;
