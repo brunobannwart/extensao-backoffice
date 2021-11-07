@@ -11,7 +11,8 @@
           "headers": {
             "Content-Type": "application/json",
             "Acess-Control-Allow-Origin": "*"
-          }
+          },
+          "file": "data/auth-success.json"
         }
     }
 ]

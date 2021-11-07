@@ -6,6 +6,7 @@
     "env-dev": "cp .env-dev .env",
     "env-prod": "cp .env-prod .env",
     "start": "npx craco start",
+    "start:mock": "concurrently \"npm start\" \"npm run stubs\"",
     "build": "npx craco build",
     "test": "npx craco test",
     "clean-install": "rm yarn.lock; rm -rf node_modules; yarn",
@@ -13,7 +14,7 @@
     "precommit": "npm run lint",
     "start:dev": "npm run env-dev && env-cmd -f .env npm start",
     "build:dev": "npm run env-dev .env && env-cmd -f .env npm run build",
-    "stubs": "stubby -s 8082 -d src/app/stubbs/stubby.json -w"
+    "stubs": "stubby -s 8082 -d src/app/stubbs/stubby.json -w -q"
   },
   "author": "",
   "license": "ISC",
@@ -92,6 +93,7 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/vanilla-masker": "^1.2.0",
     "babel-plugin-module-resolver": "^4.1.0",
+    "concurrently": "^4.1.0",
     "craco-alias": "^2.2.0",
     "craco-less": "^1.17.1",
     "customize-cra": "^1.0.0",
