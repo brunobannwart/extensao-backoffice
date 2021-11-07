@@ -4,11 +4,8 @@ import getInstance from './instance';
 const AuthApi = {
   login: async (user: models.AuthRequest) => {
     const instance = getInstance();
-    const { data } = await instance.post(`${API_URL}/auth`, {
-      email: user.username,
-      password: user.password,
-      grantType: 'password',
-    });
+    console.log(`${API_URL}/v1/login/signin`)
+    const { data } = await instance.get(`${API_URL}/v1/login/signin`); //adicionar headers
 
     return data;
   },

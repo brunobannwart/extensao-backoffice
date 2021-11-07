@@ -1,0 +1,17 @@
+[
+    {
+        "request": {
+          "url": "^/v1/login/signin$",
+          "query": {},
+          "post": null,
+          "method": "GET"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json",
+            "Acess-Control-Allow-Origin": "*"
+          }
+        }
+    }
+]
