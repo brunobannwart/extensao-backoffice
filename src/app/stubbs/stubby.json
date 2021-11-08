@@ -4,7 +4,10 @@
           "url": "^/v1/login/signin$",
           "query": {},
           "post": null,
-          "method": "GET"
+          "method": "GET",
+          "headers": {
+            "authorization": "Basic YWRtaW5AYWRtaW4uY29tOnNlbmhh"
+          }
         },
         "response": {
           "status": 200,
@@ -12,7 +15,26 @@
             "Content-Type": "application/json",
             "Acess-Control-Allow-Origin": "*"
           },
-          "file": "data/auth-success.json"
+          "file": "data/auth-admin-success.json"
         }
-    }
+    },
+    {
+      "request": {
+        "url": "^/v1/login/signin$",
+        "query": {},
+        "post": null,
+        "method": "GET",
+        "headers": {
+          "authorization": "Basic dXN1YXJpb0B1c3VhcmlvLmNvbTpzZW5oYQ=="
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json",
+          "Acess-Control-Allow-Origin": "*"
+        },
+        "file": "data/auth-user-success.json"
+      }
+  }
 ]

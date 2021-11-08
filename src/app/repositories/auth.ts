@@ -1,11 +1,18 @@
 import { API_URL } from '@portal/config/env';
 import getInstance from './instance';
+import { encodeBase64 } from '~/utils/utilities';
 
 const AuthApi = {
   login: async (user: models.AuthRequest) => {
     const instance = getInstance();
-    console.log(`${API_URL}/v1/login/signin`)
-    const { data } = await instance.get(`${API_URL}/v1/login/signin`); //adicionar headers
+    const base64 = encodeBase64(`${user.username}:${user.password}`);
+    let config = {
+      headers: {
+        authorization: `Basic ${base64}`,
+      }
+    }
+    
+    const { data } = await instance.get(`${API_URL}/v1/login/signin`, config);
 
     return data;
   },

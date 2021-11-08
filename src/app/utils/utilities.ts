@@ -9,12 +9,3 @@ export function decodeBase64(base64: string): string {
 
   return buffer.toString('ascii');
 }
-
-export function renameJSONKeys(data: string, keys: Map<string, string>): string {
-  Object.keys(data).forEach((o) => {
-    data[keys.get(o)] = data[0];
-    delete data[0];
-  });
-
-  return data;
-}
