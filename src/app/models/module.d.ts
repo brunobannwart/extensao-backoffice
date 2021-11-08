@@ -127,6 +127,5 @@ export type Profile = {
 
 export type ChangePassword = {
   oldPassword: string | null;
-  password: string | null;
-  confirmPassword: string | null;
+  newPassword: string | null;
 }

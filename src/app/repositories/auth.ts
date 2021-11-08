@@ -19,14 +19,21 @@ const AuthApi = {
 
   refreshToken: async (user: any) => {
     const instance = getInstance();
-    const { data } = await instance.post(`${API_URL}/auth/refresh`, user);
+
+    let config = {
+      headers: {
+        authorization: `Basic ${user.token}`,
+      }
+    }
+
+    const { data } = await instance.get(`${API_URL}/v1/login/refresh`, config);
 
     return data;
   },
 
   changePassword: async (params: models.ChangePassword) => {
     const instance = getInstance();
-    const { data } = await instance.post(`${API_URL}/auth/change-Password`, params);
+    const { data } = await instance.post(`${API_URL}/v1/login/chpass`, params);
 
     return data;
   }

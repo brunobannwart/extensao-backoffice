@@ -36,5 +36,52 @@
         },
         "file": "data/auth-user-success.json"
       }
+  },
+  {
+    "request": {
+      "url": "^/v1/login/refresh$",
+      "query": {},
+      "post": null,
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      },
+      "file": "data/auth-refresh.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/v1/login/chpass$",
+      "query": {},
+      "post": null,
+      "method": "POST"
+    },
+    "response": {
+      "status": 204,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      }
+    }
+  },
+  {
+    "request": {
+      "url": "^/v1/reports$",
+      "query": {},
+      "post": null,
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      },
+      "file": "data/reports.json"
+    }
   }
 ]
