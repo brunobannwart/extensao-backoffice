@@ -9,9 +9,13 @@ const initialState: reducers.AuthReducer = {
   checkLogged: false,
   me: null,
   authToken: {
-    accessToken: null,
-    refreshToken: null,
-    token: null,
+    jwtToken: "",
+    refreshToken: "",
+    type: "",
+    id: "",
+    username: "",
+    email: "",
+    roles: [""],
   },
 };
 
@@ -43,9 +47,13 @@ const authReducer = (
         checkLogged: true,
         me: null,
         authToken: {
-          accessToken: null,
-          refreshToken: null,
-          token: null,
+          jwtToken: "",
+          refreshToken: "",
+          type: "",
+          id: "",
+          username: "",
+          email: "",
+          roles: [""],
         },
       };
       break;

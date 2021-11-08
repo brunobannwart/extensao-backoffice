@@ -52,7 +52,7 @@ const AdminReport: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (auth.me?.profileType !== USER_PAGE_TYPE.ADMIN) {
+    if (!auth.me?.profileType.includes(USER_PAGE_TYPE.ADMIN)) {
       window.location.href = getRouteStackPath('DASHBOARD', 'DETAILS');
     }
   }, [auth]);

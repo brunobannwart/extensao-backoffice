@@ -14,7 +14,7 @@ const App: React.FC = () => {
 
   const isLogged: boolean = useSelector(
     (state: reducers.rootReducer) =>
-      (state.auth?.authToken?.token && true) || false
+      (state.auth?.authToken?.jwtToken && true) || false
   );
 
   useEffect(() => {
