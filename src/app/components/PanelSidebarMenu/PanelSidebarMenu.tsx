@@ -21,8 +21,6 @@ const PanelSidebarMenu: React.FC<IProps> = (props: IProps) => {
 
   const { auth } = useReduxState();
 
-  console.log(auth)
-
   return (
     <div className="panel-sidebar-menu">
       <div className="panel-sidebar-menu__items">
