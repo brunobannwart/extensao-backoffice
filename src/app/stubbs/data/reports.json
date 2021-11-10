@@ -1,16 +1,41 @@
-[
-    {
-        "id": "616c7a5cb213374d180e8c01",
-        "category": "Cidade novo",
-        "problemType": "buraco",
-        "profileType": null,
-        "description": "Tem um buraco aqui na minha rua"
-    },
-    {
-        "id": "616c836eb5110650937935d9",
-        "category": "Cidade updated 66",
-        "problemType": "buraco 6",
-        "profileType": null,
-        "description": "Tem um buraco aqui na minha rua 2"
-    }
-]
+{
+    "totalPages": 2,
+    "totalElements": 6,
+    "last": true,
+    "size": 3,
+    "rows": [
+        {
+            "id": "616f52e10d05982df3436cab",
+            "category": "Cidade",
+            "problemType": "Lixo",
+            "profileType": "transeunte",
+            "description": "Existe um aterro sanitário com cheiro forte",
+            "photo": null,
+            "audio": null,
+            "longitude": null,
+            "latitude": null
+        },
+        {
+            "id": "616f52e30d05982df3436cac",
+            "category": "Cidade",
+            "problemType": "Enxente",
+            "profileType": "transeunte",
+            "description": "A rua aqui esta alagada por causa de lixo concentrado",
+            "photo": null,
+            "audio": null,
+            "longitude": null,
+            "latitude": null
+        },
+        {
+            "id": "616f52e40d05982df3436cad",
+            "category": "Cidade",
+            "problemType": "Buraco",
+            "profileType": "transeunte",
+            "description": "Tem um buraco aqui na minha rua",
+            "photo": null,
+            "audio": null,
+            "longitude": null,
+            "latitude": null
+        }
+    ]
+}

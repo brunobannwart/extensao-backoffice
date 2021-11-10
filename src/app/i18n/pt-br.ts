@@ -416,8 +416,16 @@ const ptBr = {
 
           TABLE: {
             TITLE: {
-              FIELD: 'title',
+              FIELD: 'category',
               HEADER: 'Título',
+            },
+            TYPE: {
+              FIELD: 'problemType',
+              HEADER: 'Tipo',
+            },
+            DESCRIPTION: {
+              FIELD: 'description',
+              HEADER: 'Descrição'
             },
             CREATED: {
               FIELD: 'createdAt',
