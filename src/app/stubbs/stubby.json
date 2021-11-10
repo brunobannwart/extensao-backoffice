@@ -71,7 +71,9 @@
   {
     "request": {
       "url": "^/v1/reports$",
-      "query": {},
+      "query": {
+        "page": 0
+      },
       "post": null,
       "method": "GET"
     },
@@ -81,7 +83,25 @@
         "Content-Type": "application/json",
         "Acess-Control-Allow-Origin": "*"
       },
-      "file": "data/reports.json"
+      "file": "data/reports-page-0.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/v1/reports$",
+      "query": {
+        "page": 1
+      },
+      "post": null,
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      },
+      "file": "data/reports-page-1.json"
     }
   },
   {
