@@ -19,7 +19,15 @@ import { getPageType } from '~/utils/page';
 import { useReduxState } from '~/hooks/useReduxState';
 
 const formInitialValues: models.Occurrence = {
-  title: '',
+  id: "",
+  category: "",
+  problemType: "",
+  profileType: "",
+  description: "",
+  photo: "",
+  audio: "",
+  longitude: "",
+  latitude: ""
 };
 
 const OccurrenceDetails: React.FC = (props) => {
@@ -51,19 +59,19 @@ const OccurrenceDetails: React.FC = (props) => {
   }, [pathname, pageType]);
 
   const onFormSubmit = () => {
-    const requestForm: any = {
-      title: form.title
-    };
+    // const requestForm: any = {
+    //   title: form.title
+    // };
 
-    if (!form.title) {
-      return MessageService.error('PAGES.PANEL.OCCURRENCE.DETAILS.FORM.ERROR.TITLE');
-    }
+    // if (!form.title) {
+    //   return MessageService.error('PAGES.PANEL.OCCURRENCE.DETAILS.FORM.ERROR.TITLE');
+    // }
 
-    if (pageType === PAGE_TYPE.EDIT) {
-      dispatch(OccurrenceActions.updateOccurrence(occurrence?.detail?.id as string, requestForm));
-    } else {
-      dispatch(OccurrenceActions.addOccurrence(requestForm));
-    }
+    // if (pageType === PAGE_TYPE.EDIT) {
+    //   dispatch(OccurrenceActions.updateOccurrence(occurrence?.detail?.id as string, requestForm));
+    // } else {
+    //   dispatch(OccurrenceActions.addOccurrence(requestForm));
+    // }
   };
 
   return (
@@ -99,10 +107,38 @@ const OccurrenceDetails: React.FC = (props) => {
                 <Col md={4}>
                   <AdvancedInput
                     label={translate(
-                      'PAGES.PANEL.OCCURRENCE.DETAILS.FORM.SUBJECT.LABEL'
+                      'PAGES.PANEL.OCCURRENCE.DETAILS.FORM.CATEGORY.LABEL'
                     )}
-                    value={form.title}
-                    onChange={(val: string | null) => onFormChange('title', val)}
+                    value={form.category}
+                    onChange={(val: string | null) => onFormChange('category', val)}
+                  />
+                  <AdvancedInput
+                    label={translate(
+                      'PAGES.PANEL.OCCURRENCE.DETAILS.FORM.PROBLEM_TYPE.LABEL'
+                    )}
+                    value={form.problemType}
+                    onChange={(val: string | null) => onFormChange('problemType', val)}
+                  />
+                  <AdvancedInput
+                    label={translate(
+                      'PAGES.PANEL.OCCURRENCE.DETAILS.FORM.DESCRIPTION.LABEL'
+                    )}
+                    value={form.description}
+                    onChange={(val: string | null) => onFormChange('description', val)}
+                  />
+                  <AdvancedInput
+                    label={translate(
+                      'PAGES.PANEL.OCCURRENCE.DETAILS.FORM.LONGITUDE.LABEL'
+                    )}
+                    value={form.longitude}
+                    onChange={(val: string | null) => onFormChange('longitude', val)}
+                  />
+                  <AdvancedInput
+                    label={translate(
+                      'PAGES.PANEL.OCCURRENCE.DETAILS.FORM.LATITUDE.LABEL'
+                    )}
+                    value={form.latitude}
+                    onChange={(val: string | null) => onFormChange('latitude', val)}
                   />
                 </Col>
               </Row>

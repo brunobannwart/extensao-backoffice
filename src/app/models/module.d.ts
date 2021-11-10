@@ -120,8 +120,15 @@ export type Category = {
 }
 
 export type Occurrence = {
-  id?: string;
-  title: string;
+  id: string,
+  category: string,
+  problemType: string,
+  profileType: string,
+  description: string,
+  photo: string,
+  audio: string,
+  longitude: string,
+  latitude: string
 }
 
 export type Profile = {

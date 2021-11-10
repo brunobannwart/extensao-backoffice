@@ -451,11 +451,27 @@ const ptBr = {
           SUCCESS_REMOVE_MESSAGE: 'Ocorrência removida com sucesso!',
           FORM: {
             ERROR: {
-              TITLE: 'Preencha o título!',
+              CATEGORY: 'Preencha a categoria!',
+              PROBLEM_TYPE: 'Preencha o tipo do problema!',
+              DESCRIPTION: 'Preencha a descrição!',
+              LONGITUDE: 'Preencha a longitude!',
+              LATITUDE: 'Preencha a latitude!',
             },
-            TITLE: 'Detalhes da ocorrência',
-            SUBJECT: {
-              LABEL: 'Título',
+            TITLE: 'Detalhes do perfil',
+            CATEGORY: {
+              LABEL: 'Categoria',
+            },
+            PROBLEM_TYPE: {
+              LABEL: 'Tipo do problema',
+            },
+            DESCRIPTION: {
+              LABEL: 'Descrição',
+            },
+            LONGITUDE: {
+              LABEL: 'Longitude',
+            },
+            LATITUDE: {
+              LABEL: 'Latitude',
             },
             BACK: {
               LABEL: 'VOLTAR',
