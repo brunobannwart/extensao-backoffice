@@ -1,0 +1,87 @@
+[
+    {
+        "request": {
+          "url": "^/v1/login/signin$",
+          "query": {},
+          "post": null,
+          "method": "GET",
+          "headers": {
+            "authorization": "Basic YWRtaW5AYWRtaW4uY29tOnNlbmhh"
+          }
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json",
+            "Acess-Control-Allow-Origin": "*"
+          },
+          "file": "data/auth-admin-success.json"
+        }
+    },
+    {
+      "request": {
+        "url": "^/v1/login/signin$",
+        "query": {},
+        "post": null,
+        "method": "GET",
+        "headers": {
+          "authorization": "Basic dXN1YXJpb0B1c3VhcmlvLmNvbTpzZW5oYQ=="
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json",
+          "Acess-Control-Allow-Origin": "*"
+        },
+        "file": "data/auth-user-success.json"
+      }
+  },
+  {
+    "request": {
+      "url": "^/v1/login/refresh$",
+      "query": {},
+      "post": null,
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      },
+      "file": "data/auth-refresh.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/v1/login/chpass$",
+      "query": {},
+      "post": null,
+      "method": "POST"
+    },
+    "response": {
+      "status": 204,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      }
+    }
+  },
+  {
+    "request": {
+      "url": "^/v1/reports$",
+      "query": {},
+      "post": null,
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      },
+      "file": "data/reports.json"
+    }
+  }
+]

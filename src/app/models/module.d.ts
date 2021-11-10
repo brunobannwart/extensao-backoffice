@@ -4,9 +4,13 @@ import('./reducers');
 import('./advanced-filters');
 
 export type AuthResponse = {
-  accessToken: string | null;
-  refreshToken: string | null;
-  token: string | null;
+  jwtToken: string,
+  refreshToken: string,
+  type: string,
+  id: string,
+  username: string,
+  email: string,
+  roles: Array<string>;
 };
 
 export type AuthRequest = {
@@ -31,8 +35,8 @@ export type routeInner = {
   id: string;
   name: string;
   sidebarHidden?: boolean;
-  accessType?: number;
-  accessGranted?: Array<number>;
+  accessType?: string;
+  accessGranted?: Array<string>;
 };
 
 export type route = {
@@ -42,8 +46,8 @@ export type route = {
   name: string;
   id: string;
   items: routeInner[];
-  accessType?: number;
-  accessGranted?: Array<number>;
+  accessType?: string;
+  accessGranted?: Array<string>;
 };
 
 export type PaginationResponse<T> = {
@@ -102,9 +106,9 @@ export type User = {
   ddi?: string;
   name: string;
   email: string;
-  phone: string;
+  phone?: string;
   password?: string;
-  profileType: number;
+  profileType: Array<string>;
   confirmPassword?: string;
   changePassword?: boolean;
   document?: string;
@@ -127,6 +131,6 @@ export type Profile = {
 
 export type ChangePassword = {
   oldPassword: string | null;
-  password: string | null;
+  newPassword: string | null;
   confirmPassword: string | null;
 }

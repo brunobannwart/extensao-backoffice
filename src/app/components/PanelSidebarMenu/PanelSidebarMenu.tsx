@@ -27,8 +27,8 @@ const PanelSidebarMenu: React.FC<IProps> = (props: IProps) => {
         {props.routes.filter((o) => o.accessType === undefined
           || (auth.me 
               && (
-                o.accessType === auth.me.profileType 
-                || o.accessGranted?.includes(auth.me.profileType)
+                auth.me.profileType.includes(o.accessType) 
+                || o.accessGranted?.includes(auth.me.profileType[0])
               )
             )
           ).map((item: models.route, itemKey: number) => (
@@ -52,8 +52,8 @@ const PanelSidebarMenu: React.FC<IProps> = (props: IProps) => {
                 && (o.accessType === undefined 
                 || (auth.me 
                     && (
-                      o.accessType === auth.me.profileType 
-                      || o.accessGranted?.includes(auth.me.profileType))
+                      auth.me.profileType.includes(o.accessType) 
+                      || o.accessGranted?.includes(auth.me.profileType[0]))
                     )
                   )
                 ).map((subItem: models.routeInner, subItemKey: number) => (

@@ -5,7 +5,7 @@ import { setAuthorizationHeader } from '~/repositories/instance';
 import * as MessageService from '~/services/message';
 import * as StorageService from '~/services/storage';
 
-import { AUTH_CHECK_LOGGED, AUTH_LOGIN, AUTH_LOGOUT } from './actionTypes';
+import { AUTH_CHECK_LOGGED, AUTH_LOGIN, AUTH_LOGOUT, AUTH_ME } from './actionTypes';
 import { decreaseLoading, increaseLoading } from './loading';
 
 export const authenticate =
@@ -15,11 +15,21 @@ export const authenticate =
       const payload: models.AuthResponse = await AuthRequests.login(userData);
       StorageService.setItem('session-token', payload);
 
-      setAuthorizationHeader(payload.token as string);
+      setAuthorizationHeader(payload.jwtToken as string);
 
       dispatch({
         payload,
         type: AUTH_LOGIN,
+      });
+
+      dispatch({
+        payload: {
+          id: payload.id,
+          name: payload.username,
+          profileType: payload.roles,
+          email: payload.email
+        },
+        type: AUTH_ME,
       });
 
       StorageService.setItem('auth', userData);
@@ -43,13 +53,16 @@ export const refreshToken = (userData: any) => async (dispatch: Dispatch) => {
     const payload: models.AuthResponse = await AuthRequests.refreshToken(
       userData
     );
+
+    
     StorageService.setItem('session-token', payload);
-    setAuthorizationHeader(payload.accessToken as string);
+    setAuthorizationHeader(payload.jwtToken as string);
 
     dispatch({
       payload,
       type: AUTH_LOGIN,
     });
+
   } catch (err: any) {
     StorageService.removeItem('session-token');
     window.location.href = '/';

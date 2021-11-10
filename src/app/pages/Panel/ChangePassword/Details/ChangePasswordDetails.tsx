@@ -13,7 +13,7 @@ import * as MessageService from '~/services/message';
 
 const formInitialValues: models.ChangePassword = {
   oldPassword: '',
-  password: '',
+  newPassword: '',
   confirmPassword: '',
 };
 
@@ -28,18 +28,18 @@ const ChangePassword: React.FC = (props) => {
   const onFormSubmit = () => {
     const requestForm: any = {
       oldPassword: form.oldPassword,
-      password: form.password,
+      password: form.newPassword,
     };
 
     if (!form.oldPassword) {
       return MessageService.error('PAGES.PANEL.CHANGE_PASSWORD.DETAILS.FORM.ERROR.OLD_PASSWORD');
     }
 
-    if (!form.password) {
+    if (!form.newPassword) {
       return MessageService.error('PAGES.PANEL.CHANGE_PASSWORD.DETAILS.FORM.ERROR.PASSWORD_EMPTY');
     }
 
-    if (form.password !== form.confirmPassword) {
+    if (form.newPassword !== form.confirmPassword) {
       return MessageService.error('PAGES.PANEL.CHANGE_PASSWORD.DETAILS.FORM.ERROR.PASSWORD');
     }
 
@@ -79,7 +79,7 @@ const ChangePassword: React.FC = (props) => {
                     label={translate(
                       'PAGES.PANEL.CHANGE_PASSWORD.DETAILS.FORM.PASSWORD.LABEL'
                     )}
-                    value={form.password}
+                    value={form.newPassword}
                     onChange={(val: string | null) =>
                       onFormChange('password', val)
                     }

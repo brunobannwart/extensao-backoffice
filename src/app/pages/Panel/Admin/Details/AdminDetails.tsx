@@ -21,13 +21,11 @@ import { getPageType } from '~/utils/page';
 import { useReduxState } from '~/hooks/useReduxState';
 
 const formInitialValues: models.User = {
-  ddi: '55',
-  phone: '',
   email: '',
   name: '',
   password: '',
   confirmPassword: '',
-  profileType: USER_PAGE_TYPE.ADMIN,
+  profileType: [USER_PAGE_TYPE.ADMIN],
   changePassword: false,
 };
 
@@ -45,11 +43,7 @@ const AdminDetails: React.FC = (props) => {
 
   useEffect(() => {
     if (user && user.detail) {
-      setForm({
-        ...user.detail,
-        ddi: user.detail.phone.substring(0, 2),
-        phone: user.detail.phone.substring(2, user.detail.phone.length),
-      });
+      setForm(user.detail);
     } else {
       setForm(formInitialValues);
     }
@@ -64,7 +58,7 @@ const AdminDetails: React.FC = (props) => {
   }, [pathname, pageType]);
 
   useEffect(() => {
-    if (auth.me?.profileType !== USER_PAGE_TYPE.ADMIN) {
+    if (!auth.me?.profileType.includes(USER_PAGE_TYPE.ADMIN)) {
       window.location.href = getRouteStackPath('DASHBOARD', 'DETAILS');
     }
   }, [auth]);
@@ -73,17 +67,12 @@ const AdminDetails: React.FC = (props) => {
     const requestForm: any = {
       name: form.name,
       email: form.email,
-      phone: `${form.ddi}${unmaskField(form.phone)}`,
       password: form.password,
       profileType: form.profileType,
     };
 
     if (!form.name) {
       return MessageService.error('PAGES.PANEL.ADMIN.DETAILS.FORM.ERROR.NAME');
-    }
-
-    if (!form.phone) {
-      return MessageService.error('PAGES.PANEL.ADMIN.DETAILS.FORM.ERROR.PHONE');
     }
 
     if (!form.email) {
@@ -147,28 +136,6 @@ const AdminDetails: React.FC = (props) => {
                     )}
                     value={form.name}
                     onChange={(val: string | null) => onFormChange('name', val)}
-                  />
-                </Col>
-                <Col md={2}>
-                  <AdvancedInput
-                    label={translate(
-                      'PAGES.PANEL.ADMIN.DETAILS.FORM.DDI.LABEL'
-                    )}
-                    value={form.ddi}
-                    onChange={(val: string | null) =>
-                      onFormChange('ddi', val)
-                    }
-                  />
-                </Col>
-                <Col md={4}>
-                  <AdvancedInput
-                    label={translate(
-                      'PAGES.PANEL.ADMIN.DETAILS.FORM.PHONE.LABEL'
-                    )}
-                    value={maskPhone(form.phone as string)}
-                    onChange={(val: string | null) =>
-                      onFormChange('phone', val)
-                    }
                   />
                 </Col>
               </Row>
