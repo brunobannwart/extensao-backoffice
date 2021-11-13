@@ -1,39 +1,25 @@
-import { API_URL } from '@portal/config/env';
 import getInstance from './instance';
 import { encodeBase64 } from '~/utils/utilities';
 
 const AuthApi = {
-  login: async (user: models.AuthRequest) => {
-    const instance = getInstance();
-    const base64 = encodeBase64(`${user.username}:${user.password}`);
-    let config = {
-      headers: {
-        authorization: `Basic ${base64}`,
-      }
-    }
-    
-    const { data } = await instance.get(`${API_URL}/v1/login/signin`, config);
+  login: async ({ username, password }: models.AuthRequest) => {
+    const instance = getInstance(encodeBase64(`${username}:${password}`));
+    const { data } = await instance.get('/v1/login/signin');
 
     return data;
   },
 
   refreshToken: async (user: any) => {
-    const instance = getInstance();
+    const instance = getInstance(user);
 
-    let config = {
-      headers: {
-        authorization: `Basic ${user.token}`,
-      }
-    }
-
-    const { data } = await instance.get(`${API_URL}/v1/login/refresh`, config);
+    const { data } = await instance.get('/v1/login/refresh');
 
     return data;
   },
 
   changePassword: async (params: models.ChangePassword) => {
     const instance = getInstance();
-    const { data } = await instance.post(`${API_URL}/v1/login/chpass`, params);
+    const { data } = await instance.post('/v1/login/chpass', params);
 
     return data;
   }

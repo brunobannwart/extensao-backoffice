@@ -4,9 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
-import { maskPhone, unmaskField } from '@portal/services/masks';
 import * as UserActions from '~/actions/user';
-
 import AdvancedButton from '~/components/AdvancedButton/AdvancedButton';
 import AdvancedForm from '~/components/AdvancedForm/AdvancedForm';
 import AdvancedInput from '~/components/AdvancedInput/AdvancedInput';
@@ -22,7 +20,7 @@ import { useReduxState } from '~/hooks/useReduxState';
 
 const formInitialValues: models.User = {
   email: '',
-  name: '',
+  username: '',
   password: '',
   confirmPassword: '',
   profileType: [USER_PAGE_TYPE.ADMIN],
@@ -65,13 +63,13 @@ const AdminDetails: React.FC = (props) => {
 
   const onFormSubmit = () => {
     const requestForm: any = {
-      name: form.name,
+      username: form.username,
       email: form.email,
       password: form.password,
-      profileType: form.profileType,
+      roles: form.profileType,
     };
 
-    if (!form.name) {
+    if (!form.username) {
       return MessageService.error('PAGES.PANEL.ADMIN.DETAILS.FORM.ERROR.NAME');
     }
 
@@ -134,8 +132,8 @@ const AdminDetails: React.FC = (props) => {
                     label={translate(
                       'PAGES.PANEL.ADMIN.DETAILS.FORM.NAME.LABEL'
                     )}
-                    value={form.name}
-                    onChange={(val: string | null) => onFormChange('name', val)}
+                    value={form.username}
+                    onChange={(val: string | null) => onFormChange('username', val)}
                   />
                 </Col>
               </Row>

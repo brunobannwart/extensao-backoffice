@@ -78,7 +78,7 @@ const PanelContentTopBar: React.FC<IProps> = (props: IProps) => {
                 />
               </span>
               <span className="panel-content-top-bar__right__user-dropdown__name">
-                {props.user?.name}
+                {props.user?.username}
               </span>
             </span>
           </Popover>

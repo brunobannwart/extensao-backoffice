@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import Axios, { AxiosResponse } from 'axios';
 
-import { API_URL, AUTH_API_KEY } from '@portal/config/env';
+import { API_URL } from '@portal/config/env';
 import { translate } from '~/services/i18n';
 import * as StorageService from '~/services/storage';
 import storeCreator from '~/reducers/createStore';
@@ -21,7 +21,6 @@ const axiosInstance = Axios.create({
   baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
-    'x-api-key': AUTH_API_KEY,
     'Access-Control-Allow-Origin': '*',
   },
   timeout: 30000,
@@ -33,7 +32,7 @@ axiosInstance.interceptors.response.use(
     if (err.response.status === 401) {
       try {
         const payload: models.AuthResponse = StorageService.getItem('session-token');
-        await storeCreator.dispatch(refreshToken(payload));
+        await storeCreator.dispatch(refreshToken(payload.jwtToken));
         window.location.reload();
       } catch (err) {
         await storeCreator.dispatch(logout());
@@ -52,16 +51,23 @@ export const setHandleUnauthorizedError = (fn: () => void) => {
 };
 
 export const setAuthorizationHeader = (token: string) => {
-  axiosInstance.defaults.headers.Authorization = `Bearer ${token}`;
+  axiosInstance.defaults.headers.Authorization = `Basic ${token}`;
 };
 
-export function getInstance() {
+export function getInstance(auth?: string) {
   if (
     StorageService.getItem('session-token') &&
     StorageService.getItem('session-token').token
-  )
+  ) {
     setAuthorizationHeader(StorageService.getItem('session-token').token);
-  else setAuthorizationHeader('undefined');
+  } else {
+    setAuthorizationHeader('undefined');
+  }
+  
+  if (auth) {
+    setAuthorizationHeader(auth);
+  }
+
   return axiosInstance;
 }
 

@@ -22,12 +22,14 @@ export const authenticate =
         type: AUTH_LOGIN,
       });
 
+      const { id, username, roles: profileType, email } = payload;
+
       dispatch({
         payload: {
-          id: payload.id,
-          name: payload.username,
-          profileType: payload.roles,
-          email: payload.email
+          id,
+          username,
+          profileType,
+          email
         },
         type: AUTH_ME,
       });
@@ -47,12 +49,10 @@ export const authenticate =
     }
   };
 
-export const refreshToken = (userData: any) => async (dispatch: Dispatch) => {
+export const refreshToken = (token: any) => async (dispatch: Dispatch) => {
   dispatch(increaseLoading());
   try {
-    const payload: models.AuthResponse = await AuthRequests.refreshToken(
-      userData
-    );
+    const payload: models.AuthResponse = await AuthRequests.refreshToken(token);
 
     
     StorageService.setItem('session-token', payload);
