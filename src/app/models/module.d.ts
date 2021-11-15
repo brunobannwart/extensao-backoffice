@@ -122,10 +122,10 @@ export type Occurrence = {
   problemType: string,
   profileType: string,
   description: string,
-  photo: string,
-  audio: string,
-  longitude: string,
-  latitude: string
+  photo: string | null,
+  audio: string | null,
+  longitude: string | null,
+  latitude: string | null
 }
 
 export type Profile = {
