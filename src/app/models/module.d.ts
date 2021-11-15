@@ -117,8 +117,15 @@ export type Category = {
 }
 
 export type Occurrence = {
-  id?: string;
-  title: string;
+  id: string,
+  category: string,
+  problemType: string,
+  profileType: string,
+  description: string,
+  photo: string | null,
+  audio: string | null,
+  longitude: string | null,
+  latitude: string | null
 }
 
 export type Profile = {

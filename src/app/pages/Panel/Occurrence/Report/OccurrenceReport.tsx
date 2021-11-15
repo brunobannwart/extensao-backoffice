@@ -114,6 +114,16 @@ const OccurrenceReport: React.FC = () => {
                   headerName: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.TITLE.HEADER'),
                 },
                 {
+                  field: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.TYPE.FIELD'),
+                  flex: 1,
+                  headerName: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.TYPE.HEADER'),
+                },
+                {
+                  field: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.DESCRIPTION.FIELD'),
+                  flex: 1,
+                  headerName: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.DESCRIPTION.HEADER'),
+                },
+                {
                   field: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.CREATED.FIELD'),
                   flex: 1,
                   headerName: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.CREATED.HEADER'),
