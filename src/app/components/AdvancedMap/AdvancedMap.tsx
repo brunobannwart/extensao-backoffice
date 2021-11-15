@@ -14,7 +14,7 @@ const AdvancedMap = ({ latitude, longitude }: IAdvancedMapProps) => (
   <div className="advanced-map">
     <MapContainer
       center={[longitude, latitude]}
-      style='mapbox://styles/mapbox/streets-v9'
+      style={'mapbox://styles/mapbox/streets-v9'}
       containerStyle={{ height: '100%', width: '100%' }}
     />
   </div>

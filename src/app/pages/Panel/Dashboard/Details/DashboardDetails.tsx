@@ -12,7 +12,7 @@ const DashboardDetails: React.FC = () => {
     <div className="panel-dashboard">
       <div className="panel-dashboard__welcome">
         {translate('PAGES.PANEL.DASHBOARD.DETAILS.WELCOME')}
-        {auth.me?.name}
+        {auth.me?.username}
       </div>
       <div className="panel-dashboard__title">
         <PanelContentHeader
