@@ -12,7 +12,6 @@ import AdvancedInput from '~/components/AdvancedInput/AdvancedInput';
 import PanelContentBreadcrumb from '~/components/PanelContentBreadcrumb/PanelContentBreadcrumb';
 
 import { translate } from '~/services/i18n';
-import * as MessageService from '~/services/message';
 import { PAGE_TYPE } from '~/enum/page';
 import { getRouteStackPath } from '~/config/routes';
 import { getPageType } from '~/utils/page';
@@ -58,22 +57,6 @@ const OccurrenceDetails: React.FC = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname, pageType]);
 
-  const onFormSubmit = () => {
-    // const requestForm: any = {
-    //   title: form.title
-    // };
-
-    // if (!form.title) {
-    //   return MessageService.error('PAGES.PANEL.OCCURRENCE.DETAILS.FORM.ERROR.TITLE');
-    // }
-
-    // if (pageType === PAGE_TYPE.EDIT) {
-    //   dispatch(OccurrenceActions.updateOccurrence(occurrence?.detail?.id as string, requestForm));
-    // } else {
-    //   dispatch(OccurrenceActions.addOccurrence(requestForm));
-    // }
-  };
-
   return (
     <div className="occurrence">
       <Row>
@@ -102,7 +85,7 @@ const OccurrenceDetails: React.FC = (props) => {
                 {translate('PAGES.PANEL.OCCURRENCE.DETAILS.FORM.TITLE')}
               </h3>
             </div>
-            <AdvancedForm onSubmit={onFormSubmit}>
+            <AdvancedForm onSubmit={() => {}}>
               <Row>
                 <Col md={4}>
                   <AdvancedInput
