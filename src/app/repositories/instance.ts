@@ -50,8 +50,8 @@ export const setHandleUnauthorizedError = (fn: () => void) => {
   handler.unauthorizedError = fn;
 };
 
-export const setAuthorizationHeader = (token: string) => {
-  axiosInstance.defaults.headers.Authorization = `Basic ${token}`;
+export const setAuthorizationHeader = (token: string, type: string = 'Bearer') => {
+  axiosInstance.defaults.headers.Authorization = `${type} ${token}`;
 };
 
 export function getInstance(auth?: string) {
@@ -65,7 +65,7 @@ export function getInstance(auth?: string) {
   }
   
   if (auth) {
-    setAuthorizationHeader(auth);
+    setAuthorizationHeader(auth, 'Basic');
   }
 
   return axiosInstance;
