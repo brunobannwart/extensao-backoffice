@@ -24,17 +24,19 @@ export const authenticate =
 
       const { id, username, roles: profileType, email } = payload;
 
+      const me = {
+        id,
+        username,
+        email,
+        profileType,
+      };
+
       dispatch({
-        payload: {
-          id,
-          username,
-          profileType,
-          email
-        },
+        payload: me,
         type: AUTH_ME,
       });
 
-      StorageService.setItem('auth', userData);
+      StorageService.setItem('me', me);
       MessageService.success('PAGES.AUTH.LOGIN.MESSAGES.WELCOME');
 
       window.location.href = getRouteStackPath('DASHBOARD', 'DETAILS');
@@ -63,6 +65,13 @@ export const refreshToken = (token: any) => async (dispatch: Dispatch) => {
       type: AUTH_LOGIN,
     });
 
+    const me = await StorageService.getItem('me');
+
+    dispatch({
+      payload: me,
+      type: AUTH_ME,
+    });
+
   } catch (err: any) {
     StorageService.removeItem('session-token');
     window.location.href = '/';
@@ -75,6 +84,7 @@ export const logout = () => async (dispatch: Dispatch) => {
   dispatch(increaseLoading());
   try {
     StorageService.removeItem('session-token');
+    StorageService.removeItem('me');
 
     dispatch({
       type: AUTH_LOGOUT,
@@ -92,11 +102,18 @@ export const checkIsLogged = () => async (dispatch: Dispatch) => {
   dispatch(increaseLoading());
   try {
     const token = StorageService.getItem('session-token');
+    const me = StorageService.getItem('me');
+
     if (token) {
-      setAuthorizationHeader(token.accessToken as string);
+      setAuthorizationHeader(token.jwtToken as string);
       dispatch({
         payload: token,
         type: AUTH_LOGIN,
+      });
+
+      dispatch({
+        payload: me,
+        type: AUTH_ME,
       });
     }
   } finally {
