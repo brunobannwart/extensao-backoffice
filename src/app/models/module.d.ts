@@ -103,15 +103,12 @@ export type File = {
 
 export type User = {
   id?: string;
-  ddi?: string;
-  name: string;
+  username: string;
   email: string;
-  phone?: string;
   password?: string;
   profileType: Array<string>;
   confirmPassword?: string;
   changePassword?: boolean;
-  document?: string;
 };
 
 export type Category = {

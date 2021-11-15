@@ -3,7 +3,7 @@ import UserRequests from '~/repositories/user';
 import * as MessageService from '~/services/message';
 import centralNavigationService from '~/services/navigation';
 
-import { USER_DETAIL, USER_REPORT, AUTH_ME } from './actionTypes';
+import { USER_DETAIL, USER_REPORT } from './actionTypes';
 import { decreaseLoading, increaseLoading } from './loading';
 
 export const cleanUserDetail = () => async (dispatch: Dispatch) => {
@@ -77,23 +77,6 @@ export const addUser = (params: models.User, profile: string) => async (dispatch
     MessageService.success(`PAGES.PANEL.${profile}.DETAILS.SUCCESS_ADD_MESSAGE`);
 
     centralNavigationService.back();
-  } catch (err: any) {
-    MessageService.error(`APPLICATION.ERRORS.${err.message}`);
-  } finally {
-    dispatch(decreaseLoading());
-  }
-};
-
-export const getMe = () => async (dispatch: Dispatch) => {
-  dispatch(increaseLoading());
-
-  try {
-    const payload = await UserRequests.me();
-
-    dispatch({
-      payload,
-      type: AUTH_ME,
-    });
   } catch (err: any) {
     MessageService.error(`APPLICATION.ERRORS.${err.message}`);
   } finally {

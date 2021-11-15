@@ -43,19 +43,7 @@ const authReducer = (
       };
       break;
     case AUTH_LOGOUT:
-      state = {
-        checkLogged: true,
-        me: null,
-        authToken: {
-          jwtToken: "",
-          refreshToken: "",
-          type: "",
-          id: "",
-          username: "",
-          email: "",
-          roles: [""],
-        },
-      };
+      state = initialState;
       break;
     default:
       return state;
