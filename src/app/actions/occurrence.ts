@@ -21,7 +21,7 @@ export const getOccurrenceReport = (
     const payload: models.PaginationResponse<models.Occurrence> = await OccurrenceRequests.getReport(
       {
         ...searchParams,
-        offset: searchParams.page > 0 ? searchParams.page - 1 : searchParams.page,
+        page: searchParams.page > 0 ? searchParams.page - 1 : searchParams.page,
         limit: searchParams.pageSize,
         isDESC: searchParams.sort === 'desc' ? 'true' : 'false',
       }
