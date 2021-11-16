@@ -411,15 +411,17 @@ const ptBr = {
           PAGE_TITLE_DETAILS: 'Detalhes',
 
           ADVANCED_FILTER: {
-            TITLE: 'Título',
+            CATEGORY: 'Categoria',
+            PROBLEM_TYPE: 'Tipo',
+            PROFILE_TYPE: 'Perfil',
           },
 
           TABLE: {
-            TITLE: {
+            CATEGORY: {
               FIELD: 'category',
-              HEADER: 'Título',
+              HEADER: 'Categoria',
             },
-            TYPE: {
+            PROBLEM_TYPE: {
               FIELD: 'problemType',
               HEADER: 'Tipo',
             },

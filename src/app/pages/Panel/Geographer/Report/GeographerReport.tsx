@@ -28,7 +28,7 @@ const initialValues: advancedFilterModels.UserAdvancedFilter = {
   password: null,
   confirmPassword: null,
   orderBy: 'createdAt',
-  page: 1,
+  page: 0,
   pageSize: REPORT_PAGE_SIZE,
   sort: 'desc',
 };

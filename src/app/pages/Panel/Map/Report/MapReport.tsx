@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 
+import * as OccurrenceActions from '~/actions/occurrence';
 import AdvancedMap from '~/components/AdvancedMap/AdvancedMap';
 import PanelContentHeader from '~/components/PanelContentHeader/PanelContentHeader';
 
 import { DEFAULT_LATITUDE, DEFAULT_LONGITUDE } from '~/config/env';
 import { translate } from '~/services/i18n';
+import { useReduxState } from '~/hooks/useReduxState';
 
 const initialValues: advancedFilterModels.MapAdvancedFilter = {
   latitude: DEFAULT_LATITUDE,
@@ -13,7 +16,13 @@ const initialValues: advancedFilterModels.MapAdvancedFilter = {
 };
 
 const MapReport: React.FC = () => {
+  const dispatch = useDispatch();
   const [location, setLocation] = useState(initialValues);
+  const { occurrence } = useReduxState();
+
+  const onSearch = () => {
+    dispatch(OccurrenceActions.getOccurrenceMarkers());
+  };
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -27,6 +36,11 @@ const MapReport: React.FC = () => {
       },
       { timeout: 30000 },
     );
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    onSearch();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -45,6 +59,7 @@ const MapReport: React.FC = () => {
         <AdvancedMap
           latitude={location.latitude}
           longitude={location.longitude}
+          markers={occurrence.markers}
         />
       </div>
     </div>

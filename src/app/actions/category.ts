@@ -21,7 +21,7 @@ export const getCategoryReport = (
     const payload: models.PaginationResponse<models.Category> = await CategoryRequests.getReport(
       {
         ...searchParams,
-        offset: searchParams.page > 0 ? searchParams.page - 1 : searchParams.page,
+        page: searchParams.page,
         limit: searchParams.pageSize,
         isDESC: searchParams.sort === 'desc' ? 'true' : 'false',
       }
