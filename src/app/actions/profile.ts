@@ -21,7 +21,7 @@ export const getProfileReport = (
     const payload: models.PaginationResponse<models.Profile> = await ProfileRequests.getReport(
       {
         ...searchParams,
-        offset: searchParams.page > 0 ? searchParams.page - 1 : searchParams.page,
+        page: searchParams.page,
         limit: searchParams.pageSize,
         isDESC: searchParams.sort === 'desc' ? 'true' : 'false',
       }

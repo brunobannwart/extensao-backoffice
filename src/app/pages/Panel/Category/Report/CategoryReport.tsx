@@ -23,7 +23,7 @@ import { useReduxState } from '~/hooks/useReduxState';
 const initialValues: advancedFilterModels.CategoryAdvancedFilter = {
   title: '',
   orderBy: 'createdAt',
-  page: 1,
+  page: 0,
   pageSize: REPORT_PAGE_SIZE,
   sort: 'desc',
 };

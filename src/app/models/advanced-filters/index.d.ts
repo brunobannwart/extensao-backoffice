@@ -24,7 +24,9 @@ export interface CategoryAdvancedFilter extends baseFilter {
 }
 
 export interface OccurrenceAdvancedFilter extends baseFilter {
-  title?: string | null;
+  category?: string | null;
+  problemType?: string | null;
+  profileType?: string | null;
 }
 
 export interface MapAdvancedFilter {

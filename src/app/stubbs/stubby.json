@@ -106,6 +106,22 @@
   },
   {
     "request": {
+      "url": "^/v1/reports-markers$",
+      "query": {},
+      "post": null,
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      },
+      "file": "data/reports-markers.json"
+    }
+  },
+  {
+    "request": {
       "url": "^/v1/reports/*",
       "query": {},
       "post": null,

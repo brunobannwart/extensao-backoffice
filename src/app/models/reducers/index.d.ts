@@ -35,6 +35,7 @@ type OccurrenceReducer = {
   list: models.Occurrence[];
   listCount: number;
   detail: models.Occurrence | null;
+  markers: models.Occurrence[];
 }
 
 type ProfileReducer = {

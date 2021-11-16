@@ -58,9 +58,7 @@ const DataTable: React.FC<IProps> = (props: IProps) => {
       sort: props.sort,
     };
 
-    if (baseFilter.page !== props.page || baseFilter.pageSize !== props.pageSize) {
-      props.onChange(baseFilter);
-    }
+    props.onChange(baseFilter);
   };
 
   return (

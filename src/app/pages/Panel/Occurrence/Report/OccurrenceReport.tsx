@@ -17,9 +17,11 @@ import NavigationService from '~/services/navigation';
 import { useReduxState } from '~/hooks/useReduxState';
 
 const initialValues: advancedFilterModels.OccurrenceAdvancedFilter = {
-  title: '',
+  category: '',
+  problemType: '',
+  profileType: '',
   orderBy: 'createdAt',
-  page: 1,
+  page: 0,
   pageSize: REPORT_PAGE_SIZE,
   sort: 'desc',
 };
@@ -72,16 +74,42 @@ const OccurrenceReport: React.FC = () => {
               fields={[
                 {
                   label: translate(
-                    'PAGES.PANEL.OCCURRENCE.REPORT.ADVANCED_FILTER.TITLE'
+                    'PAGES.PANEL.OCCURRENCE.REPORT.ADVANCED_FILTER.CATEGORY'
                   ),
-                  onChange: (title: string) => {
+                  onChange: (category: string) => {
                     setAdvancedFilters({
                       ...advancedFilters,
-                      title,
+                      category,
                     });
                   },
                   type: 'input',
-                  value: advancedFilters.title,
+                  value: advancedFilters.category,
+                },
+                {
+                  label: translate(
+                    'PAGES.PANEL.OCCURRENCE.REPORT.ADVANCED_FILTER.PROBLEM_TYPE'
+                  ),
+                  onChange: (problemType: string) => {
+                    setAdvancedFilters({
+                      ...advancedFilters,
+                      problemType,
+                    });
+                  },
+                  type: 'input',
+                  value: advancedFilters.problemType,
+                },
+                {
+                  label: translate(
+                    'PAGES.PANEL.OCCURRENCE.REPORT.ADVANCED_FILTER.PROFILE_TYPE'
+                  ),
+                  onChange: (profileType: string) => {
+                    setAdvancedFilters({
+                      ...advancedFilters,
+                      profileType,
+                    });
+                  },
+                  type: 'input',
+                  value: advancedFilters.profileType,
                 },
               ]}
             />
@@ -109,14 +137,14 @@ const OccurrenceReport: React.FC = () => {
               rows={reportRows}
               columns={[
                 {
-                  field: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.TITLE.FIELD'),
+                  field: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.CATEGORY.FIELD'),
                   flex: 1,
-                  headerName: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.TITLE.HEADER'),
+                  headerName: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.CATEGORY.HEADER'),
                 },
                 {
-                  field: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.TYPE.FIELD'),
+                  field: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.PROBLEM_TYPE.FIELD'),
                   flex: 1,
-                  headerName: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.TYPE.HEADER'),
+                  headerName: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.PROBLEM_TYPE.HEADER'),
                 },
                 {
                   field: translate('PAGES.PANEL.OCCURRENCE.REPORT.TABLE.DESCRIPTION.FIELD'),

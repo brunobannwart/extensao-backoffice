@@ -3,7 +3,7 @@ import OccurrenceRequests from '~/repositories/occurrence';
 import * as MessageService from '~/services/message';
 import centralNavigationService from '~/services/navigation';
 
-import { OCCURRENCE_DETAIL, OCCURRENCE_REPORT } from './actionTypes';
+import { OCCURRENCE_DETAIL, OCCURRENCE_REPORT, OCCURRENCE_MARKERS } from './actionTypes';
 import { decreaseLoading, increaseLoading } from './loading';
 
 export const cleanOccurrenceDetail = () => async (dispatch: Dispatch) => {
@@ -11,6 +11,25 @@ export const cleanOccurrenceDetail = () => async (dispatch: Dispatch) => {
     payload: null,
     type: OCCURRENCE_DETAIL,
   });
+};
+
+export const getOccurrenceMarkers = (
+  searchParams?: advancedFilterModels.OccurrenceAdvancedFilter
+) => async (dispatch: Dispatch) => {
+  dispatch(increaseLoading());
+  try {
+    const payload: Array<models.Occurrence> = await OccurrenceRequests.getMarkers(searchParams);
+
+    dispatch({
+      payload,
+      type: OCCURRENCE_MARKERS,
+    });
+
+  } catch (err: any) {
+    MessageService.error(`APPLICATION.ERRORS.${err.message}`);
+  } finally {
+    dispatch(decreaseLoading());
+  }
 };
 
 export const getOccurrenceReport = (
@@ -21,7 +40,7 @@ export const getOccurrenceReport = (
     const payload: models.PaginationResponse<models.Occurrence> = await OccurrenceRequests.getReport(
       {
         ...searchParams,
-        page: searchParams.page > 0 ? searchParams.page - 1 : searchParams.page,
+        page: searchParams.page,
         limit: searchParams.pageSize,
         isDESC: searchParams.sort === 'desc' ? 'true' : 'false',
       }

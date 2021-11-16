@@ -23,7 +23,7 @@ import { getRouteStackPath } from '~/config/routes'
 const initialValues: advancedFilterModels.ProfileAdvancedFilter = {
   title: '',
   orderBy: 'createdAt',
-  page: 1,
+  page: 0,
   pageSize: REPORT_PAGE_SIZE,
   sort: 'desc',
 };
