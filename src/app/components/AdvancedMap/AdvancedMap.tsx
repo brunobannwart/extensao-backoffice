@@ -26,23 +26,51 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
         style={'mapbox://styles/mapbox/streets-v9'}
         containerStyle={{ height: '100%', width: '100%' }}
       >
-        {markers.map(o => (
-          <Marker
-            key={o.category}
-            coordinates={[
-              -47.2187777,
-              -23.0829082
-            ]}
-          >
-            <img 
-              style={{ 
-                width: '20px', 
-                height: '20px' 
-              }} 
-              src={IconMarker} 
-            />
-          </Marker>
-        ))}
+        <>
+          {markers
+            .filter(o => o.longitude && o.latitude)
+            .map(o => (
+              <Marker
+                key={o.id}
+                coordinates={[
+                  -47.2187777,
+                  -23.0829082
+                ]}
+                onClick={() => setSelected(markers[0])}
+              >
+                <img 
+                  style={{ 
+                    width: '20px', 
+                    height: '20px',
+                    cursor: 'pointer', 
+                  }} 
+                  src={IconMarker} 
+                  alt=''
+                />
+              </Marker>
+            ))
+          }
+
+          {selected && (
+            <Popup
+              key={`popup-${selected.id}`}
+              coordinates={[
+                -47.2187777,
+                -23.0829082
+              ]}
+              onClick={() => setSelected(null)}
+            >
+              <div className="advanced-map__marker">
+                <div className="advanced-map__marker__info">
+                  <h2>{selected.category}</h2>
+                  <h4>{selected.problemType}</h4>
+                  <h4>{selected.profileType}</h4>
+                  <p>{selected.description}</p>
+                </div>
+              </div>
+            </Popup>
+          )}
+        </>
       </MapContainer>
     </div>
   );
