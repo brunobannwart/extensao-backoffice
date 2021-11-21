@@ -33,10 +33,10 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
               <Marker
                 key={o.id}
                 coordinates={[
-                  -47.2187777,
-                  -23.0829082
+                  Number(o.longitude),
+                  Number(o.latitude),
                 ]}
-                onClick={() => setSelected(markers[0])}
+                onClick={() => setSelected(o)}
               >
                 <img 
                   style={{ 
@@ -55,8 +55,8 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
             <Popup
               key={`popup-${selected.id}`}
               coordinates={[
-                -47.2187777,
-                -23.0829082
+                Number(selected.longitude),
+                Number(selected.latitude),
               ]}
               onClick={() => setSelected(null)}
             >
