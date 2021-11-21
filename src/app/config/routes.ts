@@ -25,39 +25,22 @@ const routes: models.route[] = [
     accessType: USER_PAGE_TYPE.ADMIN,
     items: [
       {
-        id: 'ADMINISTRATOR_REPORT',
-        name: 'Administradores',
-        route: '/administradores/lista',
+        id: 'USER_REPORT',
+        name: 'Listagem',
+        route: '/lista',
       },
       {
-        id: 'ADMINISTRATOR_REGISTER',
-        name: 'Administradores',
-        route: '/administradores/registro',
+        id: 'USER_REGISTER',
+        name: 'Registro',
+        route: '/registro',
         sidebarHidden: true,
       },
       {
-        id: 'ADMINISTRATOR_DETAILS',
-        name: 'Administradores',
-        route: '/administradores/detalhes/:id?',
+        id: 'USER_DETAILS',
+        name: 'Detalhes',
+        route: '/detalhes/:id?',
         sidebarHidden: true,
-      },
-      {
-        id: 'GEOGRAPHER_REPORT',
-        name: 'Geógrafos',
-        route: '/geografos/lista',
-      },
-      {
-        id: 'GEOGRAPHER_REGISTER',
-        name: 'Geógrafos',
-        route: '/geografos/registro',
-        sidebarHidden: true,
-      },
-      {
-        id: 'GEOGRAPHER_DETAILS',
-        name: 'Geógrafos',
-        route: '/geografos/detalhes/:id?',
-        sidebarHidden: true,
-      },
+      }
     ],
   },
   {
@@ -140,7 +123,7 @@ export const getRoutes = (): models.route[] => routes;
 export const getRoutestack = (route: string): models.route =>
   routes.find((o) => o.route === route) as models.route;
 
-export const getStackPath = (stackId: string): string => {
+export const getStackPath = (stackId: string): string => { //retorna as rotas
   return `${routes.find((o) => o.id === stackId)?.route}`;
 };
 
