@@ -113,7 +113,8 @@ export type User = {
 
 export type Category = {
   id?: string;
-  title: string;
+  categoryName: string;
+  subCategories: Array<string>;
 }
 
 export type Occurrence = {
@@ -130,7 +131,7 @@ export type Occurrence = {
 
 export type Profile = {
   id?: string;
-  title: string;
+  profileName: string;
 }
 
 export type ChangePassword = {

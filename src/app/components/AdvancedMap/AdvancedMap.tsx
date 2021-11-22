@@ -27,38 +27,47 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
         containerStyle={{ height: '100%', width: '100%' }}
       >
         <>
-          {markers.map((o) => (
-            <Marker 
-              key={o.category}
-              coordinates={[
-                Number(o.latitude), 
-                Number(o.longitude)
-              ]}
-            >
-              <button 
-                className="advanced-map__button"
+          {markers
+            .filter(o => o.longitude && o.latitude)
+            .map(o => (
+              <Marker
+                key={o.id}
+                coordinates={[
+                  Number(o.longitude),
+                  Number(o.latitude),
+                ]}
                 onClick={() => setSelected(o)}
               >
                 <img 
-                  className="advanced-map__button__img"
+                  style={{ 
+                    width: '20px', 
+                    height: '20px',
+                    cursor: 'pointer', 
+                  }} 
                   src={IconMarker} 
+                  alt=''
                 />
-              </button>
-              
-            </Marker>
-          ))}
+              </Marker>
+            ))
+          }
 
           {selected && (
             <Popup
+              key={`popup-${selected.id}`}
               coordinates={[
-                Number(selected.latitude), 
-                Number(selected.longitude)
+                Number(selected.longitude),
+                Number(selected.latitude),
               ]}
               onClick={() => setSelected(null)}
             >
-              <>
-                <h2>{selected.category}</h2>
-              </>
+              <div className="advanced-map__marker">
+                <div className="advanced-map__marker__info">
+                  <h2>{selected.category}</h2>
+                  <h4>{selected.problemType}</h4>
+                  <h4>{selected.profileType}</h4>
+                  <p>{selected.description}</p>
+                </div>
+              </div>
             </Popup>
           )}
         </>
@@ -68,3 +77,4 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
 };
 
 export default AdvancedMap;
+

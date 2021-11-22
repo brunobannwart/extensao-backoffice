@@ -21,7 +21,7 @@ import { useReduxState } from '~/hooks/useReduxState';
 import { getRouteStackPath } from '~/config/routes'
 
 const initialValues: advancedFilterModels.ProfileAdvancedFilter = {
-  title: '',
+  profileName: '',
   orderBy: 'createdAt',
   page: 0,
   pageSize: REPORT_PAGE_SIZE,
@@ -78,14 +78,14 @@ const ProfileReport: React.FC = () => {
                   label: translate(
                     'PAGES.PANEL.PROFILE.REPORT.ADVANCED_FILTER.TITLE'
                   ),
-                  onChange: (title: string) => {
+                  onChange: (profileName: string) => {
                     setAdvancedFilters({
                       ...advancedFilters,
-                      title,
+                      profileName,
                     });
                   },
                   type: 'input',
-                  value: advancedFilters.title,
+                  value: advancedFilters.profileName,
                 },
               ]}
             />
