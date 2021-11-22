@@ -113,7 +113,8 @@ export type User = {
 
 export type Category = {
   id?: string;
-  title: string;
+  categoryName: string;
+  subCategories: Array<string>;
 }
 
 export type Occurrence = {

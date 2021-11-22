@@ -243,12 +243,12 @@ const ptBr = {
           PAGE_TITLE_DETAILS: 'Detalhes',
 
           ADVANCED_FILTER: {
-            TITLE: 'Título',
+            TITLE: 'Nome',
           },
 
           TABLE: {
             TITLE: {
-              FIELD: 'title',
+              FIELD: 'categoryName',
               HEADER: 'Título',
             },
             CREATED: {
@@ -276,10 +276,14 @@ const ptBr = {
           FORM: {
             ERROR: {
               TITLE: 'Preencha o título!',
+              SUB_CATEGORIES: 'Preencha campo com as subcategorias!',
             },
             TITLE: 'Detalhes da categoria',
             SUBJECT: {
               LABEL: 'Título',
+            },
+            SUB_CATEGORIES: {
+              LABEL: 'Subcategorias',
             },
             BACK: {
               LABEL: 'VOLTAR',

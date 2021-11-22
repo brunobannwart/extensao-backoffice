@@ -19,7 +19,8 @@ import { getPageType } from '~/utils/page';
 import { useReduxState } from '~/hooks/useReduxState';
 
 const formInitialValues: models.Category = {
-  title: '',
+  categoryName: '',
+  subCategories: [],
 };
 
 const CategoryDetails: React.FC = (props) => {
@@ -52,11 +53,16 @@ const CategoryDetails: React.FC = (props) => {
 
   const onFormSubmit = () => {
     const requestForm: any = {
-      title: form.title
+      categoryName: form.categoryName,
+      subCategories: form.subCategories,
     };
 
-    if (!form.title) {
+    if (!form.categoryName) {
       return MessageService.error('PAGES.PANEL.CATEGORY.DETAILS.FORM.ERROR.TITLE');
+    }
+
+    if (!form.subCategories || !form.subCategories.length) {
+      return MessageService.error('PAGES.PANEL.CATEGORY.DETAILS.FORM.ERROR.SUB_CATEGORIES');
     }
 
     if (pageType === PAGE_TYPE.EDIT) {
@@ -101,8 +107,21 @@ const CategoryDetails: React.FC = (props) => {
                     label={translate(
                       'PAGES.PANEL.CATEGORY.DETAILS.FORM.SUBJECT.LABEL'
                     )}
-                    value={form.title}
-                    onChange={(val: string | null) => onFormChange('title', val)}
+                    value={form.categoryName}
+                    onChange={(val: string | null) => onFormChange('categoryName', val)}
+                  />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col md={4}>
+                  <AdvancedInput
+                    label={translate(
+                      'PAGES.PANEL.CATEGORY.DETAILS.FORM.SUB_CATEGORIES.LABEL'
+                    )}
+                    value={form.subCategories.join('\n')}
+                    onChange={(val: string | null) => onFormChange('subCategories', val?.split('\n'))}
+                    multiline
                   />
                 </Col>
               </Row>

@@ -21,7 +21,7 @@ import NavigationService from '~/services/navigation';
 import { useReduxState } from '~/hooks/useReduxState';
 
 const initialValues: advancedFilterModels.CategoryAdvancedFilter = {
-  title: '',
+  categoryName: '',
   orderBy: 'createdAt',
   page: 0,
   pageSize: REPORT_PAGE_SIZE,
@@ -78,14 +78,14 @@ const CategoryReport: React.FC = () => {
                   label: translate(
                     'PAGES.PANEL.CATEGORY.REPORT.ADVANCED_FILTER.TITLE'
                   ),
-                  onChange: (title: string) => {
+                  onChange: (categoryName: string) => {
                     setAdvancedFilters({
                       ...advancedFilters,
-                      title,
+                      categoryName,
                     });
                   },
                   type: 'input',
-                  value: advancedFilters.title,
+                  value: advancedFilters.categoryName,
                 },
               ]}
             />
