@@ -19,7 +19,7 @@ import { getPageType } from '~/utils/page';
 import { useReduxState } from '~/hooks/useReduxState';
 
 const formInitialValues: models.Profile = {
-  title: '',
+  profileName: '',
 };
 
 const ProfileDetails: React.FC = (props) => {
@@ -52,10 +52,10 @@ const ProfileDetails: React.FC = (props) => {
 
   const onFormSubmit = () => {
     const requestForm: any = {
-      title: form.title
+      profileName: form.profileName
     };
 
-    if (!form.title) {
+    if (!form.profileName) {
       return MessageService.error('PAGES.PANEL.PROFILE.DETAILS.FORM.ERROR.TITLE');
     }
 
@@ -101,8 +101,8 @@ const ProfileDetails: React.FC = (props) => {
                     label={translate(
                       'PAGES.PANEL.PROFILE.DETAILS.FORM.SUBJECT.LABEL'
                     )}
-                    value={form.title}
-                    onChange={(val: string | null) => onFormChange('title', val)}
+                    value={form.profileName}
+                    onChange={(val: string | null) => onFormChange('profileName', val)}
                   />
                 </Col>
               </Row>

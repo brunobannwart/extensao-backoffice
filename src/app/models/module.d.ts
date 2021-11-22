@@ -131,7 +131,7 @@ export type Occurrence = {
 
 export type Profile = {
   id?: string;
-  title: string;
+  profileName: string;
 }
 
 export type ChangePassword = {

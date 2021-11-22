@@ -504,12 +504,12 @@ const ptBr = {
           PAGE_TITLE_DETAILS: 'Detalhes',
 
           ADVANCED_FILTER: {
-            TITLE: 'Título',
+            TITLE: 'Nome',
           },
 
           TABLE: {
             TITLE: {
-              FIELD: 'title',
+              FIELD: 'profileName',
               HEADER: 'Título',
             },
             CREATED: {
