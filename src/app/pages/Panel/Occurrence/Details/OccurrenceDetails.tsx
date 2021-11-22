@@ -18,15 +18,15 @@ import { getPageType } from '~/utils/page';
 import { useReduxState } from '~/hooks/useReduxState';
 
 const formInitialValues: models.Occurrence = {
-  id: "",
-  category: "",
-  problemType: "",
-  profileType: "",
-  description: "",
-  photo: "",
-  audio: "",
-  longitude: "",
-  latitude: ""
+  id: '',
+  category: '',
+  problemType: '',
+  profileType: '',
+  description: '',
+  photo: '',
+  audio: '',
+  longitude: '',
+  latitude: ''
 };
 
 const OccurrenceDetails: React.FC = (props) => {
