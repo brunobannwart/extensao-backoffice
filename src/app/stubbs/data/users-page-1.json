@@ -6,6 +6,7 @@
     "rows": [
         {
             "id": "11",
+            "username": "Armando Dalla",
             "email": "armando@adminpage2.com",
             "roles": [
                 "ROLE_ADMIN"

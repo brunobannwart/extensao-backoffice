@@ -384,6 +384,89 @@ const ptBr = {
         },
       },
 
+      USER: {
+        ROUTE: {
+          NAME: 'USUÁRIOS',
+          REPORT: 'RELATÓRIO',
+          REGISTER: 'REGISTRO',
+          DETAILS: '/usuarios/detalhes/',
+        },
+        TITLE: 'USUÁRIOS',
+        REPORT: {
+          TITLE: 'Usuários',
+          PAGE_TITLE: 'Usuários',
+          PAGE_DESCRIPTION: 'Listagem de usuários',
+          PAGE_TITLE_DETAILS: 'Detalhes',
+
+          ADVANCED_FILTER: {
+            NAME: 'Nome',
+            EMAIL: 'E-mail',
+          },
+
+          TABLE: {
+            NAME: {
+              FIELD: 'username',
+              HEADER: 'Nome',
+            },
+            EMAIL: {
+              FIELD: 'email',
+              HEADER: 'E-mail',
+            },
+            CREATED: {
+              FIELD: 'createdAt',
+              HEADER: 'Data de cadastro',
+            },
+            ACTIONS: {
+              FIELD: 'actions',
+              HEADER: 'Ações',
+            },
+          },
+        },
+
+        DETAILS: {
+          UNDEFINED: 'Não definido',
+          TITLE_ADD: 'Adicionar usuário',
+          TITLE_EDIT: 'Editar usuário',
+          DESCRIPTION_ADD:
+            'Preencha os campos abaixo para adicionar um usuário',
+          DESCRIPTION_EDIT: 'Preencha os campos abaixo para editar um usuário',
+          SUCCESS_ADD_MESSAGE: 'Usuário criado com sucesso!',
+          SUCCESS_EDIT_MESSAGE: 'Usuário editado com sucesso!',
+          SUCCESS_REMOVE_MESSAGE: 'Usuário removido com sucesso!',
+          FORM: {
+            ERROR: {
+              PASSWORD: 'Verifique se as senhas são iguais e tente novamente!',
+              PASSWORD_EMPTY: 'Preencha o campo senha!',
+              NAME: 'Preencha o nome!',
+              PHONE: 'Preencha um número de telefone!',
+              EMAIL: 'Preencha o e-mail!',
+            },
+            TITLE: 'Detalhes do usuário',
+            NAME: {
+              LABEL: 'Nome completo',
+            },
+            EMAIL: {
+              LABEL: 'E-mail válido',
+            },
+            PASSWORD: {
+              LABEL: 'Senha segura',
+            },
+            PASSWORD_CONFIRMATION: {
+              LABEL: 'Digite novamente a senha',
+            },
+            CHANGE_PASSWORD: {
+              LABEL: 'Desejo alterar a senha',
+            },
+            BACK: {
+              LABEL: 'VOLTAR',
+            },
+            SUBMIT: {
+              LABEL: 'Salvar',
+            },
+          },
+        },
+      },
+
       MAP: {
         ROUTE: {
           NAME: 'MAPA',

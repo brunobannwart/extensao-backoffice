@@ -27,7 +27,7 @@ const formInitialValues: models.User = {
   changePassword: false,
 };
 
-const GeographerDetails: React.FC = (props) => {
+const UserDetails: React.FC = (props) => {
   const dispatch = useDispatch();
   const [pageType] = useState(getPageType());
   const [form, setForm] = useState(formInitialValues);
@@ -70,19 +70,19 @@ const GeographerDetails: React.FC = (props) => {
     };
 
     if (!form.username) {
-      return MessageService.error('PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.ERROR.NAME');
+      return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.NAME');
     }
 
     if (!form.email) {
-      return MessageService.error('PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.ERROR.EMAIL');
+      return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.EMAIL');
     }
 
     if (pageType === PAGE_TYPE.ADD || form.changePassword) {
       if (!form.password) {
-        return MessageService.error('PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.ERROR.PASSWORD_EMPTY');
+        return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.PASSWORD_EMPTY');
       }
       if (form.password !== form.confirmPassword) {
-        return MessageService.error('PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.ERROR.PASSWORD');
+        return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.PASSWORD');
       }
     }
 
@@ -91,9 +91,9 @@ const GeographerDetails: React.FC = (props) => {
     }
 
     if (pageType === PAGE_TYPE.EDIT) {
-      dispatch(UserActions.updateUser(user?.detail?.id as string, requestForm, 'GEOGRAPHER'));
+      dispatch(UserActions.updateUser(user?.detail?.id as string, requestForm, 'USER'));
     } else {
-      dispatch(UserActions.addUser(requestForm, 'GEOGRAPHER'));
+      dispatch(UserActions.addUser(requestForm, 'USER'));
     }
   };
 
@@ -105,12 +105,12 @@ const GeographerDetails: React.FC = (props) => {
             items={[
               {
                 active: true,
-                title: translate('PAGES.PANEL.GEOGRAPHER.REPORT.TITLE'),
-                url: getRouteStackPath('USER', 'GEOGRAPHER_REPORT'),
+                title: translate('PAGES.PANEL.USER.REPORT.TITLE'),
+                url: getRouteStackPath('USER', 'USER'),
               },
               {
                 active: false,
-                title: translate('PAGES.PANEL.GEOGRAPHER.REPORT.PAGE_TITLE_DETAILS'),
+                title: translate('PAGES.PANEL.USER.REPORT.PAGE_TITLE_DETAILS'),
               },
             ]}
           />
@@ -122,7 +122,7 @@ const GeographerDetails: React.FC = (props) => {
           <div className="geographer__details__form">
             <div className="geographer__details__form__title">
               <h3 className="geographer__details__form__title__text">
-                {translate('PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.TITLE')}
+                {translate('PAGES.PANEL.USER.DETAILS.FORM.TITLE')}
               </h3>
             </div>
             <AdvancedForm onSubmit={onFormSubmit}>
@@ -130,7 +130,7 @@ const GeographerDetails: React.FC = (props) => {
                 <Col md={4}>
                   <AdvancedInput
                     label={translate(
-                      'PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.NAME.LABEL'
+                      'PAGES.PANEL.USER.DETAILS.FORM.NAME.LABEL'
                     )}
                     value={form.username}
                     onChange={(val: string | null) => onFormChange('username', val)}
@@ -141,7 +141,7 @@ const GeographerDetails: React.FC = (props) => {
                 <Col md={10}>
                   <AdvancedInput
                     label={translate(
-                      'PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.EMAIL.LABEL'
+                      'PAGES.PANEL.USER.DETAILS.FORM.EMAIL.LABEL'
                     )}
                     value={form.email}
                     onChange={(val: string | null) =>
@@ -156,7 +156,7 @@ const GeographerDetails: React.FC = (props) => {
                 <Row>
                   <Col>
                     <AdvancedCheckbox
-                      label={translate('PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.CHANGE_PASSWORD.LABEL')}
+                      label={translate('PAGES.PANEL.USER.DETAILS.FORM.CHANGE_PASSWORD.LABEL')}
                       value={form.changePassword}
                       onChange={(val: boolean) => onFormChange('changePassword', val)}
                     />
@@ -170,7 +170,7 @@ const GeographerDetails: React.FC = (props) => {
                     <AdvancedInput
                       type="password"
                       label={translate(
-                        'PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.PASSWORD.LABEL'
+                        'PAGES.PANEL.USER.DETAILS.FORM.PASSWORD.LABEL'
                       )}
                       value={form.password}
                       onChange={(val: string | null) =>
@@ -182,7 +182,7 @@ const GeographerDetails: React.FC = (props) => {
                     <AdvancedInput
                       type="password"
                       label={translate(
-                        'PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.PASSWORD_CONFIRMATION.LABEL'
+                        'PAGES.PANEL.USER.DETAILS.FORM.PASSWORD_CONFIRMATION.LABEL'
                       )}
                       value={form.confirmPassword}
                       onChange={(val: string | null) =>
@@ -195,11 +195,11 @@ const GeographerDetails: React.FC = (props) => {
 
               <Row>
                 <Col md={4}>
-                  <Link to={getRouteStackPath('USER', 'GEOGRAPHER_REPORT')}>
+                  <Link to={getRouteStackPath('USER', 'USER_REPORT')}>
                     <AdvancedButton
                       variant="text"
                       text={translate(
-                        'PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.BACK.LABEL'
+                        'PAGES.PANEL.USER.DETAILS.FORM.BACK.LABEL'
                       )}
                       startIcon={<LeftOutlined />}
                     />
@@ -210,7 +210,7 @@ const GeographerDetails: React.FC = (props) => {
                     type="submit"
                     className="geographer__advanced-button"
                     text={translate(
-                      'PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.SUBMIT.LABEL'
+                      'PAGES.PANEL.USER.DETAILS.FORM.SUBMIT.LABEL'
                     )}
                     endIcon={<SaveOutlined />}
                   />
@@ -223,4 +223,4 @@ const GeographerDetails: React.FC = (props) => {
     </div>
   );
 };
-export default GeographerDetails;
+export default UserDetails;

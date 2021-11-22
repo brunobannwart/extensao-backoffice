@@ -11,7 +11,7 @@ export interface baseFilter {
 }
 
 export interface UserAdvancedFilter extends baseFilter {
-  name?: string | null;
+  username?: string | null;
   email?: string | null;
   phone?: string | null;
   profileType?: Array<string>;
@@ -35,5 +35,5 @@ export interface MapAdvancedFilter {
 }
 
 export interface ProfileAdvancedFilter extends baseFilter {
-  title?: string | null;
+  profileName?: string | null;
 }

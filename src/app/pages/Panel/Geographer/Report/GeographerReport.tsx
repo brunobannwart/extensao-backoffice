@@ -23,7 +23,7 @@ import { useReduxState } from '~/hooks/useReduxState';
 const initialValues: advancedFilterModels.UserAdvancedFilter = {
   phone: null,
   email: null,
-  name: null,
+  username: null,
   profileType: [USER_PAGE_TYPE.GEOGRAPHER],
   password: null,
   confirmPassword: null,
@@ -89,14 +89,14 @@ const GeographerReport: React.FC = () => {
                   label: translate(
                     'PAGES.PANEL.GEOGRAPHER.REPORT.ADVANCED_FILTER.NAME'
                   ),
-                  onChange: (name: string) => {
+                  onChange: (username: string) => {
                     setAdvancedFilters({
                       ...advancedFilters,
-                      name,
+                      username,
                     });
                   },
                   type: 'input',
-                  value: advancedFilters.name,
+                  value: advancedFilters.username,
                 },
                 {
                   label: translate(
