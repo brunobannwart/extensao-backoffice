@@ -35,5 +35,5 @@ export interface MapAdvancedFilter {
 }
 
 export interface ProfileAdvancedFilter extends baseFilter {
-  title?: string | null;
+  profileName?: string | null;
 }
