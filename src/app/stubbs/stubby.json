@@ -171,5 +171,39 @@
       },
       "file": "data/users-page-1.json"
     }
+  },
+  {
+    "request": {
+      "url": "^/v1/users$",
+      "query": {
+        "page": 1
+      },
+      "post": null,
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      },
+      "file": "data/users-page-1.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/v1/users/*",
+      "query": {},
+      "post": null,
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      },
+      "file": "data/users-details.json"
+    }
   }
 ]

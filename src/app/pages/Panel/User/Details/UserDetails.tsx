@@ -23,7 +23,7 @@ const formInitialValues: models.User = {
   username: '',
   password: '',
   confirmPassword: '',
-  profileType: [USER_PAGE_TYPE.GEOGRAPHER],
+  profileType: [USER_PAGE_TYPE.WEB],
   changePassword: false,
 };
 
@@ -138,7 +138,7 @@ const UserDetails: React.FC = (props) => {
                 </Col>
               </Row>
               <Row>
-                <Col md={10}>
+                <Col md={8}>
                   <AdvancedInput
                     label={translate(
                       'PAGES.PANEL.USER.DETAILS.FORM.EMAIL.LABEL'

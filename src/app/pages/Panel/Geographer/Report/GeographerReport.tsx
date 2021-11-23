@@ -24,7 +24,7 @@ const initialValues: advancedFilterModels.UserAdvancedFilter = {
   phone: null,
   email: null,
   username: null,
-  profileType: [USER_PAGE_TYPE.GEOGRAPHER],
+  profileType: [USER_PAGE_TYPE.WEB],
   password: null,
   confirmPassword: null,
   orderBy: 'createdAt',

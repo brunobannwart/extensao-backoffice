@@ -1,6 +1,5 @@
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { GridCellParams } from '@material-ui/data-grid';
-import { DateTime } from 'luxon';
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
@@ -17,12 +16,12 @@ import { REPORT_PAGE_SIZE } from '~/config/env';
 import { getRouteStackPath } from '~/config/routes';
 import { translate } from '~/services/i18n';
 import NavigationService from '~/services/navigation';
-import { USER_PAGE_TYPE } from '~/enum/page';
+import { USER_PAGE_TYPE, UserPageTypeMap } from '~/enum/page';
 import { useReduxState } from '~/hooks/useReduxState';
 
 const initialValues: advancedFilterModels.UserAdvancedFilter = {
   username: null,
-  profileType: [USER_PAGE_TYPE.GEOGRAPHER],
+  profileType: [USER_PAGE_TYPE.WEB],
   password: null,
   confirmPassword: null,
   orderBy: 'createdAt',
@@ -154,15 +153,13 @@ const UserReport: React.FC = () => {
                   headerName: translate('PAGES.PANEL.USER.REPORT.TABLE.EMAIL.HEADER'),
                 },
                 {
-                  field: translate('PAGES.PANEL.USER.REPORT.TABLE.CREATED.FIELD'),
+                  field: translate('PAGES.PANEL.USER.REPORT.TABLE.ROLE.FIELD'),
                   flex: 1,
-                  headerName: translate('PAGES.PANEL.USER.REPORT.TABLE.CREATED.HEADER'),
+                  headerName: translate('PAGES.PANEL.USER.REPORT.TABLE.ROLE.HEADER'),
                   renderCell: (o: GridCellParams) => {
                     return (
                       <>
-                        {DateTime.fromISO(o.value as string).toLocaleString(
-                          DateTime.DATETIME_SHORT
-                        )}
+                        {(o.value as string[]).map(oo => UserPageTypeMap.get(oo)).join(', ')}
                       </>
                     );
                   },

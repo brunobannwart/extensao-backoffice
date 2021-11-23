@@ -412,6 +412,10 @@ const ptBr = {
               FIELD: 'email',
               HEADER: 'E-mail',
             },
+            ROLE: {
+              FIELD: 'roles',
+              HEADER: 'Papéis',
+            },
             CREATED: {
               FIELD: 'createdAt',
               HEADER: 'Data de cadastro',

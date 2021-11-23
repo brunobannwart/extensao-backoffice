@@ -23,7 +23,7 @@ const formInitialValues: models.User = {
   username: '',
   password: '',
   confirmPassword: '',
-  profileType: [USER_PAGE_TYPE.GEOGRAPHER],
+  profileType: [USER_PAGE_TYPE.WEB],
   changePassword: false,
 };
 
