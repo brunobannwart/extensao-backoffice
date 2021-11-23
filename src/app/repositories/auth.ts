@@ -10,7 +10,7 @@ const AuthApi = {
   },
 
   refreshToken: async (user: any) => {
-    const instance = getInstance(user);
+    const instance = getInstance();
 
     const { data } = await instance.get('/v1/login/refresh');
 

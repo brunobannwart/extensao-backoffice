@@ -57,11 +57,11 @@ export const setAuthorizationHeader = (token: string, type: string = 'Bearer') =
 export function getInstance(auth?: string) {
   if (
     StorageService.getItem('session-token') &&
-    StorageService.getItem('session-token').token
+    StorageService.getItem('session-token').jwtToken
   ) {
-    setAuthorizationHeader(StorageService.getItem('session-token').token);
+    setAuthorizationHeader(StorageService.getItem('session-token').jwtToken, 'Bearer');
   } else {
-    setAuthorizationHeader('undefined');
+    setAuthorizationHeader('undefined', 'Bearer');
   }
   
   if (auth) {
