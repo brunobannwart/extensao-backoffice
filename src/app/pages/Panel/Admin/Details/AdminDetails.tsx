@@ -23,7 +23,7 @@ const formInitialValues: models.User = {
   username: '',
   password: '',
   confirmPassword: '',
-  profileType: [USER_PAGE_TYPE.ADMIN],
+  roles: [USER_PAGE_TYPE.ADMIN],
   changePassword: false,
 };
 
@@ -56,7 +56,7 @@ const AdminDetails: React.FC = (props) => {
   }, [pathname, pageType]);
 
   useEffect(() => {
-    if (!auth.me?.profileType.includes(USER_PAGE_TYPE.ADMIN)) {
+    if (!auth.me?.roles.includes(USER_PAGE_TYPE.ADMIN)) {
       window.location.href = getRouteStackPath('DASHBOARD', 'DETAILS');
     }
   }, [auth]);
@@ -66,7 +66,7 @@ const AdminDetails: React.FC = (props) => {
       username: form.username,
       email: form.email,
       password: form.password,
-      roles: form.profileType,
+      roles: form.roles,
     };
 
     if (!form.username) {

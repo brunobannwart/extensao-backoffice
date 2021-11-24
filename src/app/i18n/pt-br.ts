@@ -730,8 +730,9 @@ const ptBr = {
     PENDING: 'Pendente',
     SCHEDULED: 'Agendado',
     CANCELED: 'Cancelado',
-    PROFILE_TYPE: {
+    ROLES: {
       ADMIN: 'Administrador',
+      WEB: 'Web',
       APP: 'Aplicativo',
     },
   },

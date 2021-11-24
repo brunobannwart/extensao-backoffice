@@ -27,8 +27,8 @@ const ChangePassword: React.FC = (props) => {
 
   const onFormSubmit = () => {
     const requestForm: any = {
-      oldPassword: form.oldPassword,
-      password: form.newPassword,
+      old_password: form.oldPassword,
+      new_password: form.newPassword,
     };
 
     if (!form.oldPassword) {
@@ -81,7 +81,7 @@ const ChangePassword: React.FC = (props) => {
                     )}
                     value={form.newPassword}
                     onChange={(val: string | null) =>
-                      onFormChange('password', val)
+                      onFormChange('newPassword', val)
                     }
                   />
                 </Col>

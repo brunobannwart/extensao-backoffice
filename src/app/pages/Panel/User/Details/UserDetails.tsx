@@ -17,13 +17,14 @@ import { USER_PAGE_TYPE, PAGE_TYPE } from '~/enum/page';
 import { getRouteStackPath } from '~/config/routes';
 import { getPageType } from '~/utils/page';
 import { useReduxState } from '~/hooks/useReduxState';
+import { getUserRoles } from '~/utils/utilities';
 
 const formInitialValues: models.User = {
   email: '',
   username: '',
   password: '',
   confirmPassword: '',
-  profileType: [USER_PAGE_TYPE.WEB],
+  roles: [USER_PAGE_TYPE.WEB],
   changePassword: false,
 };
 
@@ -37,6 +38,17 @@ const UserDetails: React.FC = (props) => {
 
   const onFormChange = (key: string, val: any) => {
     setForm((prevState: models.User) => ({ ...prevState, [key]: val }));
+  };
+
+  const handleSetRole = (role: string) => {
+    onFormChange('roles', [...new Set([...form.roles, role])]);
+  };
+
+  const handleRemoveRole = (index: number) => {
+    if (index > -1) {
+      form.roles.splice(index, 1);
+      onFormChange('roles', [...form.roles]);
+    }
   };
 
   useEffect(() => {
@@ -56,7 +68,7 @@ const UserDetails: React.FC = (props) => {
   }, [pathname, pageType]);
 
   useEffect(() => {
-    if (!auth.me?.profileType.includes(USER_PAGE_TYPE.ADMIN)) {
+    if (!auth.me?.roles.includes(USER_PAGE_TYPE.ADMIN)) {
       window.location.href = getRouteStackPath('DASHBOARD', 'DETAILS');
     }
   }, [auth]);
@@ -66,7 +78,7 @@ const UserDetails: React.FC = (props) => {
       username: form.username,
       email: form.email,
       password: form.password,
-      roles: form.profileType,
+      roles: form.roles,
     };
 
     if (!form.username) {
@@ -135,6 +147,21 @@ const UserDetails: React.FC = (props) => {
                     value={form.username}
                     onChange={(val: string | null) => onFormChange('username', val)}
                   />
+                </Col>
+                <Col md={6}>
+                  {getUserRoles().map((o, index) => (
+                    <AdvancedCheckbox
+                      label={translate(o.name)}
+                      value={form.roles.includes(o.value)}
+                      onChange={(val: boolean) => {
+                        if (val) {
+                          handleSetRole(o.value);
+                        } else {
+                          handleRemoveRole(index);
+                        }
+                      }}
+                    />
+                  ))}
                 </Col>
               </Row>
               <Row>

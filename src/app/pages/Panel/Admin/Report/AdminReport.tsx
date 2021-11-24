@@ -24,7 +24,7 @@ const initialValues: advancedFilterModels.UserAdvancedFilter = {
   phone: null,
   email: null,
   username: null,
-  profileType: [USER_PAGE_TYPE.ADMIN],
+  roles: [USER_PAGE_TYPE.ADMIN],
   password: null,
   confirmPassword: null,
   orderBy: 'createdAt',
@@ -52,7 +52,7 @@ const AdminReport: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (!auth.me?.profileType.includes(USER_PAGE_TYPE.ADMIN)) {
+    if (!auth.me?.roles.includes(USER_PAGE_TYPE.ADMIN)) {
       window.location.href = getRouteStackPath('DASHBOARD', 'DETAILS');
     }
   }, [auth]);

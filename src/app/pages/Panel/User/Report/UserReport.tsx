@@ -21,7 +21,7 @@ import { useReduxState } from '~/hooks/useReduxState';
 
 const initialValues: advancedFilterModels.UserAdvancedFilter = {
   username: null,
-  profileType: [USER_PAGE_TYPE.WEB],
+  roles: undefined,
   password: null,
   confirmPassword: null,
   orderBy: 'createdAt',
@@ -49,7 +49,7 @@ const UserReport: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (!auth.me?.profileType.includes(USER_PAGE_TYPE.ADMIN)) {
+    if (!auth.me?.roles.includes(USER_PAGE_TYPE.ADMIN)) {
       window.location.href = getRouteStackPath('DASHBOARD', 'DETAILS');
     }
   }, [auth]);
@@ -159,7 +159,10 @@ const UserReport: React.FC = () => {
                   renderCell: (o: GridCellParams) => {
                     return (
                       <>
-                        {(o.value as string[]).map(oo => UserPageTypeMap.get(oo)).join(', ')}
+                        {(o.value as string[])
+                          .map(oo => UserPageTypeMap.get(oo))
+                          .map(oo => translate(`SHARED.ROLES.${oo}`))
+                          .join(', ')}
                       </>
                     );
                   },
