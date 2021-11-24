@@ -44,7 +44,9 @@ const UserDetails: React.FC = (props) => {
     onFormChange('roles', [...new Set([...form.roles, role])]);
   };
 
-  const handleRemoveRole = (index: number) => {
+  const handleRemoveRole = (role: string) => {
+    const index = form.roles.findIndex(o => o === role);
+
     if (index > -1) {
       form.roles.splice(index, 1);
       onFormChange('roles', [...form.roles]);
@@ -154,19 +156,21 @@ const UserDetails: React.FC = (props) => {
                 </Col>
                 <Col md={6}>
                   <h4>{translate('PAGES.PANEL.USER.DETAILS.FORM.ROLES.LABEL')}</h4>
-                  {getUserRoles().map((o, index) => (
-                    <AdvancedCheckbox
-                      label={translate(o.name)}
-                      value={form.roles.includes(o.value)}
-                      onChange={(val: boolean) => {
-                        if (val) {
-                          handleSetRole(o.value);
-                        } else {
-                          handleRemoveRole(index);
-                        }
-                      }}
-                    />
-                  ))}
+                  <Row>
+                    {getUserRoles().map((o) => (
+                      <AdvancedCheckbox
+                        label={translate(o.name)}
+                        value={form.roles.includes(o.value)}
+                        onChange={(val: boolean) => {
+                          if (val) {
+                            handleSetRole(o.value);
+                          } else {
+                            handleRemoveRole(o.value);
+                          }
+                        }}
+                      />
+                    ))}
+                  </Row>
                 </Col>
               </Row>
               <Row>
