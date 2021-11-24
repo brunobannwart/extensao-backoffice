@@ -1,0 +1,15 @@
+{
+    "totalPages": 1,
+    "totalElements": 1,
+    "last": true,
+    "size": 1,
+    "rows": [
+        {
+            "id": "1",
+            "profileName": "Transeunte",
+            "createdAt": "Sun Nov 21 20:17:53 BRT 2021",
+            "updateAt": null,
+            "author": "admin"
+        }
+    ]
+}
