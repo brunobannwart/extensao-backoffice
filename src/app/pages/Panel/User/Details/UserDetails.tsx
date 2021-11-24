@@ -98,7 +98,7 @@ const UserDetails: React.FC = (props) => {
   };
 
   return (
-    <div className="geographer">
+    <div className="user">
       <Row>
         <Col>
           <PanelContentBreadcrumb
@@ -119,9 +119,9 @@ const UserDetails: React.FC = (props) => {
 
       <Row>
         <Col>
-          <div className="geographer__details__form">
-            <div className="geographer__details__form__title">
-              <h3 className="geographer__details__form__title__text">
+          <div className="user__details__form">
+            <div className="user__details__form__title">
+              <h3 className="user__details__form__title__text">
                 {translate('PAGES.PANEL.USER.DETAILS.FORM.TITLE')}
               </h3>
             </div>
@@ -208,7 +208,7 @@ const UserDetails: React.FC = (props) => {
                 <Col md={4}>
                   <AdvancedButton
                     type="submit"
-                    className="geographer__advanced-button"
+                    className="user__advanced-button"
                     text={translate(
                       'PAGES.PANEL.USER.DETAILS.FORM.SUBMIT.LABEL'
                     )}

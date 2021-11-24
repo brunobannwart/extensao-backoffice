@@ -70,8 +70,8 @@ const UserReport: React.FC = () => {
   };
 
   return (
-    <div className="geographer">
-      <div className="geographer__advanced-filters">
+    <div className="user">
+      <div className="user__advanced-filters">
         <PanelContentSearchBar
           advancedFilter={
             <AdvancedFilters
@@ -114,7 +114,7 @@ const UserReport: React.FC = () => {
         />
       </div>
 
-      <div className="geographer__panel-content">
+      <div className="user__panel-content">
         <Row>
           <Col lg={6}>
             <PanelContentHeader
@@ -127,7 +127,7 @@ const UserReport: React.FC = () => {
           <Col lg={6}>
             <Link to={getRouteStackPath('USER', 'USER_REGISTER')}>
               <AdvancedButton
-                className="geographer__advanced-button"
+                className="user__advanced-button"
                 text={translate('COMPONENTS.DATA_TABLE_ACTIONS.ADD.LABEL')}
                 endIcon={<PlusCircleOutlined />}
               />
@@ -138,7 +138,7 @@ const UserReport: React.FC = () => {
 
       <Row>
         <Col>
-          <div className="geographer__table">
+          <div className="user__table">
             <DataTable
               rows={reportRows}
               columns={[
