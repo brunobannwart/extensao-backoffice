@@ -106,7 +106,7 @@ export type User = {
   username: string;
   email: string;
   password?: string;
-  profileType: Array<string>;
+  roles: Array<string>;
   confirmPassword?: string;
   changePassword?: boolean;
 };

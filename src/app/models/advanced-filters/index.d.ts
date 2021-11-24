@@ -14,7 +14,7 @@ export interface UserAdvancedFilter extends baseFilter {
   username?: string | null;
   email?: string | null;
   phone?: string | null;
-  profileType?: Array<string>;
+  roles?: string | Array<string>;
   password?: string | null,
   confirmPassword?: string | null,
 }
