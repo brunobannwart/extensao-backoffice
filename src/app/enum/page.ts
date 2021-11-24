@@ -6,11 +6,11 @@ export const PAGE_TYPE = {
 export const USER_PAGE_TYPE = {
   ADMIN: 'ROLE_ADMIN',
   APP: 'ROLE_APP_USER',
-  GEOGRAPHER: 'ROLE_WEB_USER',
+  WEB: 'ROLE_WEB_USER',
 };
 
 export const UserPageTypeMap = new Map([
   [USER_PAGE_TYPE.ADMIN, 'ADMIN'],
   [USER_PAGE_TYPE.APP, 'APP'],
-  [USER_PAGE_TYPE.GEOGRAPHER, 'GEOGRAPHER'],
+  [USER_PAGE_TYPE.WEB, 'WEB'],
 ])

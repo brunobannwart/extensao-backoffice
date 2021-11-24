@@ -8,13 +8,12 @@ import { getRoutes, getStackPath } from '~/config/routes';
 import NotFound from '~/pages/Panel/NotFound/NotFound';
 
 import DashboardNavigationStack from '~/pages/Panel/Dashboard/DashboardNavigationStack';
-import AdminNavigationStack from '~/pages/Panel/Admin/AdminNavigationStack';
 import CategoryNavigationStack from '~/pages/Panel/Category/CategoryNavigationStack';
-import GeographerNavigationStack from '~/pages/Panel/Geographer/GeographerNavigationStack';
 import OccurrenceNavigationStack from '~/pages/Panel/Occurrence/OccurrenceNavigationStack';
 import MapNavigationStack from '~/pages/Panel/Map/MapNavigationStack';
 import ProfileNavigationStack from '~/pages/Panel/Profile/ProfileNavigationStack';
 import ChangePasswordNavigationStack from '@portal/pages/Panel/ChangePassword/ChangePasswordNavigationStack';
+import UserNavigationStack from '~/pages/Panel/User/UserNavigationStack';
 
 const PanelNavigationStack: React.FC = () => {
   const loggedUser = useSelector(
@@ -36,8 +35,7 @@ const PanelNavigationStack: React.FC = () => {
           </Route>
 
           <Route path={getStackPath('USER')}>
-            <AdminNavigationStack />
-            <GeographerNavigationStack />
+            <UserNavigationStack />
           </Route>
 
           <Route path={getStackPath('TRACKING')}>

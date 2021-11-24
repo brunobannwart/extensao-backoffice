@@ -25,7 +25,7 @@ const userReducer = (
       state = {
         ...state,
         list: action.payload.rows,
-        listCount: action.payload.count,
+        listCount: action.payload.totalElements,
       };
       break;
 
