@@ -444,6 +444,7 @@ const ptBr = {
               NAME: 'Preencha o nome!',
               PHONE: 'Preencha um número de telefone!',
               EMAIL: 'Preencha o e-mail!',
+              ROLES: 'Preencha os papéis deste usuário!',
             },
             TITLE: 'Detalhes do usuário',
             NAME: {
@@ -451,6 +452,9 @@ const ptBr = {
             },
             EMAIL: {
               LABEL: 'E-mail válido',
+            },
+            ROLES: {
+              LABEL: 'Papéis',
             },
             PASSWORD: {
               LABEL: 'Senha segura',

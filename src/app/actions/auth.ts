@@ -22,13 +22,13 @@ export const authenticate =
         type: AUTH_LOGIN,
       });
 
-      const { id, username, roles: profileType, email } = payload;
+      const { id, username, roles, email } = payload;
 
       const me = {
         id,
         username,
         email,
-        profileType,
+        roles,
       };
 
       dispatch({

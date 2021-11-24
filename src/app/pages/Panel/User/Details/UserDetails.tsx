@@ -89,6 +89,10 @@ const UserDetails: React.FC = (props) => {
       return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.EMAIL');
     }
 
+    if (!form.roles || !form.roles.length) {
+      return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.ROLES');
+    }
+
     if (pageType === PAGE_TYPE.ADD || form.changePassword) {
       if (!form.password) {
         return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.PASSWORD_EMPTY');
@@ -149,6 +153,7 @@ const UserDetails: React.FC = (props) => {
                   />
                 </Col>
                 <Col md={6}>
+                  <h4>{translate('PAGES.PANEL.USER.DETAILS.FORM.ROLES.LABEL')}</h4>
                   {getUserRoles().map((o, index) => (
                     <AdvancedCheckbox
                       label={translate(o.name)}
