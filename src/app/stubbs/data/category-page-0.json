@@ -1,0 +1,30 @@
+{
+    "totalPages": 1,
+    "totalElements": 2,
+    "last": true,
+    "size": 2,
+    "rows": [
+        {
+            "id": "1",
+            "categoryName": "Cidade",
+            "createdAt": "Sun Nov 21 20:17:53 BRT 2021",
+            "updateAt": null,
+            "author": "Pedro Banwart",
+            "subCategories": [
+                "Buraco",
+                "Falta de Energia"
+            ]
+        },
+        {
+            "id": "2",
+            "categoryName": "Comunidade",
+            "createdAt": "Sun Nov 28 21:17:53 BRT 2021",
+            "updateAt": null,
+            "author": "Bruno Angelo",
+            "subCategories": [
+                "Buraco",
+                "Assalto"
+            ]
+        }
+    ]
+}
