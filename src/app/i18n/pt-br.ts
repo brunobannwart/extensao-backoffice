@@ -401,6 +401,7 @@ const ptBr = {
           ADVANCED_FILTER: {
             NAME: 'Nome',
             EMAIL: 'E-mail',
+            ROLE:  'Papéis'
           },
 
           TABLE: {

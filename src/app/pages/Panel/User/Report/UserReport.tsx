@@ -84,29 +84,16 @@ const UserReport: React.FC = () => {
               fields={[
                 {
                   label: translate(
-                    'PAGES.PANEL.USER.REPORT.ADVANCED_FILTER.NAME'
+                    'PAGES.PANEL.USER.REPORT.ADVANCED_FILTER.ROLE'
                   ),
-                  onChange: (username: string) => {
+                  onChange: (roles: string) => {
                     setAdvancedFilters({
                       ...advancedFilters,
-                      username,
+                      roles,
                     });
                   },
                   type: 'input',
-                  value: advancedFilters.username,
-                },
-                {
-                  label: translate(
-                    'PAGES.PANEL.USER.REPORT.ADVANCED_FILTER.EMAIL'
-                  ),
-                  onChange: (email: string) => {
-                    setAdvancedFilters({
-                      ...advancedFilters,
-                      email,
-                    });
-                  },
-                  type: 'input',
-                  value: advancedFilters.email,
+                  value: advancedFilters.roles,
                 },
               ]}
             />

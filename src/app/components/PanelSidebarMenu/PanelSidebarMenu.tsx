@@ -27,7 +27,7 @@ const PanelSidebarMenu: React.FC<IProps> = (props: IProps) => {
         {props.routes.filter((o) => o.accessType === undefined
           || (auth.me 
               && (
-                auth.me.roles.includes(o.accessType) 
+                auth.me.roles?.includes(o.accessType) 
                 || o.accessGranted?.includes(auth.me.roles[0])
               )
             )

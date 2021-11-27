@@ -97,20 +97,7 @@ const OccurrenceReport: React.FC = () => {
                   },
                   type: 'input',
                   value: advancedFilters.problemType,
-                },
-                {
-                  label: translate(
-                    'PAGES.PANEL.OCCURRENCE.REPORT.ADVANCED_FILTER.PROFILE_TYPE'
-                  ),
-                  onChange: (profileType: string) => {
-                    setAdvancedFilters({
-                      ...advancedFilters,
-                      profileType,
-                    });
-                  },
-                  type: 'input',
-                  value: advancedFilters.profileType,
-                },
+                }
               ]}
             />
           }

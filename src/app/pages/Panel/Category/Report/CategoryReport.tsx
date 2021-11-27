@@ -63,35 +63,7 @@ const CategoryReport: React.FC = () => {
 
   return (
     <div className="category">
-      <div className="category__advanced-filters">
-        <PanelContentSearchBar
-          advancedFilter={
-            <AdvancedFilters
-              onFilter={() => onSearch(advancedFilters)}
-              onClear={() => {
-                setAdvancedFilters(initialValues);
-                onSearch(initialValues);
-              }}
-              cols={[3, 3, 3]}
-              fields={[
-                {
-                  label: translate(
-                    'PAGES.PANEL.CATEGORY.REPORT.ADVANCED_FILTER.TITLE'
-                  ),
-                  onChange: (categoryName: string) => {
-                    setAdvancedFilters({
-                      ...advancedFilters,
-                      categoryName,
-                    });
-                  },
-                  type: 'input',
-                  value: advancedFilters.categoryName,
-                },
-              ]}
-            />
-          }
-        />
-      </div>
+      
 
       <div className="category__panel-content">
         <Row>
