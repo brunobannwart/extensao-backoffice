@@ -17,6 +17,7 @@ type rootReducer = {
   category: CategoryReducer;
   occurrence: OccurrenceReducer;
   profile: ProfileReducer;
+  kpi: KpiReducer;
 };
 
 type UserReducer = {
@@ -42,4 +43,8 @@ type ProfileReducer = {
   list: models.Profile[];
   listCount: number;
   detail: models.Profile | null;
+}
+
+type KpiReducer = {
+  list: models.KPI[];
 }

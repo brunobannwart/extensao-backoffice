@@ -37,3 +37,7 @@ export interface MapAdvancedFilter {
 export interface ProfileAdvancedFilter extends baseFilter {
   profileName?: string | null;
 }
+
+export interface KpiAdvancedFilter extends baseFilter {
+  
+}

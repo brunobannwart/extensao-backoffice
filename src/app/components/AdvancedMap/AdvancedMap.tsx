@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ReactMapboxGl, { Marker, Popup } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { MAPBOX_API_KEY } from '~/config/env';
@@ -17,12 +17,8 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
   longitude, 
   markers 
 }: IAdvancedMapProps) => {
-  const [center, setCenter] = useState<[number, number]>([0, 0]);
+  const [center, setCenter] = useState<[number, number]>([longitude, latitude]);
   const [selected, setSelected] = useState<models.Occurrence | null>(null);
-
-  useEffect(() => {
-    setCenter([longitude, latitude]);
-  }, [latitude, longitude]);
 
   return (
     <div className="advanced-map">

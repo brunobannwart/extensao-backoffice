@@ -135,6 +135,10 @@ const ptBr = {
           WELCOME: 'Seja Bem Vindo ',
           TITLE: 'Informações gerais',
           PAGE_DESCRIPTION: 'Visualize alguns dos principais indicadores',
+
+          CARD: {
+            OCCURRENCE: 'Ocorrências',
+          }
         },
       },
 
