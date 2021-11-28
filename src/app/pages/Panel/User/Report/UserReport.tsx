@@ -12,16 +12,18 @@ import DataTable from '~/components/DataTable/DataTable';
 import DataTableActions from '~/components/DataTableActions/DataTableActions';
 import PanelContentHeader from '~/components/PanelContentHeader/PanelContentHeader';
 import PanelContentSearchBar from '~/components/PanelContentSearchBar/PanelContentSearchBar';
+
 import { REPORT_PAGE_SIZE } from '~/config/env';
 import { getRouteStackPath } from '~/config/routes';
 import { translate } from '~/services/i18n';
 import NavigationService from '~/services/navigation';
 import { USER_PAGE_TYPE, UserPageTypeMap } from '~/enum/page';
 import { useReduxState } from '~/hooks/useReduxState';
+import { getUserRolesFilter } from '~/utils/utilities';
 
 const initialValues: advancedFilterModels.UserAdvancedFilter = {
   username: null,
-  roles: undefined,
+  roles: '',
   password: null,
   confirmPassword: null,
   orderBy: 'createdAt',
@@ -86,13 +88,19 @@ const UserReport: React.FC = () => {
                   label: translate(
                     'PAGES.PANEL.USER.REPORT.ADVANCED_FILTER.ROLE'
                   ),
+                  options: getUserRolesFilter()
+                    .map(o => ({ 
+                      name: translate(o.name), 
+                      value: o.value
+                    })
+                  ),
                   onChange: (roles: string) => {
                     setAdvancedFilters({
                       ...advancedFilters,
                       roles,
                     });
                   },
-                  type: 'input',
+                  type: 'select',
                   value: advancedFilters.roles,
                 },
               ]}

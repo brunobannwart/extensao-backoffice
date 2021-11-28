@@ -8,11 +8,9 @@ import { Link } from 'react-router-dom';
 
 import * as CategoryActions from '~/actions/category';
 import AdvancedButton from '~/components/AdvancedButton/AdvancedButton';
-import AdvancedFilters from '~/components/AdvancedFilters/AdvancedFilters';
 import DataTable from '~/components/DataTable/DataTable';
 import DataTableActions from '~/components/DataTableActions/DataTableActions';
 import PanelContentHeader from '~/components/PanelContentHeader/PanelContentHeader';
-import PanelContentSearchBar from '~/components/PanelContentSearchBar/PanelContentSearchBar';
 
 import { REPORT_PAGE_SIZE } from '~/config/env';
 import { getRouteStackPath } from '~/config/routes';
@@ -63,8 +61,6 @@ const CategoryReport: React.FC = () => {
 
   return (
     <div className="category">
-      
-
       <div className="category__panel-content">
         <Row>
           <Col lg={6}>
