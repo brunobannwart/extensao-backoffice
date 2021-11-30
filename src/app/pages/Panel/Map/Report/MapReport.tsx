@@ -17,15 +17,9 @@ const initialValues: advancedFilterModels.MapAdvancedFilter = {
   distance: 0,
 };
 
-const initialPosition: models.Location = {
-  latitude: DEFAULT_LATITUDE,
-  longitude: DEFAULT_LONGITUDE,
-};
-
 const MapReport: React.FC = () => {
   const dispatch = useDispatch();
   const [advancedFilters, setAdvancedFilters] = useState(initialValues);
-  const [position, setPosition] = useState(initialPosition);
   const { map } = useReduxState();
 
   const onSearch = (filters: advancedFilterModels.MapAdvancedFilter) => {
@@ -42,8 +36,6 @@ const MapReport: React.FC = () => {
           latitude, 
           longitude
         });
-
-        setPosition({ latitude, longitude });
       },
       (_ignored) => {
         //
@@ -64,10 +56,7 @@ const MapReport: React.FC = () => {
         <AdvancedFilters
           onFilter={() => onSearch(advancedFilters)}
           onClear={() => {
-            setAdvancedFilters({
-              ...advancedFilters,
-              ...position
-            });
+            setAdvancedFilters(advancedFilters);
             onSearch(initialValues);
           }}
           cols={[3, 3, 3]}
@@ -129,10 +118,10 @@ const MapReport: React.FC = () => {
           latitude={advancedFilters.latitude}
           longitude={advancedFilters.longitude}
           markers={map.markers}
-          onChange={(location: models.Location) => {
+          onChange={(val: models.Location) => {
             setAdvancedFilters({
               ...advancedFilters,
-              ...location,
+              ...val,
             });
           }}
         />
