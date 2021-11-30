@@ -56,7 +56,7 @@ const MapReport: React.FC = () => {
         <AdvancedFilters
           onFilter={() => onSearch(advancedFilters)}
           onClear={() => {
-            setAdvancedFilters(advancedFilters);
+            setAdvancedFilters(initialValues);
             onSearch(initialValues);
           }}
           cols={[3, 3, 3]}

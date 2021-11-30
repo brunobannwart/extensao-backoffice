@@ -492,6 +492,12 @@ const ptBr = {
           PAGE_TITLE: 'Mapa',
           PAGE_DESCRIPTION: 'Visualização',
           PAGE_TITLE_DETAILS: 'Detalhes',
+
+          ADVANCED_FILTER: {
+            LONGITUDE: 'Longitude',
+            LATITUDE: 'Latitude',
+            DISTANCE: 'Distância',
+          },
         },
       },
 
