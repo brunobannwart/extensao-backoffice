@@ -17,12 +17,13 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
   longitude, 
   markers 
 }: IAdvancedMapProps) => {
+  const [center, setCenter] = useState<[number, number]>([longitude, latitude]);
   const [selected, setSelected] = useState<models.Occurrence | null>(null);
 
   return (
     <div className="advanced-map">
       <MapContainer
-        center={[longitude, latitude]}
+        center={center}
         style={'mapbox://styles/mapbox/streets-v9'}
         containerStyle={{ height: '100%', width: '100%' }}
       >
@@ -36,7 +37,13 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
                   Number(o.longitude),
                   Number(o.latitude),
                 ]}
-                onClick={() => setSelected(o)}
+                onClick={() => {
+                  setSelected(o);
+                  setCenter([
+                    Number(o.longitude),
+                    Number(o.latitude),
+                  ]);
+                }}
               >
                 <img 
                   style={{ 

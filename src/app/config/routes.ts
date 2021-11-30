@@ -11,8 +11,8 @@ const routes: models.route[] = [
     items: [
       {
         id: 'DETAILS',
-        name: 'Detalhes',
-        route: '/relatorio/detalhes',
+        name: 'Painel de Controle',
+        route: '/painel-controle',
       },
     ],
   },

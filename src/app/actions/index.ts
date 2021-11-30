@@ -5,6 +5,7 @@ import * as UserActions from './user';
 import * as CategoryActions from './category';
 import * as OccurrenceActions from './occurrence';
 import * as ProfileActions from './profile';
+import * as KpiActions from './kpi';
 
 export {
   LoadingActions,
@@ -13,5 +14,6 @@ export {
   UserActions,
   CategoryActions,
   OccurrenceActions,
-  ProfileActions
+  ProfileActions,
+  KpiActions,
 };

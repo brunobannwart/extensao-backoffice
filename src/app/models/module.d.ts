@@ -139,3 +139,8 @@ export type ChangePassword = {
   newPassword: string | null;
   confirmPassword: string | null;
 }
+
+export type KPI = {
+  number: number;
+  description: string;
+}

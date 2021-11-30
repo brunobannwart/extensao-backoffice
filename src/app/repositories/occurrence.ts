@@ -17,7 +17,7 @@ const OccurrenceApi = {
 
   getMarkers: async (params?: advancedFilterModels.OccurrenceAdvancedFilter) => {
     const instance = await getInstance();
-    const { data } = await instance.get('/v1/reports-markers');
+    const { data } = await instance.get('/v1/reports-markers', { params });
 
     return data;
   },
