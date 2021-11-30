@@ -12,16 +12,18 @@ import DataTable from '~/components/DataTable/DataTable';
 import DataTableActions from '~/components/DataTableActions/DataTableActions';
 import PanelContentHeader from '~/components/PanelContentHeader/PanelContentHeader';
 import PanelContentSearchBar from '~/components/PanelContentSearchBar/PanelContentSearchBar';
+
 import { REPORT_PAGE_SIZE } from '~/config/env';
 import { getRouteStackPath } from '~/config/routes';
 import { translate } from '~/services/i18n';
 import NavigationService from '~/services/navigation';
 import { USER_PAGE_TYPE, UserPageTypeMap } from '~/enum/page';
 import { useReduxState } from '~/hooks/useReduxState';
+import { getUserRolesFilter } from '~/utils/utilities';
 
 const initialValues: advancedFilterModels.UserAdvancedFilter = {
   username: null,
-  roles: undefined,
+  roles: '',
   password: null,
   confirmPassword: null,
   orderBy: 'createdAt',
@@ -84,29 +86,22 @@ const UserReport: React.FC = () => {
               fields={[
                 {
                   label: translate(
-                    'PAGES.PANEL.USER.REPORT.ADVANCED_FILTER.NAME'
+                    'PAGES.PANEL.USER.REPORT.ADVANCED_FILTER.ROLE'
                   ),
-                  onChange: (username: string) => {
+                  options: getUserRolesFilter()
+                    .map(o => ({ 
+                      name: translate(o.name), 
+                      value: o.value
+                    })
+                  ),
+                  onChange: (roles: string) => {
                     setAdvancedFilters({
                       ...advancedFilters,
-                      username,
+                      roles,
                     });
                   },
-                  type: 'input',
-                  value: advancedFilters.username,
-                },
-                {
-                  label: translate(
-                    'PAGES.PANEL.USER.REPORT.ADVANCED_FILTER.EMAIL'
-                  ),
-                  onChange: (email: string) => {
-                    setAdvancedFilters({
-                      ...advancedFilters,
-                      email,
-                    });
-                  },
-                  type: 'input',
-                  value: advancedFilters.email,
+                  type: 'select',
+                  value: advancedFilters.roles,
                 },
               ]}
             />

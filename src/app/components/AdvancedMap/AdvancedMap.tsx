@@ -9,21 +9,22 @@ const MapContainer = ReactMapboxGl({ accessToken: MAPBOX_API_KEY });
 interface IAdvancedMapProps {
   latitude: number,
   longitude: number,
-  markers: models.Occurrence[];
+  markers: models.Occurrence[],
+  onChange: (val: models.GeoPosition) => void,
 }
 
 const AdvancedMap: React.FC<IAdvancedMapProps> = ({ 
   latitude, 
   longitude, 
-  markers 
+  markers,
+  onChange,
 }: IAdvancedMapProps) => {
-  const [center, setCenter] = useState<[number, number]>([longitude, latitude]);
   const [selected, setSelected] = useState<models.Occurrence | null>(null);
 
   return (
     <div className="advanced-map">
       <MapContainer
-        center={center}
+        center={[longitude, latitude]}
         style={'mapbox://styles/mapbox/streets-v9'}
         containerStyle={{ height: '100%', width: '100%' }}
       >
@@ -39,10 +40,10 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
                 ]}
                 onClick={() => {
                   setSelected(o);
-                  setCenter([
-                    Number(o.longitude),
-                    Number(o.latitude),
-                  ]);
+                  onChange({
+                    latitude: Number(o.latitude),
+                    longitude: Number(o.longitude),
+                  });
                 }}
               >
                 <img 

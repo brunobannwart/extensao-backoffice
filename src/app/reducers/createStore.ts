@@ -9,6 +9,7 @@ import categoryReducer from './category';
 import occurrenceReducer from './occurrence';
 import profileReducer from './profile';
 import kpiReducer from './kpi';
+import mapReducer from './map';
 
 const appReducer = combineReducers({
   auth: authReducer,
@@ -19,6 +20,7 @@ const appReducer = combineReducers({
   occurrence: occurrenceReducer,
   profile: profileReducer,
   kpi: kpiReducer,
+  map: mapReducer,
 });
 
 const rootReducer = (state: any, action: any) => {

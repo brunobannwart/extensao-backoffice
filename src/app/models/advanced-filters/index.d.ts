@@ -32,6 +32,7 @@ export interface OccurrenceAdvancedFilter extends baseFilter {
 export interface MapAdvancedFilter {
   latitude: number;
   longitude: number;
+  distance: number;
 }
 
 export interface ProfileAdvancedFilter extends baseFilter {

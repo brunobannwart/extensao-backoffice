@@ -26,3 +26,11 @@ export const getUserRoles = () => ([
     value: USER_PAGE_TYPE.APP,
   }
 ]); 
+
+export const getUserRolesFilter = () => ([
+  ...getUserRoles(),
+  {
+    name: 'SHARED.ROLES.NONE',
+    value: '',
+  },
+]);

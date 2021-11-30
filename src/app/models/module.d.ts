@@ -144,3 +144,8 @@ export type KPI = {
   number: number;
   description: string;
 }
+
+export type GeoPosition = {
+  latitude: number;
+  longitude: number;
+}

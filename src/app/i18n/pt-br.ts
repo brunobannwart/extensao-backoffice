@@ -405,6 +405,7 @@ const ptBr = {
           ADVANCED_FILTER: {
             NAME: 'Nome',
             EMAIL: 'E-mail',
+            ROLE:  'Papéis'
           },
 
           TABLE: {
@@ -492,6 +493,12 @@ const ptBr = {
           PAGE_TITLE: 'Mapa',
           PAGE_DESCRIPTION: 'Visualização',
           PAGE_TITLE_DETAILS: 'Detalhes',
+
+          ADVANCED_FILTER: {
+            LONGITUDE: 'Longitude',
+            LATITUDE: 'Latitude',
+            DISTANCE: 'Distância',
+          },
         },
       },
 
@@ -739,6 +746,7 @@ const ptBr = {
     SCHEDULED: 'Agendado',
     CANCELED: 'Cancelado',
     ROLES: {
+      NONE: 'Nenhum',
       ADMIN: 'Administrador',
       WEB: 'Web',
       APP: 'Aplicativo',
