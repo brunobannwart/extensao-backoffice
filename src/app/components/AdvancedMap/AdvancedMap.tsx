@@ -10,7 +10,7 @@ interface IAdvancedMapProps {
   latitude: number,
   longitude: number,
   markers: models.Occurrence[],
-  onChange: (val: models.Location) => void,
+  onChange: (val: models.GeoPosition) => void,
 }
 
 const AdvancedMap: React.FC<IAdvancedMapProps> = ({ 

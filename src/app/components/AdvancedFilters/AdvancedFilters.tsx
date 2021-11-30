@@ -76,21 +76,25 @@ const AdvancedFilters: React.FC<IProps> = (props: IProps) => {
         {renderInputs()}
 
         <div className="advanced-filters__buttons">
-          <div className="advanced-filters__buttons__single">
-            <AdvancedButton
-              type="submit"
-              text={translate('COMPONENTS.ADVANCED_FILTER.CLEAN')}
-              onClick={clean}
-              size="medium"
-            />
-          </div>
-          <div className="advanced-filters__buttons__single">
-            <AdvancedButton
-              type="submit"
-              text={translate('COMPONENTS.ADVANCED_FILTER.FILTER')}
-              size="medium"
-            />
-          </div>
+          {props.onClear && (
+            <div className="advanced-filters__buttons__single">
+              <AdvancedButton
+                type="button"
+                text={translate('COMPONENTS.ADVANCED_FILTER.CLEAN')}
+                onClick={clean}
+                size="medium"
+              />
+            </div>
+          )}
+          {props.onFilter && (
+            <div className="advanced-filters__buttons__single">
+              <AdvancedButton
+                type="submit"
+                text={translate('COMPONENTS.ADVANCED_FILTER.FILTER')}
+                size="medium"
+              />
+            </div>
+          )}
         </div>
       </form>
     </div>

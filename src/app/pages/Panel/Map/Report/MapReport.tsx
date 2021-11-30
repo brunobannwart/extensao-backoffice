@@ -17,13 +17,20 @@ const initialValues: advancedFilterModels.MapAdvancedFilter = {
   distance: 0,
 };
 
+const geoPositionInitialValues: models.GeoPosition = {
+  latitude: DEFAULT_LATITUDE,
+  longitude: DEFAULT_LONGITUDE,
+};
+
 const MapReport: React.FC = () => {
   const dispatch = useDispatch();
   const [advancedFilters, setAdvancedFilters] = useState(initialValues);
+  const [currentPosition, setCurrentPosition] = useState(geoPositionInitialValues);
   const { map } = useReduxState();
 
   const onSearch = (filters: advancedFilterModels.MapAdvancedFilter) => {
     dispatch(MapActions.getMapMarkers(filters));
+    setCurrentPosition({ latitude: filters.latitude, longitude: filters.longitude });
   };
 
   useEffect(() => {
@@ -32,10 +39,12 @@ const MapReport: React.FC = () => {
         const { latitude, longitude } = position.coords;
 
         setAdvancedFilters({ 
-          ...advancedFilters, 
+          ...advancedFilters,
           latitude, 
-          longitude
+          longitude,
         });
+
+        setCurrentPosition({ latitude, longitude });
       },
       (_ignored) => {
         //
@@ -55,10 +64,6 @@ const MapReport: React.FC = () => {
       <div className="map__advanced-filters">
         <AdvancedFilters
           onFilter={() => onSearch(advancedFilters)}
-          onClear={() => {
-            setAdvancedFilters(initialValues);
-            onSearch(initialValues);
-          }}
           cols={[3, 3, 3]}
           fields={[
             {
@@ -115,14 +120,18 @@ const MapReport: React.FC = () => {
       </div>
       <div className="map__markers">
         <AdvancedMap
-          latitude={advancedFilters.latitude}
-          longitude={advancedFilters.longitude}
+          latitude={currentPosition.latitude}
+          longitude={currentPosition.longitude}
           markers={map.markers}
-          onChange={(val: models.Location) => {
+          onChange={(val: models.GeoPosition) => {
             setAdvancedFilters({
               ...advancedFilters,
               ...val,
             });
+            onSearch({
+              ...advancedFilters,
+              ...val,
+            })
           }}
         />
       </div>
