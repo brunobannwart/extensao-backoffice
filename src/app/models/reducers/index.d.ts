@@ -18,6 +18,7 @@ type rootReducer = {
   occurrence: OccurrenceReducer;
   profile: ProfileReducer;
   kpi: KpiReducer;
+  map: MapReducer;
 };
 
 type UserReducer = {
@@ -36,7 +37,6 @@ type OccurrenceReducer = {
   list: models.Occurrence[];
   listCount: number;
   detail: models.Occurrence | null;
-  markers: models.Occurrence[];
 }
 
 type ProfileReducer = {
@@ -47,4 +47,8 @@ type ProfileReducer = {
 
 type KpiReducer = {
   list: models.KPI[];
+}
+
+type MapReducer = {
+  markers: models.Occurrence[];
 }
