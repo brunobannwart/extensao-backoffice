@@ -1,0 +1,18 @@
+[
+    {
+      "number": 135,
+      "description": "users"
+    },
+    {
+      "number": 5323,
+      "description": "reports"
+    },
+    {
+      "number": 53,
+      "description": "reports_last_24"
+    },
+    {
+      "number": 5,
+      "description": "reports_last_hour"
+    }
+]
