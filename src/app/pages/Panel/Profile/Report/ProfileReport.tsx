@@ -7,12 +7,10 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import * as ProfileActions from '~/actions/profile';
-import AdvancedFilters from '~/components/AdvancedFilters/AdvancedFilters';
 import AdvancedButton from '~/components/AdvancedButton/AdvancedButton';
 import DataTable from '~/components/DataTable/DataTable';
 import DataTableActions from '~/components/DataTableActions/DataTableActions';
 import PanelContentHeader from '~/components/PanelContentHeader/PanelContentHeader';
-import PanelContentSearchBar from '~/components/PanelContentSearchBar/PanelContentSearchBar';
 
 import { REPORT_PAGE_SIZE } from '~/config/env';
 import { translate } from '~/services/i18n';
@@ -63,36 +61,6 @@ const ProfileReport: React.FC = () => {
 
   return (
     <div className="profile">
-      <div className="profile__advanced-filters">
-        <PanelContentSearchBar
-          advancedFilter={
-            <AdvancedFilters
-              onFilter={() => onSearch(advancedFilters)}
-              onClear={() => {
-                setAdvancedFilters(initialValues);
-                onSearch(initialValues);
-              }}
-              cols={[3, 3, 3]}
-              fields={[
-                {
-                  label: translate(
-                    'PAGES.PANEL.PROFILE.REPORT.ADVANCED_FILTER.TITLE'
-                  ),
-                  onChange: (profileName: string) => {
-                    setAdvancedFilters({
-                      ...advancedFilters,
-                      profileName,
-                    });
-                  },
-                  type: 'input',
-                  value: advancedFilters.profileName,
-                },
-              ]}
-            />
-          }
-        />
-      </div>
-
       <div className="profile__panel-content">
         <Row>
           <Col lg={6}>

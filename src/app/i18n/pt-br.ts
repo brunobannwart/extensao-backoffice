@@ -405,6 +405,7 @@ const ptBr = {
           ADVANCED_FILTER: {
             NAME: 'Nome',
             EMAIL: 'E-mail',
+            ROLE:  'Papéis'
           },
 
           TABLE: {
@@ -739,6 +740,7 @@ const ptBr = {
     SCHEDULED: 'Agendado',
     CANCELED: 'Cancelado',
     ROLES: {
+      NONE: 'Nenhum',
       ADMIN: 'Administrador',
       WEB: 'Web',
       APP: 'Aplicativo',

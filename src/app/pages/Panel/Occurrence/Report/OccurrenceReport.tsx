@@ -5,11 +5,9 @@ import { Col, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 
 import * as OccurrenceActions from '~/actions/occurrence';
-import AdvancedFilters from '~/components/AdvancedFilters/AdvancedFilters';
 import DataTable from '~/components/DataTable/DataTable';
 import DataTableActions from '~/components/DataTableActions/DataTableActions';
 import PanelContentHeader from '~/components/PanelContentHeader/PanelContentHeader';
-import PanelContentSearchBar from '~/components/PanelContentSearchBar/PanelContentSearchBar';
 
 import { REPORT_PAGE_SIZE } from '~/config/env';
 import { translate } from '~/services/i18n';
@@ -61,62 +59,6 @@ const OccurrenceReport: React.FC = () => {
 
   return (
     <div className="occurrence">
-      <div className="occurrence__advanced-filters">
-        <PanelContentSearchBar
-          advancedFilter={
-            <AdvancedFilters
-              onFilter={() => onSearch(advancedFilters)}
-              onClear={() => {
-                setAdvancedFilters(initialValues);
-                onSearch(initialValues);
-              }}
-              cols={[3, 3, 3]}
-              fields={[
-                {
-                  label: translate(
-                    'PAGES.PANEL.OCCURRENCE.REPORT.ADVANCED_FILTER.CATEGORY'
-                  ),
-                  onChange: (category: string) => {
-                    setAdvancedFilters({
-                      ...advancedFilters,
-                      category,
-                    });
-                  },
-                  type: 'input',
-                  value: advancedFilters.category,
-                },
-                {
-                  label: translate(
-                    'PAGES.PANEL.OCCURRENCE.REPORT.ADVANCED_FILTER.PROBLEM_TYPE'
-                  ),
-                  onChange: (problemType: string) => {
-                    setAdvancedFilters({
-                      ...advancedFilters,
-                      problemType,
-                    });
-                  },
-                  type: 'input',
-                  value: advancedFilters.problemType,
-                },
-                {
-                  label: translate(
-                    'PAGES.PANEL.OCCURRENCE.REPORT.ADVANCED_FILTER.PROFILE_TYPE'
-                  ),
-                  onChange: (profileType: string) => {
-                    setAdvancedFilters({
-                      ...advancedFilters,
-                      profileType,
-                    });
-                  },
-                  type: 'input',
-                  value: advancedFilters.profileType,
-                },
-              ]}
-            />
-          }
-        />
-      </div>
-
       <div className="occurrence__panel-content">
         <Row>
           <Col lg={6}>
