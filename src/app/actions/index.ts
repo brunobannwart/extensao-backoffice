@@ -6,6 +6,7 @@ import * as CategoryActions from './category';
 import * as OccurrenceActions from './occurrence';
 import * as ProfileActions from './profile';
 import * as KpiActions from './kpi';
+import * as MapActions from './map';
 
 export {
   LoadingActions,
@@ -16,4 +17,5 @@ export {
   OccurrenceActions,
   ProfileActions,
   KpiActions,
+  MapActions,
 };

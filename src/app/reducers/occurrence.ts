@@ -1,14 +1,12 @@
 import {
   OCCURRENCE_DETAIL,
   OCCURRENCE_REPORT,
-  OCCURRENCE_MARKERS,
 } from '~/actions/actionTypes';
 
 const initialState: reducers.OccurrenceReducer = {
   detail: null,
   list: [],
   listCount: 0,
-  markers: [],
 };
 
 const occurrenceReducer = (
@@ -28,13 +26,6 @@ const occurrenceReducer = (
         ...state,
         list: action.payload.rows,
         listCount: action.payload.totalElements,
-      };
-      break;
-
-    case OCCURRENCE_MARKERS:
-      state = {
-        ...state,
-        markers: action.payload,
       };
       break;
 

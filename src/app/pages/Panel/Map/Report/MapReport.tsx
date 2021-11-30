@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 
-import * as OccurrenceActions from '~/actions/occurrence';
+import * as MapActions from '~/actions/map';
+import AdvancedFilters from '~/components/AdvancedFilters/AdvancedFilters';
 import AdvancedMap from '~/components/AdvancedMap/AdvancedMap';
 import PanelContentHeader from '~/components/PanelContentHeader/PanelContentHeader';
 
@@ -13,15 +14,22 @@ import { useReduxState } from '~/hooks/useReduxState';
 const initialValues: advancedFilterModels.MapAdvancedFilter = {
   latitude: DEFAULT_LATITUDE,
   longitude: DEFAULT_LONGITUDE,
+  distance: 0,
+};
+
+const initialPosition: models.Location = {
+  latitude: DEFAULT_LATITUDE,
+  longitude: DEFAULT_LONGITUDE,
 };
 
 const MapReport: React.FC = () => {
   const dispatch = useDispatch();
-  const [location, setLocation] = useState(initialValues);
-  const { occurrence } = useReduxState();
+  const [advancedFilters, setAdvancedFilters] = useState(initialValues);
+  const [position, setPosition] = useState(initialPosition);
+  const { map } = useReduxState();
 
-  const onSearch = () => {
-    dispatch(OccurrenceActions.getOccurrenceMarkers());
+  const onSearch = (filters: advancedFilterModels.MapAdvancedFilter) => {
+    dispatch(MapActions.getMapMarkers(filters));
   };
 
   useEffect(() => {
@@ -29,10 +37,16 @@ const MapReport: React.FC = () => {
       (position) => {
         const { latitude, longitude } = position.coords;
 
-        setLocation({ latitude, longitude });
+        setAdvancedFilters({ 
+          ...advancedFilters, 
+          latitude, 
+          longitude
+        });
+
+        setPosition({ latitude, longitude });
       },
-      (err) => {
-        setLocation({ latitude: DEFAULT_LATITUDE, longitude: DEFAULT_LONGITUDE });
+      (_ignored) => {
+        //
       },
       { timeout: 30000 },
     );
@@ -40,12 +54,67 @@ const MapReport: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    onSearch();
+    onSearch(advancedFilters);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="map">
+      <div className="map__advanced-filters">
+        <AdvancedFilters
+          onFilter={() => onSearch(advancedFilters)}
+          onClear={() => {
+            setAdvancedFilters({
+              ...advancedFilters,
+              ...position
+            });
+            onSearch(initialValues);
+          }}
+          cols={[3, 3, 3]}
+          fields={[
+            {
+              label: translate(
+                'PAGES.PANEL.MAP.REPORT.ADVANCED_FILTER.LATITUDE'
+              ),
+              onChange: (latitude: number) => {
+                setAdvancedFilters({
+                 ...advancedFilters,
+                  latitude,
+                });
+              },
+              type: 'input',
+              value: advancedFilters.latitude,
+            },
+            {
+              label: translate(
+                'PAGES.PANEL.MAP.REPORT.ADVANCED_FILTER.LONGITUDE'
+              ),
+              onChange: (longitude: number) => {
+                setAdvancedFilters({
+                 ...advancedFilters,
+                 longitude,
+                });
+              },
+              type: 'input',
+              value: advancedFilters.longitude,
+            },
+            {
+              label: translate(
+                'PAGES.PANEL.MAP.REPORT.ADVANCED_FILTER.DISTANCE'
+              ),
+              onChange: (distance: number) => {
+                setAdvancedFilters({
+                 ...advancedFilters,
+                 distance,
+                });
+              },
+              type: 'input',
+              value: advancedFilters.distance,
+            },
+          ]}
+        />
+      </div>
+
       <div className="map__panel-content">
         <Row>
           <Col lg={6}>
@@ -57,9 +126,15 @@ const MapReport: React.FC = () => {
       </div>
       <div className="map__markers">
         <AdvancedMap
-          latitude={location.latitude}
-          longitude={location.longitude}
-          markers={occurrence.markers}
+          latitude={advancedFilters.latitude}
+          longitude={advancedFilters.longitude}
+          markers={map.markers}
+          onChange={(location: models.Location) => {
+            setAdvancedFilters({
+              ...advancedFilters,
+              ...location,
+            });
+          }}
         />
       </div>
     </div>
