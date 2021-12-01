@@ -17,20 +17,20 @@ const initialValues: advancedFilterModels.MapAdvancedFilter = {
   distance: 0,
 };
 
-const geoPositionInitialValues: models.GeoPosition = {
+const viewportInitialValues: models.Viewport = {
   latitude: DEFAULT_LATITUDE,
   longitude: DEFAULT_LONGITUDE,
+  zoom: 20,
 };
 
 const MapReport: React.FC = () => {
   const dispatch = useDispatch();
   const [advancedFilters, setAdvancedFilters] = useState(initialValues);
-  const [currentPosition, setCurrentPosition] = useState(geoPositionInitialValues);
+  const [viewport, setViewport] = useState(viewportInitialValues);
   const { map } = useReduxState();
 
   const onSearch = (filters: advancedFilterModels.MapAdvancedFilter) => {
     dispatch(MapActions.getMapMarkers(filters));
-    setCurrentPosition({ latitude: filters.latitude, longitude: filters.longitude });
   };
 
   useEffect(() => {
@@ -38,13 +38,20 @@ const MapReport: React.FC = () => {
       (position) => {
         const { latitude, longitude } = position.coords;
 
+        const coordinates = {
+          latitude,
+          longitude,
+        };
+
         setAdvancedFilters({ 
           ...advancedFilters,
-          latitude, 
-          longitude,
+          ...coordinates,
         });
 
-        setCurrentPosition({ latitude, longitude });
+        setViewport({
+          ...viewport,
+          ...coordinates,
+        });
       },
       (_ignored) => {
         //
@@ -63,7 +70,14 @@ const MapReport: React.FC = () => {
     <div className="map">
       <div className="map__advanced-filters">
         <AdvancedFilters
-          onFilter={() => onSearch(advancedFilters)}
+          onFilter={() => {
+            onSearch(advancedFilters);
+            setViewport({
+              ...viewport,
+              latitude: advancedFilters.latitude,
+              longitude: advancedFilters.longitude,
+            });
+          }}
           cols={[3, 3, 3]}
           fields={[
             {
@@ -120,18 +134,17 @@ const MapReport: React.FC = () => {
       </div>
       <div className="map__markers">
         <AdvancedMap
-          latitude={currentPosition.latitude}
-          longitude={currentPosition.longitude}
+          latitude={viewport.latitude}
+          longitude={viewport.longitude}
+          zoom={viewport.zoom}
           markers={map.markers}
-          onChange={(val: models.GeoPosition) => {
+          onChange={(val: models.Viewport) => {
             setAdvancedFilters({
               ...advancedFilters,
-              ...val,
+              latitude: val.latitude,
+              longitude: val.longitude,
             });
-            onSearch({
-              ...advancedFilters,
-              ...val,
-            })
+            setViewport(val);
           }}
         />
       </div>
