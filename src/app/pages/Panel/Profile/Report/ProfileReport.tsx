@@ -95,6 +95,11 @@ const ProfileReport: React.FC = () => {
                   headerName: translate('PAGES.PANEL.PROFILE.REPORT.TABLE.TITLE.HEADER'),
                 },
                 {
+                  field: translate('PAGES.PANEL.PROFILE.REPORT.TABLE.AUTHOR.FIELD'),
+                  flex: 1,
+                  headerName: translate('PAGES.PANEL.PROFILE.REPORT.TABLE.AUTHOR.HEADER'),
+                },
+                {
                   field: translate('PAGES.PANEL.PROFILE.REPORT.TABLE.CREATED.FIELD'),
                   flex: 1,
                   headerName: translate('PAGES.PANEL.PROFILE.REPORT.TABLE.CREATED.HEADER'),

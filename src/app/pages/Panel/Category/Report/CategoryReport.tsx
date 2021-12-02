@@ -95,6 +95,18 @@ const CategoryReport: React.FC = () => {
                   headerName: translate('PAGES.PANEL.CATEGORY.REPORT.TABLE.TITLE.HEADER'),
                 },
                 {
+                  field: translate('PAGES.PANEL.CATEGORY.REPORT.TABLE.SUB_CATEGORIES.FIELD'),
+                  flex: 1,
+                  headerName: translate('PAGES.PANEL.CATEGORY.REPORT.TABLE.SUB_CATEGORIES.HEADER'),
+                  renderCell: (o: GridCellParams) => {
+                    return (
+                      <>
+                        {(o.value as string[]).join(', ')}
+                      </>
+                    );
+                  },
+                },
+                {
                   field: translate('PAGES.PANEL.CATEGORY.REPORT.TABLE.CREATED.FIELD'),
                   flex: 1,
                   headerName: translate('PAGES.PANEL.CATEGORY.REPORT.TABLE.CREATED.HEADER'),

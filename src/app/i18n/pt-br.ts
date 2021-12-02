@@ -259,6 +259,10 @@ const ptBr = {
               FIELD: 'categoryName',
               HEADER: 'Título',
             },
+            SUB_CATEGORIES: {
+              FIELD: 'subCategories',
+              HEADER: 'Subcategories',
+            },
             CREATED: {
               FIELD: 'createdAt',
               HEADER: 'Data de cadastro',
@@ -501,7 +505,7 @@ const ptBr = {
           ADVANCED_FILTER: {
             LONGITUDE: 'Longitude',
             LATITUDE: 'Latitude',
-            DISTANCE: 'Distância',
+            DISTANCE: 'Distância em quilômetros',
           },
         },
       },
@@ -617,6 +621,10 @@ const ptBr = {
             TITLE: {
               FIELD: 'profileName',
               HEADER: 'Título',
+            },
+            AUTHOR: {
+              FIELD: 'author',
+              HEADER: 'Criador',
             },
             CREATED: {
               FIELD: 'createdAt',

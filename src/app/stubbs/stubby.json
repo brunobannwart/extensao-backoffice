@@ -106,7 +106,7 @@
   },
   {
     "request": {
-      "url": "^/v1/reports-markers$",
+      "url": "^/v1/map$",
       "query": {},
       "post": null,
       "method": "GET"
@@ -117,7 +117,7 @@
         "Content-Type": "application/json",
         "Acess-Control-Allow-Origin": "*"
       },
-      "file": "data/reports-markers.json"
+      "file": "data/reports-map.json"
     }
   },
   {
