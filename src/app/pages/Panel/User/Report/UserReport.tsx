@@ -57,7 +57,10 @@ const UserReport: React.FC = () => {
   }, [auth]);
 
   const onSearch = (filters: advancedFilterModels.UserAdvancedFilter) => {
-    dispatch(UserActions.getUserReport(filters));
+    dispatch(UserActions.getUserReport({
+      ...filters,
+      roles: filters.roles && filters.roles !== '' ? filters.roles : undefined,
+    }));
   };
 
   const onRemove = async (id: string) => {
