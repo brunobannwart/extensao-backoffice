@@ -1,4 +1,4 @@
-import LuxonUtils from '@date-io/luxon';
+import DateFnsUtils from '@date-io/date-fns';
 import { ThemeProvider } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
@@ -60,7 +60,7 @@ ReactDOM.render(
     <Provider store={store}>
       <HelmetProvider>
         <ThemeProvider theme={theme}>
-          <MuiPickersUtilsProvider utils={LuxonUtils} locale={localeMap}>
+          <MuiPickersUtilsProvider utils={DateFnsUtils} locale={localeMap}>
             <App />
           </MuiPickersUtilsProvider>
         </ThemeProvider>

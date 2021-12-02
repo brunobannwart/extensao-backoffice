@@ -20,3 +20,4 @@ export const PROFILE_DETAIL= 'PROFILE_DETAIL';
 
 export const KPI_REPORT = 'KPI_REPORT';
 export const MAP_MARKERS = 'MAP_MARKERS';
+export const EXPORT_CSV = 'EXPORT_CSV';
