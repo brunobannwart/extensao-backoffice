@@ -14,6 +14,7 @@ import MapNavigationStack from '~/pages/Panel/Map/MapNavigationStack';
 import ProfileNavigationStack from '~/pages/Panel/Profile/ProfileNavigationStack';
 import ChangePasswordNavigationStack from '@portal/pages/Panel/ChangePassword/ChangePasswordNavigationStack';
 import UserNavigationStack from '~/pages/Panel/User/UserNavigationStack';
+import ExportNavigationStack from '~/pages/Panel/Export/ExportNavigationStack';
 
 const PanelNavigationStack: React.FC = () => {
   const loggedUser = useSelector(
@@ -36,6 +37,10 @@ const PanelNavigationStack: React.FC = () => {
 
           <Route path={getStackPath('USER')}>
             <UserNavigationStack />
+          </Route>
+
+          <Route path={getStackPath('EXPORT')}>
+            <ExportNavigationStack />
           </Route>
 
           <Route path={getStackPath('TRACKING')}>
