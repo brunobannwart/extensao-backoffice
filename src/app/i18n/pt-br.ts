@@ -9,6 +9,7 @@ const ptBr = {
         REFRESH_TOKEN: 'Token expirado. Faça Login novamente!',
         LOGIN: 'Faça Login novamente!',
       },
+      TIMEOUT: 'Verifique sua conexão. Tente novamente mais tarde.',
     },
     LANG: 'pt-BR',
   },

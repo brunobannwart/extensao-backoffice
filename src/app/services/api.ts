@@ -17,6 +17,9 @@ export const handleAxiosError = (err: AxiosError) => {
   if (err.response && err.response.status === 401) {
     throw new Error(err.response.data.error);
   }
+  if (err.code && err.code === 'ECONNABORTED') {
+    throw new Error('TIMEOUT');
+  }
   const error: IApiError = {
     data: err.config && err.config.data,
     headers: err.config && err.config.headers,
