@@ -273,5 +273,21 @@
       },
       "file": "data/category-details.json"
     }
+  },
+  {
+    "request": {
+      "url": "^/v1/kpis",
+      "query": {},
+      "post": null,
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Acess-Control-Allow-Origin": "*"
+      },
+      "file": "data/kpis.json"
+    }
   }
 ]
