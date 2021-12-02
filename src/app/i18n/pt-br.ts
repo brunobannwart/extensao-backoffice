@@ -137,7 +137,10 @@ const ptBr = {
           PAGE_DESCRIPTION: 'Visualize alguns dos principais indicadores',
 
           CARD: {
-            OCCURRENCE: 'Ocorrências',
+            USERS: 'Usuários',
+            REPORTS: 'Ocorrências',
+            REPORTS_LAST_HOUR: 'Ocorrências na última hora',
+            REPORTS_LAST_24: 'Ocorrências nas últimas 24 horas',
           }
         },
       },
