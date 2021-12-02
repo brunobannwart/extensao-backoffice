@@ -501,7 +501,7 @@ const ptBr = {
           ADVANCED_FILTER: {
             LONGITUDE: 'Longitude',
             LATITUDE: 'Latitude',
-            DISTANCE: 'Distância',
+            DISTANCE: 'Distância em quilômetros',
           },
         },
       },
