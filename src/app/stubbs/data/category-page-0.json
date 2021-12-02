@@ -7,7 +7,7 @@
         {
             "id": "1",
             "categoryName": "Cidade",
-            "createdAt": "Sun Nov 21 20:17:53 BRT 2021",
+            "createdAt": "2021-12-02T01:20Z",
             "updateAt": null,
             "author": "Pedro Banwart",
             "subCategories": [
@@ -18,7 +18,7 @@
         {
             "id": "2",
             "categoryName": "Comunidade",
-            "createdAt": "Sun Nov 28 21:17:53 BRT 2021",
+            "createdAt": "2021-11-10T11:20Z",
             "updateAt": null,
             "author": "Bruno Angelo",
             "subCategories": [
