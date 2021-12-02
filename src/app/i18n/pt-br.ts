@@ -261,7 +261,7 @@ const ptBr = {
             },
             SUB_CATEGORIES: {
               FIELD: 'subCategories',
-              HEADER: 'Subcategories',
+              HEADER: 'Subcategorias',
             },
             CREATED: {
               FIELD: 'createdAt',
