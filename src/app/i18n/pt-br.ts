@@ -618,6 +618,10 @@ const ptBr = {
               FIELD: 'profileName',
               HEADER: 'Título',
             },
+            AUTHOR: {
+              FIELD: 'author',
+              HEADER: 'Criador',
+            },
             CREATED: {
               FIELD: 'createdAt',
               HEADER: 'Data de cadastro',
