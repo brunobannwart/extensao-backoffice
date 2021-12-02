@@ -11,8 +11,9 @@
             "updateAt": null,
             "author": "Pedro Banwart",
             "subCategories": [
-                "Buraco",
-                "Falta de Energia"
+                "Falta de Energia",
+                "Tempestade",
+                "Manifestação"
             ]
         },
         {
@@ -22,8 +23,9 @@
             "updateAt": null,
             "author": "Bruno Angelo",
             "subCategories": [
-                "Buraco",
-                "Assalto"
+                "Lixo",
+                "Assalto",
+                "Enchente"
             ]
         }
     ]
