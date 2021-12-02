@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
-import ReactMapboxGl, { Marker, Popup } from 'react-mapbox-gl';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { MAPBOX_API_KEY } from '~/config/env';
 import IconMarker from '~/assets/svg/ic_marker.svg';
 
-const MapContainer = ReactMapboxGl({ accessToken: MAPBOX_API_KEY });
-
 interface IAdvancedMapProps {
   latitude: number,
   longitude: number,
+  zoom: number,
   markers: models.Occurrence[],
-  onChange: (val: models.GeoPosition) => void,
+  onChange: (val: models.Viewport) => void,
 }
 
 const AdvancedMap: React.FC<IAdvancedMapProps> = ({ 
   latitude, 
-  longitude, 
+  longitude,
+  zoom, 
   markers,
   onChange,
 }: IAdvancedMapProps) => {
@@ -23,29 +23,27 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
 
   return (
     <div className="advanced-map">
-      <MapContainer
-        center={[longitude, latitude]}
-        style={'mapbox://styles/mapbox/streets-v9'}
-        containerStyle={{ height: '100%', width: '100%' }}
+      <ReactMapGL
+        latitude={latitude}
+        longitude={longitude}
+        zoom={zoom}
+        pitch={0}
+        bearing={0}
+        height='100%'
+        width='100%'
+        mapStyle={'mapbox://styles/mapbox/streets-v9'}
+        mapboxApiAccessToken={MAPBOX_API_KEY}
+        onViewportChange={(viewport: any) => onChange(viewport)}
       >
-        <>
-          {markers
-            .filter(o => o.longitude && o.latitude)
-            .map(o => (
-              <Marker
-                key={o.id}
-                coordinates={[
-                  Number(o.longitude),
-                  Number(o.latitude),
-                ]}
-                onClick={() => {
-                  setSelected(o);
-                  onChange({
-                    latitude: Number(o.latitude),
-                    longitude: Number(o.longitude),
-                  });
-                }}
-              >
+        {markers
+          .filter(o => o.longitude && o.latitude)
+          .map(o => (
+            <Marker
+              key={o.id}
+              latitude={Number(o.latitude)}
+              longitude={Number(o.longitude)}
+              onClick={() => setSelected(o)}
+            >
                 <img 
                   style={{ 
                     width: '20px', 
@@ -62,10 +60,8 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
           {selected && (
             <Popup
               key={`popup-${selected.id}`}
-              coordinates={[
-                Number(selected.longitude),
-                Number(selected.latitude),
-              ]}
+              latitude={Number(selected.latitude)}
+              longitude={Number(selected.longitude)}
               onClick={() => setSelected(null)}
             >
               <div className="advanced-map__marker">
@@ -78,8 +74,7 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
               </div>
             </Popup>
           )}
-        </>
-      </MapContainer>
+      </ReactMapGL>
     </div>
   );
 };
