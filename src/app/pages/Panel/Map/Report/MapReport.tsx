@@ -14,13 +14,13 @@ import { useReduxState } from '~/hooks/useReduxState';
 const initialValues: advancedFilterModels.MapAdvancedFilter = {
   latitude: DEFAULT_LATITUDE,
   longitude: DEFAULT_LONGITUDE,
-  distance: 0,
+  distance: 1000,
 };
 
 const viewportInitialValues: models.Viewport = {
   latitude: DEFAULT_LATITUDE,
   longitude: DEFAULT_LONGITUDE,
-  zoom: 20,
+  zoom: 10,
 };
 
 const MapReport: React.FC = () => {
