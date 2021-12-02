@@ -67,7 +67,7 @@
     "react-ga": "^3.3.0",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^1.0.9",
-    "react-mapbox-gl": "^5.1.1",
+    "react-map-gl": "^6.1.17",
     "react-redux": "^7.2.3",
     "react-redux-i18n": "^1.9.3",
     "react-router-dom": "^5.2.0",
