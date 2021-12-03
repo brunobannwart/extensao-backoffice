@@ -530,6 +530,10 @@ const ptBr = {
             PROFILE_TYPE: 'Perfil',
           },
 
+          EXPORT: {
+            LABEL: 'Exportar relatórios'
+          },
+
           TABLE: {
             CATEGORY: {
               FIELD: 'category',
@@ -707,50 +711,6 @@ const ptBr = {
             },
             SUBMIT: {
               LABEL: 'Salvar',
-            },
-          },
-        },
-      },
-
-      EXPORT_CSV: {
-        ROUTE: {
-          NAME: 'EXPORTAR CSV',
-          REPORT: 'RELATÓRIO',
-          REGISTER: 'REGISTRO',
-          DETAILS: '/exportar/relatorio-csv',
-        },
-        TITLE: 'EXPORTAR CSV',
-        REPORT: {
-          TITLE: 'Exportar relatório',
-          PAGE_TITLE: 'Exportar relatório',
-          PAGE_DESCRIPTION: 'Formulário de exportar relatório (csv)',
-        },
-
-        DETAILS: {
-          UNDEFINED: 'Não definido',
-          TITLE: 'Alterar senha',
-          DESCRIPTION_ADD: 'Preencha os campos abaixo para exportar relatório (csv)',
-          SUCCESS_MESSAGE: 'Relatório exportado com sucesso!',
-          FORM: {
-            ERROR: {
-              START: 'Preencha o período inicial!',
-              END: 'Preencha o período final!',
-            },
-            TITLE: 'Exportar relatório',
-            PERIOD: {
-              LABEL: 'Período',
-            },
-            START: {
-              LABEL: 'Ínicio',
-            },
-            END: {
-              LABEL: 'Fim'
-            },
-            DOWNLOAD: {
-              LABEL: 'Baixar relatório',
-            },
-            SUBMIT: {
-              LABEL: 'Criar relatório',
             },
           },
         },

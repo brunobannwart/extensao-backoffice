@@ -4,15 +4,16 @@
 
   &__marker {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     cursor: pointer;
 
     &__photo {
       display: flex;
       flex-direction: column;
+      width: 100%;
 
       img {
-        width: 50px;
+        width: 100%;
         height: 50px;
       }
     }
@@ -20,11 +21,18 @@
     &__info {
       display: flex;
       flex-direction: column;
+      width: 100%;
 
       h1, h2, h3, h4, h5 {
         text-transform: uppercase;
         margin-bottom: 3px !important;
       }
+    }
+
+    &__audio {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
   }
 }

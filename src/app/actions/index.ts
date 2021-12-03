@@ -7,7 +7,6 @@ import * as OccurrenceActions from './occurrence';
 import * as ProfileActions from './profile';
 import * as KpiActions from './kpi';
 import * as MapActions from './map';
-import * as ExportActions from './export';
 
 export {
   LoadingActions,
@@ -19,5 +18,4 @@ export {
   ProfileActions,
   KpiActions,
   MapActions,
-  ExportActions,
 };

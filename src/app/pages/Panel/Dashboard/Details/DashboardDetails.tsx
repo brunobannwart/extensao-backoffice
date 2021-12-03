@@ -39,7 +39,7 @@ const DashboardDetails: React.FC = () => {
               <Col md={9} className="panel-dashboard__kpi--inner">
                 <KPICard
                   number={o.number || 0}
-                  description={translate(`PAGES.PANEL.DASHOBARD.DETAILS.CARD.${o.description.toUpperCase()}`)}
+                  description={translate(`PAGES.PANEL.DASHBOARD.DETAILS.CARD.${o.description.toUpperCase()}`)}
                 />
               </Col>
             </Row>

@@ -3,6 +3,7 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { MAPBOX_API_KEY } from '~/config/env';
 import IconMarker from '~/assets/svg/ic_marker.svg';
+import AdvancedAudio from '~/components/AdvancedAudio/AdvancedAudio';
 
 interface IAdvancedMapProps {
   latitude: number,
@@ -44,36 +45,51 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
               longitude={Number(o.longitude)}
               onClick={() => setSelected(o)}
             >
-                <img 
-                  style={{ 
-                    width: '20px', 
-                    height: '20px',
-                    cursor: 'pointer', 
-                  }} 
-                  src={IconMarker} 
-                  alt=''
-                />
-              </Marker>
-            ))
-          }
+              <img 
+                style={{ 
+                  width: '20px', 
+                  height: '20px',
+                  cursor: 'pointer', 
+                }} 
+                src={IconMarker} 
+                alt=''
+              />
+            </Marker>
+          ))
+        }
 
-          {selected && (
-            <Popup
-              key={`popup-${selected.id}`}
-              latitude={Number(selected.latitude)}
-              longitude={Number(selected.longitude)}
-              onClick={() => setSelected(null)}
-            >
-              <div className="advanced-map__marker">
-                <div className="advanced-map__marker__info">
-                  <h2>{selected.category}</h2>
-                  <h4>{selected.problemType}</h4>
-                  <h4>{selected.profileType}</h4>
-                  <p>{selected.description}</p>
+        {selected && (
+          <Popup
+            key={`popup-${selected.id}`}
+            latitude={Number(selected.latitude)}
+            longitude={Number(selected.longitude)}
+            onClose={() => setSelected(null)}
+          >
+            <div className="advanced-map__marker">
+              {selected.photo && (
+                <div className="advanced-map__marker__photo">
+                  <img 
+                    src={selected.photo as string} 
+                    alt={selected.category as string} 
+                  />
                 </div>
+              )}
+              <div className="advanced-map__marker__info">
+                <h2>{selected.category}</h2>
+                <h4>{selected.problemType}</h4>
+                <h4>{selected.profileType}</h4>
+                <p>{selected.description}</p>
               </div>
-            </Popup>
-          )}
+              {selected.audio && (
+                <div className="advanced-map__marker__audio">
+                  <AdvancedAudio
+                    tracks={[{ source: selected.audio }]}
+                  />
+                </div>
+              )}
+            </div>
+          </Popup>
+        )}
       </ReactMapGL>
     </div>
   );

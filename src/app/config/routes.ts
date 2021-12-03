@@ -44,20 +44,6 @@ const routes: models.route[] = [
     ],
   },
   {
-    id: 'EXPORT',
-    name: 'Exportar',
-    route: '/exportar',
-    icon: '/assets/svg/panel-sidebar/ic_export.svg',
-    iconAlt: 'Exportar',
-    items: [
-      {
-        id: 'CSV',
-        name: 'Relatório (CSV)',
-        route: '/relatorio-csv',
-      },
-    ],
-  },
-  {
     id: 'TRACKING',
     name: 'Monitoramento',
     route: '/monitoramento',
