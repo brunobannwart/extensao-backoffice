@@ -1,3 +1,4 @@
+import { DownloadOutlined } from '@ant-design/icons';
 import { GridCellParams } from '@material-ui/data-grid';
 import { DateTime } from 'luxon';
 import React, { useEffect, useState } from 'react';
@@ -8,6 +9,7 @@ import * as OccurrenceActions from '~/actions/occurrence';
 import DataTable from '~/components/DataTable/DataTable';
 import DataTableActions from '~/components/DataTableActions/DataTableActions';
 import PanelContentHeader from '~/components/PanelContentHeader/PanelContentHeader';
+import AdvancedButton from '~/components/AdvancedButton/AdvancedButton';
 
 import { REPORT_PAGE_SIZE } from '~/config/env';
 import { translate } from '~/services/i18n';
@@ -67,6 +69,15 @@ const OccurrenceReport: React.FC = () => {
               pageDescription={translate(
                 'PAGES.PANEL.OCCURRENCE.REPORT.PAGE_DESCRIPTION'
               )}
+            />
+          </Col>
+          <Col lg={6}>
+            <AdvancedButton
+              type="button"
+              className="occurrence__advanced-button"
+              text={translate('PAGES.PANEL.OCCURRENCE.REPORT.EXPORT.LABEL')}
+              onClick={() => OccurrenceActions.exportOccurrence(advancedFilters)}
+              endIcon={<DownloadOutlined />}
             />
           </Col>
         </Row>

@@ -150,9 +150,3 @@ export type Viewport = {
   longitude: number;
   zoom: number;
 }
-
-export type ExportCSV = {
-  start: string;
-  end: string;
-  period?: Array<any>;
-}

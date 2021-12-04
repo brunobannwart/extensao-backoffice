@@ -3,7 +3,7 @@ import OccurrenceRequests from '~/repositories/occurrence';
 import * as MessageService from '~/services/message';
 import centralNavigationService from '~/services/navigation';
 
-import { OCCURRENCE_DETAIL, OCCURRENCE_REPORT } from './actionTypes';
+import { OCCURRENCE_DETAIL, OCCURRENCE_REPORT, OCCURRENCE_EXPORT } from './actionTypes';
 import { decreaseLoading, increaseLoading } from './loading';
 
 export const cleanOccurrenceDetail = () => async (dispatch: Dispatch) => {
@@ -11,6 +11,24 @@ export const cleanOccurrenceDetail = () => async (dispatch: Dispatch) => {
     payload: null,
     type: OCCURRENCE_DETAIL,
   });
+};
+
+export const exportOccurrence = (
+  searchParams: advancedFilterModels.OccurrenceAdvancedFilter
+) => async (dispatch: Dispatch) => {
+  increaseLoading();
+  try {
+    const payload: string = await OccurrenceRequests.export(searchParams);
+
+    dispatch({
+      type: OCCURRENCE_EXPORT,
+      payload,
+    });
+  } catch (err: any) {
+    MessageService.error(`APPLICATION.ERRORS.${err.message}`);
+  } finally {
+    dispatch(decreaseLoading());
+  }
 };
 
 export const getOccurrenceReport = (

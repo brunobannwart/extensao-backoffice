@@ -15,6 +15,13 @@ const OccurrenceApi = {
     return data;
   },
 
+  export: async (params: advancedFilterModels.OccurrenceAdvancedFilter) => {
+    const instance = await getInstance();
+    const { data } = await instance.get(`/v1/reports-csv`, { params });
+
+    return data;
+  },
+
   add: async (params: models.Occurrence) => {
     const instance = await getInstance();
     const { data } = await instance.post('/v1/reports', params);
