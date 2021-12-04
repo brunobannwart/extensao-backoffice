@@ -23,7 +23,7 @@ const AdvancedAudio = ({ tracks }: AdvancedAudioProps) => {
     : '0%';
 
   const style = `
-    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${percentage}, #FFF), color-stop(${percentage}, #777))
+    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${percentage}, #46eb7d), color-stop(${percentage}, #777))
   `;
 
   useEffect(() => {
