@@ -593,6 +593,12 @@ const ptBr = {
             LATITUDE: {
               LABEL: 'Latitude',
             },
+            AUDIO: {
+              LABEL: 'Áudio',
+            },
+            PHOTO: {
+              LABEL: 'Imagem',
+            },
             BACK: {
               LABEL: 'VOLTAR',
             },

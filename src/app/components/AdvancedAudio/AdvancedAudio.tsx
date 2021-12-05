@@ -33,6 +33,7 @@ const AdvancedAudio = ({ tracks }: AdvancedAudioProps) => {
     } else {
       audio.current.pause();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying]);
 
   useEffect(() => {
@@ -49,6 +50,7 @@ const AdvancedAudio = ({ tracks }: AdvancedAudioProps) => {
     } else {
       isReady.current = true;
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trackIndex]);
 
   useEffect(() => {

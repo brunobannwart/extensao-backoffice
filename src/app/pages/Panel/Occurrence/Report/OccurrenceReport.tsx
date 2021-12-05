@@ -129,7 +129,7 @@ const OccurrenceReport: React.FC = () => {
                         row={o.row}
                         basePath={translate('PAGES.PANEL.OCCURRENCE.ROUTE.DETAILS')}
                         onRemove={(id: string) => onRemove(id)}
-                        onDetail={(id: string) => dispatch(OccurrenceActions.getOccurrenceDetail(id))}
+                        onRead={(id: string) => dispatch(OccurrenceActions.getOccurrenceDetail(id))}
                       />
                     );
                   },
