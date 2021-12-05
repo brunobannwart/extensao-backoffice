@@ -8,6 +8,7 @@ export interface baseFilter {
   offset?: number | null;
   limit?: number | null;
   isDESC?: string | null;
+  isPaginated?: boolean;
 }
 
 export interface UserAdvancedFilter extends baseFilter {

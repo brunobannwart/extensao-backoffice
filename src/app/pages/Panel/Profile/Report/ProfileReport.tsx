@@ -24,6 +24,7 @@ const initialValues: advancedFilterModels.ProfileAdvancedFilter = {
   page: 0,
   pageSize: REPORT_PAGE_SIZE,
   sort: 'desc',
+  isPaginated: true,
 };
 
 const ProfileReport: React.FC = () => {
