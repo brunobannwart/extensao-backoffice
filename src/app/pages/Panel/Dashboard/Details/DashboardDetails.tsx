@@ -34,12 +34,12 @@ const DashboardDetails: React.FC = () => {
       </div>
       <div className="panel-dashboard__kpi">
         <div className="panel-dashboard__kpi__indicators">
-          {kpi.list.filter(o => o.number && o.description).map((o) => (
+          {kpi.list.filter(o => o.value && o.name).map((o) => (
             <Row>
               <Col md={9} className="panel-dashboard__kpi--inner">
                 <KPICard
-                  number={o.number || 0}
-                  description={translate(`PAGES.PANEL.DASHBOARD.DETAILS.CARD.${o.description.toUpperCase()}`)}
+                  number={o.value || 0}
+                  description={translate(`PAGES.PANEL.DASHBOARD.DETAILS.CARD.${o.name.toUpperCase()}`)}
                 />
               </Col>
             </Row>

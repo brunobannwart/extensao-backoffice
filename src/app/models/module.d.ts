@@ -141,8 +141,8 @@ export type ChangePassword = {
 }
 
 export type KPI = {
-  number: number;
-  description: string;
+  value: number;
+  name: string;
 }
 
 export type Viewport = {
