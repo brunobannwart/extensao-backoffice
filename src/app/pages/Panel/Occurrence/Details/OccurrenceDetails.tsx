@@ -10,6 +10,8 @@ import AdvancedButton from '~/components/AdvancedButton/AdvancedButton';
 import AdvancedForm from '~/components/AdvancedForm/AdvancedForm';
 import AdvancedInput from '~/components/AdvancedInput/AdvancedInput';
 import PanelContentBreadcrumb from '~/components/PanelContentBreadcrumb/PanelContentBreadcrumb';
+import AdvancedImage from '~/components/AdvancedImage/AdvancedImage';
+import AdvancedAudio from '@portal/components/AdvancedAudio/AdvancedAudio';
 
 import { translate } from '~/services/i18n';
 import { PAGE_TYPE } from '~/enum/page';
@@ -94,6 +96,7 @@ const OccurrenceDetails: React.FC = (props) => {
                     )}
                     value={form.category}
                     onChange={(val: string | null) => onFormChange('category', val)}
+                    disabled={true}
                   />
                   <AdvancedInput
                     label={translate(
@@ -101,6 +104,7 @@ const OccurrenceDetails: React.FC = (props) => {
                     )}
                     value={form.problemType}
                     onChange={(val: string | null) => onFormChange('problemType', val)}
+                    disabled={true}
                   />
                   <AdvancedInput
                     label={translate(
@@ -108,6 +112,8 @@ const OccurrenceDetails: React.FC = (props) => {
                     )}
                     value={form.description}
                     onChange={(val: string | null) => onFormChange('description', val)}
+                    disabled={true}
+                    multiline
                   />
                   <AdvancedInput
                     label={translate(
@@ -115,6 +121,7 @@ const OccurrenceDetails: React.FC = (props) => {
                     )}
                     value={form.longitude}
                     onChange={(val: string | null) => onFormChange('longitude', val)}
+                    disabled={true}
                   />
                   <AdvancedInput
                     label={translate(
@@ -122,7 +129,33 @@ const OccurrenceDetails: React.FC = (props) => {
                     )}
                     value={form.latitude}
                     onChange={(val: string | null) => onFormChange('latitude', val)}
+                    disabled={true}
                   />
+                </Col>
+                <Col md={4}>
+                  {form.photo && (
+                    <>
+                      <h3>
+                        {translate('PAGES.PANEL.OCCURRENCE.DETAILS.FORM.PHOTO.LABEL')}
+                      </h3>
+                      <AdvancedImage 
+                        src={form.photo} 
+                        alt={''} 
+                      />
+                    </>
+                  )}
+                  {form.audio && (
+                    <>
+                      <h3>
+                        {translate('PAGES.PANEL.OCCURRENCE.DETAILS.FORM.AUDIO.LABEL')}
+                      </h3>
+                      <AdvancedAudio 
+                        tracks={[{ 
+                          source: form.audio 
+                        }]}
+                      />
+                    </>
+                  )}
                 </Col>
               </Row>
 

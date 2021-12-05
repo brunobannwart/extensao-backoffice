@@ -593,6 +593,12 @@ const ptBr = {
             LATITUDE: {
               LABEL: 'Latitude',
             },
+            AUDIO: {
+              LABEL: 'Áudio',
+            },
+            PHOTO: {
+              LABEL: 'Imagem',
+            },
             BACK: {
               LABEL: 'VOLTAR',
             },
@@ -761,6 +767,7 @@ const ptBr = {
     PENDING: 'Pendente',
     SCHEDULED: 'Agendado',
     CANCELED: 'Cancelado',
+    NO_ALERTS: 'Nenhuma notificação',
     ROLES: {
       NONE: 'Nenhum',
       ADMIN: 'Administrador',

@@ -25,9 +25,9 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
   return (
     <div className="advanced-map">
       <ReactMapGL
-        latitude={latitude}
-        longitude={longitude}
-        zoom={zoom}
+        latitude={Number(latitude)}
+        longitude={Number(longitude)}
+        zoom={Number(zoom)}
         pitch={0}
         bearing={0}
         height='100%'
