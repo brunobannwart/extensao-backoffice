@@ -14,7 +14,7 @@ import { useReduxState } from '~/hooks/useReduxState';
 const initialValues: advancedFilterModels.MapAdvancedFilter = {
   latitude: DEFAULT_LATITUDE,
   longitude: DEFAULT_LONGITUDE,
-  distance: 1000,
+  range: 1000,
 };
 
 const viewportInitialValues: models.Viewport = {
@@ -87,7 +87,7 @@ const MapReport: React.FC = () => {
               onChange: (latitude: number) => {
                 setAdvancedFilters({
                  ...advancedFilters,
-                  latitude,
+                  latitude: Number(latitude),
                 });
               },
               type: 'input',
@@ -100,7 +100,7 @@ const MapReport: React.FC = () => {
               onChange: (longitude: number) => {
                 setAdvancedFilters({
                  ...advancedFilters,
-                 longitude,
+                 longitude: Number(longitude),
                 });
               },
               type: 'input',
@@ -110,14 +110,14 @@ const MapReport: React.FC = () => {
               label: translate(
                 'PAGES.PANEL.MAP.REPORT.ADVANCED_FILTER.DISTANCE'
               ),
-              onChange: (distance: number) => {
+              onChange: (range: number) => {
                 setAdvancedFilters({
                  ...advancedFilters,
-                 distance,
+                 range: Number(range),
                 });
               },
               type: 'input',
-              value: advancedFilters.distance,
+              value: advancedFilters.range,
             },
           ]}
         />
