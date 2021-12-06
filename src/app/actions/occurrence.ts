@@ -14,9 +14,9 @@ export const cleanOccurrenceDetail = () => async (dispatch: Dispatch) => {
 };
 
 export const exportOccurrence = (
-  searchParams: advancedFilterModels.OccurrenceAdvancedFilter
+  searchParams?: advancedFilterModels.OccurrenceAdvancedFilter
 ) => async (dispatch: Dispatch) => {
-  increaseLoading();
+  dispatch(increaseLoading());
   try {
     const payload: string = await OccurrenceRequests.export(searchParams);
 

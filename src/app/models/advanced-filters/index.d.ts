@@ -8,6 +8,7 @@ export interface baseFilter {
   offset?: number | null;
   limit?: number | null;
   isDESC?: string | null;
+  isPaginated?: boolean;
 }
 
 export interface UserAdvancedFilter extends baseFilter {
@@ -27,12 +28,14 @@ export interface OccurrenceAdvancedFilter extends baseFilter {
   category?: string | null;
   problemType?: string | null;
   profileType?: string | null;
+  from?: Date | string | null;
+  to?: Date | string | null;
 }
 
 export interface MapAdvancedFilter {
   latitude: number;
   longitude: number;
-  distance: number;
+  range: number;
 }
 
 export interface ProfileAdvancedFilter extends baseFilter {

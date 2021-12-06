@@ -20,6 +20,8 @@ const initialValues: advancedFilterModels.OccurrenceAdvancedFilter = {
   category: '',
   problemType: '',
   profileType: '',
+  from: '2021-01-01',
+  to: '2030-12-30',
   orderBy: 'createdAt',
   page: 0,
   pageSize: REPORT_PAGE_SIZE,
@@ -43,6 +45,18 @@ const OccurrenceReport: React.FC = () => {
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (occurrence.export) {
+      const file = document.createElement('a');
+      file.href = 'data:text/csv;charset=utf-8,'.concat(encodeURI(occurrence.export));
+
+      file.target = '_blank';
+      file.download = translate('PAGES.PANEL.OCCURRENCE.REPORT.EXPORT.FILENAME');
+      file.click();
+    }
+
+  }, [occurrence.export]);
 
   const onSearch = (filters: advancedFilterModels.OccurrenceAdvancedFilter) => {
     dispatch(OccurrenceActions.getOccurrenceReport(filters));
@@ -76,7 +90,7 @@ const OccurrenceReport: React.FC = () => {
               type="button"
               className="occurrence__advanced-button"
               text={translate('PAGES.PANEL.OCCURRENCE.REPORT.EXPORT.LABEL')}
-              onClick={() => OccurrenceActions.exportOccurrence(advancedFilters)}
+              onClick={() => dispatch(OccurrenceActions.exportOccurrence(advancedFilters))}
               endIcon={<DownloadOutlined />}
             />
           </Col>

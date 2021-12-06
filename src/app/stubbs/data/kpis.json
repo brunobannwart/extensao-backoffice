@@ -1,18 +1,6 @@
 [
-    {
-      "number": 135,
-      "description": "users"
-    },
-    {
-      "number": 5323,
-      "description": "reports"
-    },
-    {
-      "number": 53,
-      "description": "reports_last_24"
-    },
-    {
-      "number": 5,
-      "description": "reports_last_hour"
-    }
+  { "value": "12", "name": "users" },
+  { "value": "432", "name": "reports" },
+  { "value": "31", "name": "reports_last_24" },
+  { "value": "9", "name": "reports_last_hour" }
 ]
