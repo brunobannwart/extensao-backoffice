@@ -46,6 +46,21 @@ const OccurrenceReport: React.FC = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+
+    if(!occurrence.export) {
+      return;
+    }
+
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(occurrence.export!);
+    hiddenElement.target = '_blank';
+
+    //provide the name for the CSV file to be downloaded
+    hiddenElement.download = 'Famous Personalities.csv';
+    hiddenElement.click();
+  }, [occurrence.export]);
+
   const onSearch = (filters: advancedFilterModels.OccurrenceAdvancedFilter) => {
     dispatch(OccurrenceActions.getOccurrenceReport(filters));
   };
