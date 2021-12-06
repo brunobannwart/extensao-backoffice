@@ -15,7 +15,7 @@ const OccurrenceApi = {
     return data;
   },
 
-  export: async (params: advancedFilterModels.OccurrenceAdvancedFilter) => {
+  export: async (params?: advancedFilterModels.OccurrenceAdvancedFilter) => {
     const instance = await getInstance();
     const { data } = await instance.get(`/v1/reports-csv`, { params });
 

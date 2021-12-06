@@ -20,6 +20,8 @@ const initialValues: advancedFilterModels.OccurrenceAdvancedFilter = {
   category: '',
   problemType: '',
   profileType: '',
+  from: '2021-01-01',
+  to: '2030-12-30',
   orderBy: 'createdAt',
   page: 0,
   pageSize: REPORT_PAGE_SIZE,
@@ -76,7 +78,7 @@ const OccurrenceReport: React.FC = () => {
               type="button"
               className="occurrence__advanced-button"
               text={translate('PAGES.PANEL.OCCURRENCE.REPORT.EXPORT.LABEL')}
-              onClick={() => OccurrenceActions.exportOccurrence(advancedFilters)}
+              onClick={() => dispatch(OccurrenceActions.exportOccurrence(advancedFilters))}
               endIcon={<DownloadOutlined />}
             />
           </Col>

@@ -28,6 +28,8 @@ export interface OccurrenceAdvancedFilter extends baseFilter {
   category?: string | null;
   problemType?: string | null;
   profileType?: string | null;
+  from?: Date | string | null;
+  to?: Date | string | null;
 }
 
 export interface MapAdvancedFilter {
