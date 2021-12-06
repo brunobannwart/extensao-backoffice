@@ -47,7 +47,7 @@ const OccurrenceReport: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (occurrence.report) {
+    if (occurrence.export) {
       const file = document.createElement('a');
       file.href = 'data:text/csv;charset=utf-8,'.concat(encodeURI(occurrence.export));
 
