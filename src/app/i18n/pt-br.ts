@@ -531,7 +531,8 @@ const ptBr = {
           },
 
           EXPORT: {
-            LABEL: 'Exportar relatórios'
+            LABEL: 'Exportar relatórios',
+            FILENAME: 'Relatório de ocorrências.csv',
           },
 
           TABLE: {

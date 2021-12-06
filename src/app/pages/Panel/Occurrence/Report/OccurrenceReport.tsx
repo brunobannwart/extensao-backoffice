@@ -47,18 +47,15 @@ const OccurrenceReport: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    if (occurrence.report) {
+      const file = document.createElement('a');
+      file.href = 'data:text/csv;charset=utf-8,'.concat(encodeURI(occurrence.export));
 
-    if(!occurrence.export) {
-      return;
+      file.target = '_blank';
+      file.download = translate('PAGES.PANEL.OCCURRENCE.REPORT.EXPORT.FILENAME');
+      file.click();
     }
 
-    var hiddenElement = document.createElement('a');
-    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(occurrence.export!);
-    hiddenElement.target = '_blank';
-
-    //provide the name for the CSV file to be downloaded
-    hiddenElement.download = 'Famous Personalities.csv';
-    hiddenElement.click();
   }, [occurrence.export]);
 
   const onSearch = (filters: advancedFilterModels.OccurrenceAdvancedFilter) => {
