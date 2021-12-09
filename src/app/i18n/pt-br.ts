@@ -18,6 +18,18 @@ const ptBr = {
       FILTER: 'Filtrar',
       CLEAN: 'limpar',
     },
+    ADVANCED_EXPORT: {
+      EXPORT: 'Exportar',
+      PERIOD: {
+        LABEL: 'Período',
+      },
+      START: {
+        LABEL: 'Ínicio',
+      },
+      END: {
+        LABEL: 'Fim',
+      }
+    },
     SEARCH_BAR: {
       SEARCH: {
         LABEL: 'o que deseja procurar?',

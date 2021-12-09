@@ -150,3 +150,9 @@ export type Viewport = {
   longitude: number;
   zoom: number;
 }
+
+export type Export = {
+  start: string,
+  end: string,
+  period: string,
+}
