@@ -154,5 +154,5 @@ export type Viewport = {
 export type Export = {
   start: string,
   end: string,
-  period: string,
+  period: any[],
 }

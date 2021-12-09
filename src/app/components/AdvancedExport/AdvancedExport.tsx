@@ -13,7 +13,7 @@ interface IProps {
 const initialValues: models.Export = {
   start: '',
   end: '',
-  period: '',
+  period: [],
 }
 
 const AdvancedExport: React.FC<IProps> = ({ 
@@ -25,7 +25,7 @@ const AdvancedExport: React.FC<IProps> = ({
     setForm((prevState: models.Export) => ({ ...prevState, [key]: val }));
   };
 
-  const handlePeriodChange = (period: any) => {
+  const handlePeriodChange = (period: any[]) => {
     onFormChange('period', period);
     onFormChange('start', period[0].format('YYYY-MM-DD'));
     onFormChange('end', period[1].format('YYYY-MM-DD'));
