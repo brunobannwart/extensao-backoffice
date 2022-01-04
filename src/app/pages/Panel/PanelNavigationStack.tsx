@@ -1,11 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import PanelContentTopBar from '~/components/PanelContentTopBar/PanelContentTopBar';
 import PanelSidebar from '~/components/PanelSidebar/PanelSidebar';
-import { getRoutes, getStackPath } from '~/config/routes';
-import NotFound from '~/pages/Panel/NotFound/NotFound';
+import { getRoutes, getStackPath, getRouteStackPath } from '~/config/routes';
 
 import DashboardNavigationStack from '~/pages/Panel/Dashboard/DashboardNavigationStack';
 import CategoryNavigationStack from '~/pages/Panel/Category/CategoryNavigationStack';
@@ -49,9 +48,7 @@ const PanelNavigationStack: React.FC = () => {
             <ChangePasswordNavigationStack />
           </Route>
 
-          <Route>
-            <NotFound />
-          </Route>
+          <Redirect from="*" to={getRouteStackPath('DASHBOARD', 'NOT_FOUND')} />
         </Switch>
       </div>
     </div>

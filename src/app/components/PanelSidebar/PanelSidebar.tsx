@@ -16,7 +16,7 @@ const PanelSidebar: React.FC<IProps> = (props: IProps) => {
 
   const validatePath = () => {
     if (!routeExist(location.pathname)) {
-      window.location.href = getRouteStackPath('DASHBOARD', 'DETAILS');
+      window.location.href = getRouteStackPath('DASHBOARD', 'NOT_FOUND');
     }
   };
 

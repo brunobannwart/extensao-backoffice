@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Route,
   Switch,
+  Redirect,
 } from 'react-router-dom';
 
 import Login from './Login/Login';
@@ -21,6 +22,8 @@ const AuthNavigationStack: React.FC = () => (
     <Route path="/alterar-senha">
       <ResetPassword />
     </Route>
+
+    <Redirect from="*" to="/" />
   </Switch>
 );
 

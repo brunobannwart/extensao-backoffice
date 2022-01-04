@@ -116,6 +116,13 @@ export const checkIsLogged = () => async (dispatch: Dispatch) => {
         type: AUTH_ME,
       });
     }
+  } catch (err) {
+    dispatch({
+      type: AUTH_LOGOUT,
+    });
+
+    window.location.href = '/';
+
   } finally {
     dispatch({
       type: AUTH_CHECK_LOGGED,

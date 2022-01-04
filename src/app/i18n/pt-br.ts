@@ -144,6 +144,11 @@ const ptBr = {
       DASHBOARD: {
         TITLE: 'DASHBOARD',
 
+        NOT_FOUND: {
+          PAGE_TITLE: 'Não encontrado',
+          DESCRIPTION: 'Oops... a página que procura não existe ou não foi encontrada.',
+        },
+
         DETAILS: {
           WELCOME: 'Seja Bem Vindo ',
           TITLE: 'Informações gerais',

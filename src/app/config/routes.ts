@@ -14,6 +14,12 @@ const routes: models.route[] = [
         name: 'Painel de Controle',
         route: '/painel-controle',
       },
+      {
+        id: 'NOT_FOUND',
+        name: 'Não encontrado',
+        route: '/nao-encontrado',
+        sidebarHidden: true,
+      },
     ],
   },
   {
