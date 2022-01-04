@@ -48,6 +48,8 @@ const PanelNavigationStack: React.FC = () => {
             <ChangePasswordNavigationStack />
           </Route>
 
+          <Redirect from="/" exact to={getRouteStackPath('DASHBOARD', 'DETAILS')} />
+
           <Redirect from="*" to={getRouteStackPath('DASHBOARD', 'NOT_FOUND')} />
         </Switch>
       </div>

@@ -9,6 +9,7 @@ import UserIcon from '~/assets/svg/panel-top-bar/ic_user.svg';
 
 import { translate } from '~/services/i18n';
 import { AuthActions } from '~/actions';
+import { getRouteStackPath } from '~/config/routes';
 
 interface IProps {
   user?: models.User | null;
@@ -27,7 +28,7 @@ const PanelContentTopBar: React.FC<IProps> = (props: IProps) => {
       <div className="panel-content-top-bar__menu">
         <div
           className={`panel-content-top-bar__menu__item ${
-            pathname === '/dashboard/detalhes'
+            pathname === getRouteStackPath('DASHBOARD', 'DETAILS')
               ? 'panel-content-top-bar__menu__item--active'
               : ''
           }`}
