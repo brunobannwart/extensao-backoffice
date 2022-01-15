@@ -13,6 +13,7 @@ const AdvancedInput = ({
   InputLabelProps,
   disabled = false,
   inputProps,
+  InputProps,
 }: any) => {
   return (
     <div className='advanced-input'>
@@ -29,6 +30,7 @@ const AdvancedInput = ({
         InputLabelProps={InputLabelProps}
         disabled={disabled}
         inputProps={inputProps}
+        InputProps={InputProps}
       />
     </div>
   );

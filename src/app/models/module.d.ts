@@ -16,6 +16,7 @@ export type AuthResponse = {
 export type AuthRequest = {
   username: string;
   password: string;
+  showPassword?: boolean;
 };
 
 export type UserPasswordRecovery = {
@@ -109,6 +110,7 @@ export type User = {
   roles: Array<string>;
   confirmPassword?: string;
   changePassword?: boolean;
+  showPassword?: boolean;
 };
 
 export type Category = {

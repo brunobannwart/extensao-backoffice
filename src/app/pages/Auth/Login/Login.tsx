@@ -1,4 +1,4 @@
-import { ArrowRightOutlined } from '@ant-design/icons';
+import { ArrowRightOutlined, EyeFilled, EyeInvisibleFilled } from '@ant-design/icons';
 import React, { useState } from 'react';
 import { Col, Container, Row, Card } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
@@ -9,12 +9,14 @@ import * as AuthActions from '~/actions/auth';
 import AdvancedButton from '~/components/AdvancedButton/AdvancedButton';
 import AdvancedForm from '~/components/AdvancedForm/AdvancedForm';
 import AdvancedInput from '~/components/AdvancedInput/AdvancedInput';
+import AdvancedInputAdornment from '~/components/AdvancedInputAdornment/AdvancedInputAdornment';
 import { WL_COMPANY_LOGIN_LOGO } from '~/config/env';
 import { translate } from '~/services/i18n';
 
 const initialValues: models.AuthRequest = {
   password: '',
   username: '',
+  showPassword: false,
 };
 
 const Login: React.FC = () => {
@@ -22,7 +24,7 @@ const Login: React.FC = () => {
 
   const [form, setForm] = useState(initialValues);
 
-  const onFormChange = (key: string, value: string) => {
+  const onFormChange = (key: string, value: string | number | boolean) => {
     setForm((prevState: models.AuthRequest) => ({
       ...prevState,
       [key]: value,
@@ -89,7 +91,15 @@ const Login: React.FC = () => {
                                 onChange={(value: string) =>
                                   onFormChange('password', value)
                                 }
-                                type="password"
+                                type={form.showPassword ? "text" : "password"}
+                                InputProps={{
+                                  endAdornment: (
+                                    <AdvancedInputAdornment 
+                                      onClick={() => onFormChange('showPassword', !form.showPassword)}
+                                      icon={form.showPassword ? <EyeInvisibleFilled /> : <EyeFilled /> }
+                                    />
+                                  )
+                                }}
                               />
                             </Col>
                           </Row>
