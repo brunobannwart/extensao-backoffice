@@ -34,3 +34,11 @@ export const getUserRolesFilter = () => ([
     value: '',
   },
 ]);
+
+export function formatBase64(base64: string, type: string = '') {
+  const regex = /^data:\w+\/[\w\.\-]+;base64,/g;
+
+  if (!regex.test(base64)) base64 = `data:${type};base64,${base64}`;
+
+  return base64;
+}

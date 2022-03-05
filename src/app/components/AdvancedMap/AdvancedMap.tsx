@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { MAPBOX_API_KEY } from '~/config/env';
 import IconMarker from '~/assets/svg/ic_marker.svg';
 import AdvancedAudio from '~/components/AdvancedAudio/AdvancedAudio';
+import { formatBase64 } from '~/utils/utilities';
 
 interface IAdvancedMapProps {
   latitude: number,
@@ -69,7 +70,7 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
               {selected.photo && (
                 <div className="advanced-map__marker__photo">
                   <img 
-                    src={selected.photo as string} 
+                    src={selected.photo && formatBase64(selected.photo, 'image/png')} 
                     alt={selected.category as string} 
                   />
                 </div>
@@ -83,7 +84,11 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
               {selected.audio && (
                 <div className="advanced-map__marker__audio">
                   <AdvancedAudio
-                    tracks={[{ source: selected.audio }]}
+                    tracks={[{ 
+                      source: 
+                        selected.audio && 
+                        formatBase64(selected.audio, 'audio/mp3') 
+                    }]}
                   />
                 </div>
               )}
