@@ -1,4 +1,5 @@
 import { API_URL } from '@portal/config/env';
+
 import getInstance from './instance';
 
 const PasswordRecoveryApi = {

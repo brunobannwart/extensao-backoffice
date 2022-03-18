@@ -25,6 +25,7 @@ const CategoryApi = {
   update: async (id: string, params: models.Category) => {
     const instance = await getInstance();
     const { data } = await instance.put(`/v1/category/${id}`, params);
+
     return data;
   },
 

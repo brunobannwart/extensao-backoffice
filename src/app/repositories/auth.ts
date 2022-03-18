@@ -1,5 +1,6 @@
-import getInstance from './instance';
 import { encodeBase64 } from '~/utils/utilities';
+
+import getInstance from './instance';
 
 const AuthApi = {
   login: async ({ username, password }: models.AuthRequest) => {

@@ -1,6 +1,6 @@
 export as namespace advancedFilterModels;
 
-export interface baseFilter {
+export interface BaseFilter {
   pageSize: number = 10;
   page: number = 1;
   orderBy: string = 'createdAt';
@@ -11,20 +11,20 @@ export interface baseFilter {
   isPaginated?: boolean;
 }
 
-export interface UserAdvancedFilter extends baseFilter {
+export interface UserAdvancedFilter extends BaseFilter {
   username?: string | null;
   email?: string | null;
   phone?: string | null;
-  roles?: string | Array<string>;
+  roles?: string | string[];
   password?: string | null,
   confirmPassword?: string | null,
 }
 
-export interface CategoryAdvancedFilter extends baseFilter {
+export interface CategoryAdvancedFilter extends BaseFilter {
   categoryName?: string | null;
 }
 
-export interface OccurrenceAdvancedFilter extends baseFilter {
+export interface OccurrenceAdvancedFilter extends BaseFilter {
   category?: string | null;
   problemType?: string | null;
   profileType?: string | null;
@@ -38,10 +38,10 @@ export interface MapAdvancedFilter {
   range: number;
 }
 
-export interface ProfileAdvancedFilter extends baseFilter {
+export interface ProfileAdvancedFilter extends BaseFilter {
   profileName?: string | null;
 }
 
-export interface KpiAdvancedFilter extends baseFilter {
-  
+export interface KpiAdvancedFilter extends BaseFilter {
+  //
 }

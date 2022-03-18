@@ -3,13 +3,13 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
 import authReducer from './auth';
-import loadingReducer from './loading';
-import userReducer from './user';
 import categoryReducer from './category';
+import kpiReducer from './kpi';
+import loadingReducer from './loading';
+import mapReducer from './map';
 import occurrenceReducer from './occurrence';
 import profileReducer from './profile';
-import kpiReducer from './kpi';
-import mapReducer from './map';
+import userReducer from './user';
 
 const appReducer = combineReducers({
   auth: authReducer,

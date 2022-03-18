@@ -1,4 +1,5 @@
 import Masker from 'vanilla-masker';
+
 import { translate } from '~/services/i18n';
 
 const invalidCPF: string[] = [
@@ -68,6 +69,7 @@ const checkDV = (numberParam: string, dv: string, checkType: string) => {
       .split('')
       .map((item: any, i) => {
         const res = item * (numberParam.length + 1 - i);
+
         return res;
       })
       .reduce((x, y) => {
@@ -124,7 +126,7 @@ export const maskHour = (value: string) => {
 
 export const maskCurrency = (value: number) => {
   return value ? `${translate('SHARED.CURRENCY_SYMBOL')} ${value.toFixed(2)}` : '';
-}
+};
 
 export const unmaskField = (value: any) => {
   return value ? value.replace(/\D/g, "") : '';

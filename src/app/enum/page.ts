@@ -13,4 +13,4 @@ export const UserPageTypeMap = new Map([
   [USER_PAGE_TYPE.ADMIN, 'ADMIN'],
   [USER_PAGE_TYPE.APP, 'APP'],
   [USER_PAGE_TYPE.WEB, 'WEB'],
-])
+]);

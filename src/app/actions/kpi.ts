@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux';
+
 import KPIRequests from '~/repositories/kpi';
 import * as MessageService from '~/services/message';
 
@@ -10,7 +11,7 @@ export const getKPIReport = (
 ) => async (dispatch: Dispatch) => {
   dispatch(increaseLoading());
   try {
-    const payload: Array<models.KPI> = await KPIRequests.getReport(searchParams);
+    const payload: models.KPI[] = await KPIRequests.getReport(searchParams);
     dispatch({
       payload,
       type: KPI_REPORT,
@@ -21,4 +22,3 @@ export const getKPIReport = (
     dispatch(decreaseLoading());
   }
 };
-

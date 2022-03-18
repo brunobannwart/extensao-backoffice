@@ -32,6 +32,7 @@ const UserApi = {
   update: async (id: string, params: models.User) => {
     const instance = await getInstance();
     const { data } = await instance.put(`/v1/users/${id}`, params);
+
     return data;
   },
 

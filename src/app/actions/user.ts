@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux';
+
 import UserRequests from '~/repositories/user';
 import * as MessageService from '~/services/message';
 import centralNavigationService from '~/services/navigation';
@@ -67,7 +68,7 @@ export const updateUser = (id: string, params: models.User, profile: string) => 
   } finally {
     dispatch(decreaseLoading());
   }
-}
+};
 
 export const addUser = (params: models.User, profile: string) => async (dispatch: Dispatch) => {
   dispatch(increaseLoading());

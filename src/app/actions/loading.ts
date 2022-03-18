@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux';
+
 import { DESCREASE_LOADING, INCREASE_LOADING } from './actionTypes';
 
 export const increaseLoading = () => ({

@@ -32,6 +32,7 @@ const OccurrenceApi = {
   update: async (id: string, params: models.Occurrence) => {
     const instance = await getInstance();
     const { data } = await instance.put(`/v1/reports/${id}`, params);
+
     return data;
   },
 
