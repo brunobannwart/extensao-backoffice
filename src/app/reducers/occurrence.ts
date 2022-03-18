@@ -1,7 +1,7 @@
 import {
   OCCURRENCE_DETAIL,
-  OCCURRENCE_REPORT,
   OCCURRENCE_EXPORT,
+  OCCURRENCE_REPORT,
 } from '~/actions/actionTypes';
 
 const initialState: reducers.OccurrenceReducer = {

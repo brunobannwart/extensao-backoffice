@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux';
+
 import { getRouteStackPath } from '@portal/config/routes';
 import AuthRequests from '~/repositories/auth';
 import { setAuthorizationHeader } from '~/repositories/instance';
@@ -56,7 +57,6 @@ export const refreshToken = (token: any) => async (dispatch: Dispatch) => {
   try {
     const payload: models.AuthResponse = await AuthRequests.refreshToken(token);
 
-    
     StorageService.setItem('session-token', payload);
     setAuthorizationHeader(payload.jwtToken as string);
 

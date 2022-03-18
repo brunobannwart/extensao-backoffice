@@ -1,7 +1,9 @@
 import { Dispatch } from 'redux';
+
 import { translate } from '@portal/services/i18n';
 import PasswordRecoveryRequests from '~/repositories/passwordRecovery';
 import * as MessageService from '~/services/message';
+
 import { decreaseLoading, increaseLoading } from './loading';
 
 export const SendVerification = (email: string) => async (dispatch: Dispatch) => {

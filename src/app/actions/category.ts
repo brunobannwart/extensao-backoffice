@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux';
+
 import CategoryRequests from '~/repositories/category';
 import * as MessageService from '~/services/message';
 import centralNavigationService from '~/services/navigation';
@@ -67,7 +68,7 @@ export const updateCategory = (id: string, params: models.Category) => async (di
   } finally {
     dispatch(decreaseLoading());
   }
-}
+};
 
 export const addCategory = (params: models.Category) => async (dispatch: Dispatch) => {
   dispatch(increaseLoading());

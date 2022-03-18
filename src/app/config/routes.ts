@@ -129,7 +129,7 @@ export const getRoutes = (): models.route[] => routes;
 export const getRoutestack = (route: string): models.route =>
   routes.find((o) => o.route === route) as models.route;
 
-export const getStackPath = (stackId: string): string => { //retorna as rotas
+export const getStackPath = (stackId: string): string => { // retorna as rotas
   return `${routes.find((o) => o.id === stackId)?.route}`;
 };
 

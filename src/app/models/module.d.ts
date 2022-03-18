@@ -10,7 +10,7 @@ export type AuthResponse = {
   id: string,
   username: string,
   email: string,
-  roles: Array<string>;
+  roles: string[];
 };
 
 export type AuthRequest = {
@@ -37,7 +37,7 @@ export type routeInner = {
   name: string;
   sidebarHidden?: boolean;
   accessType?: string;
-  accessGranted?: Array<string>;
+  accessGranted?: string[];
 };
 
 export type route = {
@@ -48,7 +48,7 @@ export type route = {
   id: string;
   items: routeInner[];
   accessType?: string;
-  accessGranted?: Array<string>;
+  accessGranted?: string[];
 };
 
 export type PaginationResponse<T> = {
@@ -63,7 +63,7 @@ export type Count = {
 export type Range = {
   min: number;
   max: number;
-}
+};
 
 export type PageType = {
   ADD: number;
@@ -107,7 +107,7 @@ export type User = {
   username: string;
   email: string;
   password?: string;
-  roles: Array<string>;
+  roles: string[];
   confirmPassword?: string;
   changePassword?: boolean;
   showPassword?: boolean;
@@ -116,8 +116,8 @@ export type User = {
 export type Category = {
   id?: string;
   categoryName: string;
-  subCategories: Array<string>;
-}
+  subCategories: string[];
+};
 
 export type Occurrence = {
   id: string,
@@ -129,32 +129,32 @@ export type Occurrence = {
   audio: string | null,
   longitude: string | null,
   latitude: string | null
-}
+};
 
 export type Profile = {
   id?: string;
   profileName: string;
-}
+};
 
 export type ChangePassword = {
   oldPassword: string | null;
   newPassword: string | null;
   confirmPassword: string | null;
-}
+};
 
 export type KPI = {
   value: number;
   name: string;
-}
+};
 
 export type Viewport = {
   latitude: number;
   longitude: number;
   zoom: number;
-}
+};
 
 export type Export = {
   start: string,
   end: string,
   period: any[],
-}
+};

@@ -25,6 +25,7 @@ const ProfileApi = {
   update: async (id: string, params: models.Profile) => {
     const instance = await getInstance();
     const { data } = await instance.put(`/v1/profile/${id}`, params);
+
     return data;
   },
 

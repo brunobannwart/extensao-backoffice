@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux';
+
 import MapRequests from '~/repositories/map';
 import * as MessageService from '~/services/message';
 
@@ -10,7 +11,7 @@ export const getMapMarkers = (
 ) => async (dispatch: Dispatch) => {
   dispatch(increaseLoading());
   try {
-    const payload: Array<models.Occurrence> = await MapRequests.getMarkers(searchParams);
+    const payload: models.Occurrence[] = await MapRequests.getMarkers(searchParams);
 
     dispatch({
       payload,

@@ -1,4 +1,5 @@
 import Compress from 'compress.js';
+
 import { FILE_TYPE } from '~/enum/file';
 
 export const imageExtensions = ['png', 'jpg', 'jpeg'];

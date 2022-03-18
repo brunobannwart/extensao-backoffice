@@ -1,9 +1,10 @@
 import { Dispatch } from 'redux';
+
 import OccurrenceRequests from '~/repositories/occurrence';
 import * as MessageService from '~/services/message';
 import centralNavigationService from '~/services/navigation';
 
-import { OCCURRENCE_DETAIL, OCCURRENCE_REPORT, OCCURRENCE_EXPORT } from './actionTypes';
+import { OCCURRENCE_DETAIL, OCCURRENCE_EXPORT, OCCURRENCE_REPORT } from './actionTypes';
 import { decreaseLoading, increaseLoading } from './loading';
 
 export const cleanOccurrenceDetail = () => async (dispatch: Dispatch) => {
@@ -85,7 +86,7 @@ export const updateOccurrence = (id: string, params: models.Occurrence) => async
   } finally {
     dispatch(decreaseLoading());
   }
-}
+};
 
 export const addOccurrence = (params: models.Occurrence) => async (dispatch: Dispatch) => {
   dispatch(increaseLoading());

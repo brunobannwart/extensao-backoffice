@@ -7,6 +7,7 @@
   ],
   "rules": {
     "no-console": true,
+    "no-empty": false,
     "interface-over-type-literal": false,
     "no-duplicate-variable": true,
     "indent": [true],

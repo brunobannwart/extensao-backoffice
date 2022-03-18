@@ -2,10 +2,10 @@ import { message } from 'antd';
 import Axios, { AxiosResponse } from 'axios';
 
 import { API_URL } from '@portal/config/env';
+import { logout, refreshToken } from '~/actions/auth';
+import storeCreator from '~/reducers/createStore';
 import { translate } from '~/services/i18n';
 import * as StorageService from '~/services/storage';
-import storeCreator from '~/reducers/createStore';
-import { refreshToken, logout } from '~/actions/auth';
 
 import { handleAxiosError } from '../services/api';
 
@@ -63,7 +63,7 @@ export function getInstance(auth?: string) {
   } else {
     setAuthorizationHeader('undefined', 'Bearer');
   }
-  
+
   if (auth) {
     setAuthorizationHeader(auth, 'Basic');
   }
