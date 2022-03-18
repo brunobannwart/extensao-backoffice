@@ -30,7 +30,10 @@ const MapReport: React.FC = () => {
   const { map } = useReduxState();
 
   const onSearch = (filters: advancedFilterModels.MapAdvancedFilter) => {
-    dispatch(MapActions.getMapMarkers(filters));
+    dispatch(MapActions.getMapMarkers({
+      ...filters,
+      range: (filters.range || 0) * 1000,
+    }));
   };
 
   useEffect(() => {
@@ -113,7 +116,7 @@ const MapReport: React.FC = () => {
               onChange: (range: number) => {
                 setAdvancedFilters({
                  ...advancedFilters,
-                 range: Number(range),
+                 range: Number(range) > 0 ? Number(range) : 0,
                 });
               },
               type: 'input',
