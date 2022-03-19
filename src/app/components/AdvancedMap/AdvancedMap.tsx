@@ -3,8 +3,7 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { MAPBOX_API_KEY } from '~/config/env';
 import IconMarker from '~/assets/svg/ic_marker.svg';
-import AdvancedAudio from '~/components/AdvancedAudio/AdvancedAudio';
-import { formatBase64 } from '~/utils/utilities';
+import AdvancedMapMarker from '~/components/AdvancedMapMarker/AdvancedMapMarker';
 
 interface IAdvancedMapProps {
   latitude: number,
@@ -66,33 +65,13 @@ const AdvancedMap: React.FC<IAdvancedMapProps> = ({
             longitude={Number(selected.longitude)}
             onClose={() => setSelected(null)}
           >
-            <div className="advanced-map__marker">
-              {selected.photo && (
-                <div className="advanced-map__marker__photo">
-                  <img 
-                    src={selected.photo && formatBase64(selected.photo, 'image/png')} 
-                    alt={selected.category as string} 
-                  />
-                </div>
-              )}
-              <div className="advanced-map__marker__info">
-                <h2>{selected.category}</h2>
-                <h4>{selected.problemType}</h4>
-                <h4>{selected.profileType}</h4>
-                <p>{selected.description}</p>
-              </div>
-              {selected.audio && (
-                <div className="advanced-map__marker__audio">
-                  <AdvancedAudio
-                    tracks={[{ 
-                      source: 
-                        selected.audio && 
-                        formatBase64(selected.audio, 'audio/mp3') 
-                    }]}
-                  />
-                </div>
-              )}
-            </div>
+            <AdvancedMapMarker
+              photo={selected.photo}
+              category={selected.category}
+              profileType={selected.profileType}
+              description={selected.description}
+              audio={selected.audio}
+            />
           </Popup>
         )}
       </ReactMapGL>

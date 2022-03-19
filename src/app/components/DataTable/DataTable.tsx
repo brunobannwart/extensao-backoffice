@@ -10,7 +10,7 @@ interface IProps {
   rowCount: number,
   orderBy: string,
   sort: 'asc' | 'desc',
-  onChange: (params: advancedFilterModels.baseFilter) => any,
+  onChange: (params: advancedFilterModels.BaseFilter) => any,
   disableColumnMenu?: boolean,
 }
 
@@ -51,7 +51,7 @@ const DataTable: React.FC<IProps> = (props: IProps) => {
   const onPage = (page: number) => {
     if (props.pageSize === 100) { return; }
 
-    const baseFilter: advancedFilterModels.baseFilter = {
+    const baseFilter: advancedFilterModels.BaseFilter = {
       orderBy: props.orderBy,
       page: page,
       pageSize: props.pageSize || 10,
