@@ -28,6 +28,10 @@ const ptBr = {
       },
       END: {
         LABEL: 'Fim',
+      },
+      ERRORS: {
+        START: 'Preencher campo ínicio!',
+        END: 'Preencher campo fim!',
       }
     },
     SEARCH_BAR: {
