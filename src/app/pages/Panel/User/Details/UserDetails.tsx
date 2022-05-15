@@ -18,6 +18,7 @@ import { getRouteStackPath } from '~/config/routes';
 import { getPageType } from '~/utils/page';
 import { useReduxState } from '~/hooks/useReduxState';
 import { getUserRoles } from '~/utils/utilities';
+import { isEmptyField, isEmptyFields } from '~/services/form';
 
 const formInitialValues: models.User = {
   email: '',
@@ -83,20 +84,20 @@ const UserDetails: React.FC = (props) => {
       roles: form.roles,
     };
 
-    if (!form.username) {
+    if (isEmptyField(form.username)) {
       return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.NAME');
     }
 
-    if (!form.email) {
+    if (isEmptyField(form.email)) {
       return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.EMAIL');
     }
 
-    if (!form.roles || !form.roles.length) {
+    if (isEmptyFields(form.roles)) {
       return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.ROLES');
     }
 
     if (pageType === PAGE_TYPE.ADD || form.changePassword) {
-      if (!form.password) {
+      if (isEmptyField(form.password)) {
         return MessageService.error('PAGES.PANEL.USER.DETAILS.FORM.ERROR.PASSWORD_EMPTY');
       }
       if (form.password !== form.confirmPassword) {

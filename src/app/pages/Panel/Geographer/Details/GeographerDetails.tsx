@@ -17,6 +17,7 @@ import { USER_PAGE_TYPE, PAGE_TYPE } from '~/enum/page';
 import { getRouteStackPath } from '~/config/routes';
 import { getPageType } from '~/utils/page';
 import { useReduxState } from '~/hooks/useReduxState';
+import { isEmptyField } from '~/services/form';
 
 const formInitialValues: models.User = {
   email: '',
@@ -69,11 +70,11 @@ const GeographerDetails: React.FC = (props) => {
       roles: form.roles,
     };
 
-    if (!form.username) {
+    if (isEmptyField(form.username)) {
       return MessageService.error('PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.ERROR.NAME');
     }
 
-    if (!form.email) {
+    if (isEmptyField(form.username)) {
       return MessageService.error('PAGES.PANEL.GEOGRAPHER.DETAILS.FORM.ERROR.EMAIL');
     }
 

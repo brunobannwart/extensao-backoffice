@@ -6,7 +6,7 @@ export function isEmptyField(field: string | undefined | null): boolean {
   return false;
 }
 
-export function isEmptyFields(fields: Array<string> | undefined | null): boolean {
+export function isEmptyFields(fields: string[] | undefined | null): boolean {
   if (!fields) return true;
 
   if (fields.length === 0) return true;
