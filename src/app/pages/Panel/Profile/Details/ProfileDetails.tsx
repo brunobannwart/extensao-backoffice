@@ -17,6 +17,7 @@ import { PAGE_TYPE } from '~/enum/page';
 import { getRouteStackPath } from '~/config/routes';
 import { getPageType } from '~/utils/page';
 import { useReduxState } from '~/hooks/useReduxState';
+import { isEmptyField } from '~/services/form';
 
 const formInitialValues: models.Profile = {
   profileName: '',
@@ -55,7 +56,7 @@ const ProfileDetails: React.FC = (props) => {
       profileName: form.profileName
     };
 
-    if (!form.profileName) {
+    if (isEmptyField(form.profileName)) {
       return MessageService.error('PAGES.PANEL.PROFILE.DETAILS.FORM.ERROR.TITLE');
     }
 

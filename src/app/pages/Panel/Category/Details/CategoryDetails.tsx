@@ -17,6 +17,7 @@ import { PAGE_TYPE } from '~/enum/page';
 import { getRouteStackPath } from '~/config/routes';
 import { getPageType } from '~/utils/page';
 import { useReduxState } from '~/hooks/useReduxState';
+import { isEmptyField, isEmptyFields } from '~/services/form';
 
 const formInitialValues: models.Category = {
   categoryName: '',
@@ -57,11 +58,11 @@ const CategoryDetails: React.FC = (props) => {
       subCategories: form.subCategories,
     };
 
-    if (!form.categoryName) {
+    if (isEmptyField(form.categoryName)) {
       return MessageService.error('PAGES.PANEL.CATEGORY.DETAILS.FORM.ERROR.TITLE');
     }
 
-    if (!form.subCategories || !form.subCategories.length) {
+    if (isEmptyFields(form.subCategories)) {
       return MessageService.error('PAGES.PANEL.CATEGORY.DETAILS.FORM.ERROR.SUB_CATEGORIES');
     }
 

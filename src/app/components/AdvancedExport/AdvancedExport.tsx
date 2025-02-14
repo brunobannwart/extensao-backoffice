@@ -5,6 +5,8 @@ import { DownloadOutlined } from '@ant-design/icons';
 import AdvancedButton from '~/components/AdvancedButton/AdvancedButton';
 import AdvancedDateRangePicker from '~/components/AdvancedDateRangePicker/AdvancedDateRangePicker';
 import { translate } from '~/services/i18n';
+import { isEmptyField } from '~/services/form';
+import * as MessageService from '~/services/message';
 
 interface IProps {
   onExport: (start: string, end: string) => void,
@@ -29,6 +31,18 @@ const AdvancedExport: React.FC<IProps> = ({
     onFormChange('period', period);
     onFormChange('start', period[0].format('YYYY-MM-DD'));
     onFormChange('end', period[1].format('YYYY-MM-DD'));
+  };
+
+  const handleExport = (start: string, end: string) => {
+    if (isEmptyField(start)) {
+      return MessageService.error('COMPONENTS.ADVANCED_EXPORT.ERRORS.START');
+    }
+
+    if (isEmptyField(end)) {
+      return MessageService.error('COMPONENTS.ADVANCED_EXPORT.ERRORS.END');
+    }
+
+    onExport(start, end);
   };
 
   return (

@@ -9,6 +9,7 @@ import AdvancedForm from '~/components/AdvancedForm/AdvancedForm';
 import AdvancedInput from '~/components/AdvancedInput/AdvancedInput';
 
 import { translate } from '~/services/i18n';
+import { isEmptyField } from '~/services/form';
 import * as MessageService from '~/services/message';
 
 const formInitialValues: models.ChangePassword = {
@@ -31,11 +32,11 @@ const ChangePassword: React.FC = (props) => {
       new_password: form.newPassword,
     };
 
-    if (!form.oldPassword) {
+    if (isEmptyField(form.oldPassword)) {
       return MessageService.error('PAGES.PANEL.CHANGE_PASSWORD.DETAILS.FORM.ERROR.OLD_PASSWORD');
     }
 
-    if (!form.newPassword) {
+    if (isEmptyField(form.newPassword)) {
       return MessageService.error('PAGES.PANEL.CHANGE_PASSWORD.DETAILS.FORM.ERROR.PASSWORD_EMPTY');
     }
 
